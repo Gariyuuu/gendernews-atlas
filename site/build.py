@@ -675,12 +675,20 @@ def validation(site: Site):
     prf = [[E(r["method"]), E(r["target"]), dec(r.get("precision")), dec(r.get("recall")), dec(r.get("f1")), num(r.get("n_pos_ref")),
             pct(r.get("prev_ref_w")), pct(r.get("prev_pred_w"))]
            for r in val if r.get("target") in ("AUTHORITY", "PUBLIC_OFFICE", "PROFESSIONAL", "BUSINESS", "CIVIC", "FAMILY")]
+    ac = load("annotation_consistency", {}) or {}
+    ac_rows = [[E(r["field"].replace("role:", "role · ")), dec(r.get("kappa")), pct(r.get("agreement"), 0), num(r.get("n"))]
+               for r in ac.get("rows", [])]
+    ac_html = (f"<h3>Self-consistency of the reference labels</h3><p class='prose'>{num(ac.get('n_items'))} items were re-labelled blind, "
+               f"in shuffled order, after the full pass. This is {E(ac.get('what', ''))}. It measures stability, not correctness, "
+               f"and it is not agreement between annotators.</p><div class='table-scroll'>"
+               f"{table(['Field', 'Cohen κ', 'Agreement', 'Items'], ac_rows, numeric={1, 2, 3})}</div>") if ac_rows else ""
     tot = next((r for r in gc if r.get("year") == -1), {})
     cons = [{"label": "pronoun rule agrees with honorific", "color": "neutral", "dash": 1,
              "points": [{"x": r["year"], "y": r.get("agree"), "n": r.get("n")} for r in gc if r.get("year", -1) > 0]}]
     body = f"""{head("Validation", "Every method is checked against a stratified sample of reference labels. The reference labels are not human annotation, and this page says so first.")}
 <div class="finding"><p class="claim">Who produced the reference labels</p>
 <p>{E(ref_note)}. The {num(n_ref)} labelled people were drawn by stratified random sampling (period × honorific class × role present). The annotator worked blind to every method's output, following <code>research/annotation_protocol.md</code>. Estimates are reweighted to population proportions. Replacing these labels with human annotation is the first open item, and the <a href="/annotate/">annotation tool</a> exists for exactly that.</p></div>
+{ac_html}
 <h2>Is the extracted span a person?</h2>
 <p class="prose">Of sampled entities, {pct(isp.get('precision'))} (sampling-weighted) are real references to a person. The rest are OCR fragments, places and organisations tagged as people. Every entity-level estimate carries this noise.</p>
 <h2>Gender signal</h2>

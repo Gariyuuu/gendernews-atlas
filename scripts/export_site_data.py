@@ -51,7 +51,7 @@ def main() -> int:
     OUT.mkdir(parents=True, exist_ok=True)
     shutil.copy(RESULTS / "release.json", OUT / "release.json")
     for f in ("disagreement_examples.json", "topic_model.json", "sampling_audit.json", "claims.json",
-              "failure_examples.json"):
+              "failure_examples.json", "annotation_consistency.json"):
         if (RESULTS / f).exists():
             shutil.copy(RESULTS / f, OUT / f)
     shutil.copy(ROOT / "config" / "topic_labels.json", OUT / "topic_labels.json")

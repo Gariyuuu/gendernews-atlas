@@ -17,7 +17,7 @@ import pandas as pd  # noqa: E402
 
 from gna.lexicons import AUTHORITY  # noqa: E402
 from gna.paths import DATA, RESULTS, safe_write  # noqa: E402
-from role_methods import load_entities  # noqa: E402
+from role_methods import ENT_COLS, load_entities  # noqa: E402
 
 ANN = DATA / "annotation"
 PER_KIND = 4
@@ -31,7 +31,7 @@ def trim(ctx: str, s: int, e: int, pad: int = 200):
 
 def main() -> int:
     lab = pd.DataFrame([json.loads(x) for x in open(ANN / "labels_v1.jsonl") if x.strip()])
-    ents = load_entities(set(lab["entity_id"]))
+    ents = load_entities(set(lab["entity_id"]), cols=ENT_COLS + ["src_hp"])
     d = lab.merge(ents, on="entity_id", how="inner").sample(frac=1.0, random_state=11)
     d["ref_auth"] = d["roles"].map(lambda r: bool(set(r) & AUTHORITY))
     d["b_auth"] = d["roles_b"].map(lambda r: bool(set(r) & AUTHORITY))

@@ -1,0 +1,112 @@
+{
+ "what": "intra-annotator self-consistency: the same AI annotator re-labelled a 20% subset blind to method outputs, in shuffled order, after the full pass, but in the same working session, with first-pass labels still in its context history. Treat it as an UPPER BOUND on self-consistency, not as independent agreement",
+ "n_items": 120,
+ "rows": [
+  {
+   "field": "is_person",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120
+  },
+  {
+   "field": "gender_text",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120
+  },
+  {
+   "field": "quoted",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120
+  },
+  {
+   "field": "role:PUBLIC_OFFICE",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 14,
+   "positives_pass2": 14
+  },
+  {
+   "field": "role:MILITARY",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 2,
+   "positives_pass2": 2
+  },
+  {
+   "field": "role:BUSINESS",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 10,
+   "positives_pass2": 10
+  },
+  {
+   "field": "role:LABOR",
+   "kappa": null,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 0,
+   "positives_pass2": 0
+  },
+  {
+   "field": "role:PROFESSIONAL",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 16,
+   "positives_pass2": 16
+  },
+  {
+   "field": "role:ARTS_SPORTS",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 15,
+   "positives_pass2": 15
+  },
+  {
+   "field": "role:CIVIC",
+   "kappa": 0.9607843137254902,
+   "agreement": 0.9916666666666667,
+   "n": 120,
+   "positives_pass1": 15,
+   "positives_pass2": 14
+  },
+  {
+   "field": "role:SOCIAL",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 20,
+   "positives_pass2": 20
+  },
+  {
+   "field": "role:FAMILY",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 24,
+   "positives_pass2": 24
+  },
+  {
+   "field": "role:CRIME_ACCIDENT",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 4,
+   "positives_pass2": 4
+  },
+  {
+   "field": "role:AUTHORITY",
+   "kappa": 1.0,
+   "agreement": 1.0,
+   "n": 120,
+   "positives_pass1": 39,
+   "positives_pass2": 39
+  }
+ ]
+}

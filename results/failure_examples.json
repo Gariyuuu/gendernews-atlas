@@ -1,0 +1,225 @@
+{
+ "note": "Failure cases from the v1 reference sample (AI-annotator labels, not human). Public-domain OCR excerpts.",
+ "examples": [
+  {
+   "kind": "NER: not a person",
+   "entity_id": "as1-e94a91de475d6a37#0",
+   "year": 1900,
+   "publication": "the salt lake herald",
+   "excerpt": "Evangelical Lutheran Church of Our Savior.-On Fourth East between Fourth and Fifth South streets No Sunday school today. Children's Easter service at $3.50 p. m The Benevolentia society Will meet at the residence of Mr. and Mrs. Cleophas, 343 East Fourth South street, Thursday evening The Little GIFTS Missionary society will meet FRIDAY afternoon at the parsonage. Bible clas…",
+   "hl_start": 165,
+   "hl_end": 177,
+   "note": "Reference: not a reference to a person. Extracted as a person entity.",
+   "reference_notes": "society name"
+  },
+  {
+   "kind": "NER: not a person",
+   "entity_id": "as1-693c16739f5dc8db#8",
+   "year": 1906,
+   "publication": "los angeles herald",
+   "excerpt": "…eup of the fleet of the Pacific squadron, which will arrive here today. The vessels in the squadron are the cruiser Chicago, Commander Charles Badger; cruiser Boston, Commander Dewitt Coffin; gunboat Marblehead. Commander Richard Mulligan; gun boat Princeton, Commander Francis Sherman; torpedo boat destroyer Perry, Lieut.. Frederick Freeman, and collier Saturn. The Paul",
+   "hl_start": 201,
+   "hl_end": 211,
+   "note": "Reference: not a reference to a person. Extracted as a person entity.",
+   "reference_notes": "gunboat name"
+  },
+  {
+   "kind": "NER: not a person",
+   "entity_id": "as1-0dd25b0357532601#5",
+   "year": 1948,
+   "publication": "ohio waisenfreund",
+   "excerpt": "…= Der bas &enn5ei6en Der edten gaG= folger GbriIti. Ser Seilano ielblt iteat an bic Seinigen flar uno beltimmt Sic bobe 6orber1ng: v@er Gater ODER Otutter, 8ruoer ooer 'S6meIter mebr liebt oils Vfif, Ger lit 0feiner niht pert.\" gtibt nlr an Eetrus, ionOern an olle Seine Singer ri6tete Ser @err Ge Srage: n2ieblt ou 0ti6?\" lno an alle erlieB gr als Sein GermG6tni5 Sen 8e= febl: r8leibet",
+   "hl_start": 201,
+   "hl_end": 204,
+   "note": "Reference: not a reference to a person. Extracted as a person entity.",
+   "reference_notes": "German garble"
+  },
+  {
+   "kind": "NER: not a person",
+   "entity_id": "as1-05458f81d1a29d68#4",
+   "year": 1930,
+   "publication": "the republican",
+   "excerpt": "self-righteous Pharisees-priests and elders. ! 3. The parable Of the householder ,(vv. 3O-46). (1) This was God Himself. (2) ! The vineyard. This means Israel i lisa. SILT, Jer. 2:21, Ps. S0:9). The Lord went to particular pains to gather out this nation and make 1t separate, bestowing peculiar favors upon it. This vineyard so we'll kept and provided for,",
+   "hl_start": 173,
+   "hl_end": 176,
+   "note": "Reference: not a reference to a person. Extracted as a person entity.",
+   "reference_notes": "Bible citation (Jeremiah)"
+  },
+  {
+   "kind": "Gender: rule contradicts text",
+   "entity_id": "as1-6d842879a59e8797#0",
+   "year": 1936,
+   "publication": "the washington times",
+   "excerpt": "Charley GrapeWin was kiSSlesS bridegroom on his fortieth we'd ding anniversary yesterday. Mrs. GrapeWin wouldn't kiss him because of a five-day Stub BILE of beard he wore. He couldn't shave it off because it's a part…",
+   "hl_start": 0,
+   "hl_end": 16,
+   "note": "Reference gender: M. Pipeline (honorific + pronoun): F via honorific.",
+   "reference_notes": "actor; \"wouldn't kiss him\""
+  },
+  {
+   "kind": "Gender: rule contradicts text",
+   "entity_id": "as1-c2003c5933521170#1",
+   "year": 1909,
+   "publication": "evening times-republican",
+   "excerpt": "was not in the public book. 1t had private number. known to but two, people e1cept herself. Taking down the receiver. she asked II low voice. \"Hello. who is it?\" \"Mr. Wall\" It was the name Senator Peabody used in telephone conversation with her. Eyes. congressman\" she responded. She always said Eyes, congress man.\" in replying to \"Mr. Wall\" a prearranged manner OF indicating that he was talking to the…",
+   "hl_start": 189,
+   "hl_end": 204,
+   "note": "Reference gender: M. Pipeline (honorific + pronoun): F via pronoun.",
+   "reference_notes": "senator's telephone code name; \"he was talking\""
+  },
+  {
+   "kind": "Gender: rule contradicts text",
+   "entity_id": "as1-0eea35305392ebb0#0",
+   "year": 1936,
+   "publication": "evening star",
+   "excerpt": "Chancellor Joseph M. M Gray of American University today was Of ficially commended for having virtually bishop Of the Methodist Episcopal Church, to remain loyalty at his post with American University. At the semi-annual meetin…",
+   "hl_start": 11,
+   "hl_end": 27,
+   "note": "Reference gender: M. Pipeline (honorific + pronoun): F via honorific.",
+   "reference_notes": "university chancellor; \"his post\""
+  },
+  {
+   "kind": "Gender: rule contradicts text",
+   "entity_id": "as1-0ee8ce022fa57122#1",
+   "year": 1903,
+   "publication": "corvallis gazette",
+   "excerpt": "In the Circuit Court of the State of, Oregon for Benton county. W. Lair Hill, Julia G. Hill his wife, H Taylor Hill, Jennie Hill his wife, G. A. Hill, Julia Hill his wife, J. L. Hill, NJ. A. Thompson, Rufus Thompson, her husband Rupert C. Hill, Eta Kttrdge, --- kittridge. her husband, Lenor…",
+   "hl_start": 78,
+   "hl_end": 91,
+   "note": "Reference gender: F. Pipeline (honorific + pronoun): M via pronoun.",
+   "reference_notes": "\"his wife\"; party in court action"
+  },
+  {
+   "kind": "Role: authority missed by rules (B)",
+   "entity_id": "as1-5c928e1aca5251f1#0",
+   "year": 1909,
+   "publication": "the san francisco call",
+   "excerpt": "to jump rope because 1t wears out my SHOES very quickly. When | was very, very young I did hot like at all to jump rope because l was afraid mamma would whip me. Miss Jones, who is the principal of the school that 1 so TO, said that it was good to jump rope and get strong and healthy",
+   "hl_start": 162,
+   "hl_end": 172,
+   "note": "Reference roles: PROFESSIONAL. Method B roles: none.",
+   "reference_notes": "school principal; \"said that\""
+  },
+  {
+   "kind": "Role: authority missed by rules (B)",
+   "entity_id": "as1-92533bd4d9678c8a#0",
+   "year": 1951,
+   "publication": "evening star",
+   "excerpt": "…our effort to find those common ties and to bring the churches together in greater unity in crusade for peace\" he insisted. I'm this way. we shall find greater power to meet the troubles Of our time\" Mr. Truman's appeal is in line with the sentiments of some of his noblest predecessors among the Nations leaders. Surely, he spoke for a vast majority of his countrymen when he pied for fellowship against the f…",
+   "hl_start": 201,
+   "hl_end": 211,
+   "note": "Reference roles: PUBLIC_OFFICE. Method B roles: none.",
+   "reference_notes": "President; \"he insisted\", \"he spoke\""
+  },
+  {
+   "kind": "Role: authority missed by rules (B)",
+   "entity_id": "as1-addf8540b7b57df7#2",
+   "year": 1927,
+   "publication": "evening star",
+   "excerpt": "vacation in the United States. Thirty years ago the British states man visited America, and the proposed trip will give Miss Macdonald her first sight of this country. While in New York, Mr. MacDonaid and his daughter will be guests of Miss Lillian D. Valid, widely known social worker. of THE house of Henry street.\" a social settlement The MacDonalds also plan a So",
+   "hl_start": 187,
+   "hl_end": 200,
+   "note": "Reference roles: PUBLIC_OFFICE, SOCIAL. Method B roles: SOCIAL.",
+   "reference_notes": "British statesman; \"his daughter\"; guest"
+  },
+  {
+   "kind": "Role: authority missed by rules (B)",
+   "entity_id": "as1-5788d4683c832966#3",
+   "year": 1906,
+   "publication": "the daily tribune",
+   "excerpt": "officials aud oc urt dig. nitarie,. have proceeded to she from. tier to meet Princess Ens Of Battsn bsrR. who 10 to make her entry into Spain tomorrow to beo1ms the bride Of King Alfonso. The princes will be met by members Of the British ambAssy. who will make ths formal presentation Of the future queen and her suite to the Spanish authorities Ths",
+   "hl_start": 174,
+   "hl_end": 186,
+   "note": "Reference roles: PUBLIC_OFFICE, SOCIAL. Method B roles: none.",
+   "reference_notes": "King; bridegroom"
+  },
+  {
+   "kind": "Role: public office inherited by the lexical window (A)",
+   "entity_id": "as1-94fc9b06d3298d62#2",
+   "year": 1933,
+   "publication": "the waterbury democrat",
+   "excerpt": "church yesterday afternoon the officers were reelected as follows: Honorary president. Mrs Robert b. Brown, wife of Rev Robert F.. Brown. former pastor at the Sec. ond church; president, Mrs Will Ham c. Green; first vice president Mrse stephen T. Crane; second vice president, Mrs Arthur Reed Klmball; recording secretary, Mrs Walter M Boyd: corresponding secretary. Mrs Anson w. Miner; treasurer, Mrs Aaron …",
+   "hl_start": 187,
+   "hl_end": 208,
+   "note": "Reference roles: CIVIC. Method A found PUBLIC_OFFICE nearby; method B: PUBLIC_OFFICE.",
+   "reference_notes": "church women's society president"
+  },
+  {
+   "kind": "Role: public office inherited by the lexical window (A)",
+   "entity_id": "as1-08f1dbec3893e152#0",
+   "year": 1960,
+   "publication": "minneapolis spokesman",
+   "excerpt": "~ lady Of clubdom, the late Mrs. Lillian Turner Alexander, with ten women from Minneapolis and ten from st. Paul. The Greek word \"Adelphai,\" meaning sister was selected by the late william r. Morris, Minneapolis attorney, for the club name which was unanimo…",
+   "hl_start": 28,
+   "hl_end": 57,
+   "note": "Reference roles: CIVIC. Method A found PUBLIC_OFFICE nearby; method B: PUBLIC_OFFICE.",
+   "reference_notes": "\"lady of clubdom\"; club founder"
+  },
+  {
+   "kind": "Role: public office inherited by the lexical window (A)",
+   "entity_id": "as1-8edd175fd9edf63b#1",
+   "year": 1921,
+   "publication": "the idaho republican",
+   "excerpt": "…s passed thru the schools of bond age and were now in the university of liberty, altho she condemned the present day youth drunk with liberty\" A plea for greater love among the club women was made by Mrs. Thomas Winter of Minneapolis, president of the general federation,",
+   "hl_start": 201,
+   "hl_end": 219,
+   "note": "Reference roles: CIVIC. Method A found PUBLIC_OFFICE nearby; method B: CIVIC.",
+   "reference_notes": "federation president; plea made by"
+  },
+  {
+   "kind": "Role: public office inherited by the lexical window (A)",
+   "entity_id": "as1-89282346cad8e37d#19",
+   "year": 1930,
+   "publication": "evening star",
+   "excerpt": "…The hostesSes at the studio for this week during the afternoon hours will be Miss Marie c. Redfern, Mrs. Ed Mrs. Ernest Virgins and Mrs. Hugh Irish. The following elections committee has been chosen: Miss Jean Stephenson, Mrs. Evelyn Sheriff., DR.. Frances Moon Butts, Mrs. Theodore Tiller and Mrs. Hugh Irish. This committee will receive nominations for the different Offices which are to be filled at the annual meetin…",
+   "hl_start": 201,
+   "hl_end": 221,
+   "note": "Reference roles: CIVIC. Method A found PUBLIC_OFFICE nearby; method B: PUBLIC_OFFICE.",
+   "reference_notes": "club elections committee"
+  },
+  {
+   "kind": "Quote: attributed speech missed",
+   "entity_id": "as1-92533bd4d9678c8a#0",
+   "year": 1951,
+   "publication": "evening star",
+   "excerpt": "…our effort to find those common ties and to bring the churches together in greater unity in crusade for peace\" he insisted. I'm this way. we shall find greater power to meet the troubles Of our time\" Mr. Truman's appeal is in line with the sentiments of some of his noblest predecessors among the Nations leaders. Surely, he spoke for a vast majority of his countrymen when he pied for fellowship against the f…",
+   "hl_start": 201,
+   "hl_end": 211,
+   "note": "Reference: speech is attributed to this person. The named-speaker rule found none.",
+   "reference_notes": "President; \"he insisted\", \"he spoke\""
+  },
+  {
+   "kind": "Quote: attributed speech missed",
+   "entity_id": "as1-74ee03b3af2ccef4#9",
+   "year": 1909,
+   "publication": "rock island argus",
+   "excerpt": "…iscontinue work on the bill daily at that hour. for one week HoUsETFormal charges of impeachment against Federal Judges Phillips land Mcpherson of the western district / of Missouri are to be fled by Representative Murphy of that state. who imade announcement of that fact i'm Imediately after the house adjourned yesterday. Incensed by a telegram &c lAttroney General Wickersham by Franz jHagerman,",
+   "hl_start": 201,
+   "hl_end": 222,
+   "note": "Reference: speech is attributed to this person. The named-speaker rule found none.",
+   "reference_notes": "Representative; announcement"
+  },
+  {
+   "kind": "Quote: attributed speech missed",
+   "entity_id": "as1-8edd175fd9edf63b#1",
+   "year": 1921,
+   "publication": "the idaho republican",
+   "excerpt": "…s passed thru the schools of bond age and were now in the university of liberty, altho she condemned the present day youth drunk with liberty\" A plea for greater love among the club women was made by Mrs. Thomas Winter of Minneapolis, president of the general federation,",
+   "hl_start": 201,
+   "hl_end": 219,
+   "note": "Reference: speech is attributed to this person. The named-speaker rule found none.",
+   "reference_notes": "federation president; plea made by"
+  },
+  {
+   "kind": "Quote: attributed speech missed",
+   "entity_id": "as1-308aca0572492e2e#3",
+   "year": 1963,
+   "publication": "evening star",
+   "excerpt": "… saving and using this Ma. TONS supply of natural resources to assure a fuller, rich er life for all Americans now and for generations to come. Z\" Going to Wisconsin After his appearance at Mil ford, Mr. Kennedy was to fly to Ashland, Wis, for another conservation speech before addressing an Agriculture Depart ment Land and People Conference\" in Duluth, Mimi, tonight. Besides stops in these States, Mr. Kenne…",
+   "hl_start": 201,
+   "hl_end": 212,
+   "note": "Reference: speech is attributed to this person. The named-speaker rule found none.",
+   "reference_notes": "speech quoted; office not stated in view"
+  }
+ ]
+}

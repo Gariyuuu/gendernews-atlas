@@ -10,6 +10,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import random
 import re
 import time
 from concurrent.futures import ThreadPoolExecutor
@@ -80,11 +81,12 @@ class LLMClient:
         self.base = os.environ.get("GNA_LLM_BASE_URL", "https://api.gariyuuu.com/v1").rstrip("/")
         self.key = os.environ.get("GNA_LLM_API_KEY", "")
         self.model = os.environ.get("GNA_LLM_MODEL", "Yuu no Sekai")
-        self.model_note = os.environ.get("GNA_LLM_MODEL_NOTE", "Qwen3-8B (open weights) behind self-hosted gateway")
+        self.model_note = os.environ.get(
+            "GNA_LLM_MODEL_NOTE", "Qwen3-8B (open weights); owner's gateway forwards to OpenRouter (hosted inference)")
         if not self.key:
             raise RuntimeError("GNA_LLM_API_KEY not set; method E is optional and is skipped without it")
 
-    def label(self, item: dict, retries: int = 3) -> dict:
+    def label(self, item: dict, retries: int = 7) -> dict:
         body = {"model": self.model, "temperature": TEMPERATURE, "max_tokens": MAX_TOKENS,
                 "reasoning": {"enabled": False},
                 "messages": [{"role": "system", "content": SYSTEM},
@@ -105,7 +107,9 @@ class LLMClient:
                         "parse_ok": parsed is not None}
             except Exception as e:  # network / server errors are recorded, not raised
                 err = repr(e)
-                time.sleep(2 ** attempt)
+                # the gateway rate-limits (HTTP 429): back off hard, with jitter
+                wait = min(60.0, 4.0 * 2 ** attempt) if "429" in err else 2.0 ** attempt
+                time.sleep(wait * (0.75 + 0.5 * random.random()))
         return {"entity_id": item["entity_id"], "model": self.model, "prompt_hash": prompt_hash(self.model),
                 "timestamp": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "error": err, "parse_ok": False}
 
