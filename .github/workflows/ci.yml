@@ -1,0 +1,50 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install (CPU-only; no torch needed for unit tests)
+        run: |
+          python -m pip install --upgrade pip
+          grep -viE "^(torch|sentence-transformers|transformers)" requirements.txt > req-ci.txt
+          pip install -r req-ci.txt
+          pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.8.0/en_core_web_sm-3.8.0-py3-none-any.whl
+      - name: Lint
+        run: python -m ruff check src scripts tests site/build.py
+      - name: Unit tests
+        run: python -m pytest -q
+      - name: Compile every script
+        run: python -m py_compile scripts/*.py site/build.py src/gna/*.py
+
+  site:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Chart kit syntax + unit tests (zero dependencies)
+        working-directory: site
+        run: |
+          node --check assets/charts.js
+          node --check assets/app.js
+          node --test tests/
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Production build from committed results
+        run: |
+          pip install pandas pyarrow numpy
+          python scripts/export_site_data.py
+          python site/build.py
+          test -f site/dist/index.html
+          test $(find site/dist -name index.html | wc -l) -ge 14

@@ -1,0 +1,10 @@
+{
+  "name": "gendernews-atlas-site",
+  "private": true,
+  "type": "module",
+  "description": "Zero-dependency static site; built by site/build.py",
+  "scripts": {
+    "test": "node --test tests/",
+    "check": "node --check assets/charts.js && node --check assets/app.js"
+  }
+}

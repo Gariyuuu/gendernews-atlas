@@ -1,0 +1,29 @@
+{
+  "_provenance": "Labels assigned by the build agent after reading the top 18 terms of each seed-11 NMF component (results/topic_model.json). Interpretive, not validated. Components with matched cross-seed cosine < 0.75 (16, 20, 21, 11) are flagged unstable; the section grouping, not the individual topic, is the unit used for composition adjustment wherever stability matters. is_news=false marks advertising, legal boilerplate, classifieds, non-English text and fiction; it is used only by the pre-declared news_only robustness spec.",
+  "topics": {
+    "0":  {"label": "Fiction & general prose",          "section": "FEATURES",        "is_news": false},
+    "1":  {"label": "Local personals & visits",         "section": "SOCIETY",         "is_news": true},
+    "2":  {"label": "Probate & legal notices",          "section": "NOTICES",         "is_news": false},
+    "3":  {"label": "Real-estate classifieds",          "section": "ADS",             "is_news": false},
+    "4":  {"label": "Club & meeting announcements",     "section": "CIVIC",           "is_news": true},
+    "5":  {"label": "Church & religion",                "section": "RELIGION",        "is_news": true},
+    "6":  {"label": "Spanish-language text",            "section": "NON_ENGLISH",     "is_news": false},
+    "7":  {"label": "Sports",                           "section": "SPORTS",          "is_news": true},
+    "8":  {"label": "Trustee-sale notices",             "section": "NOTICES",         "is_news": false},
+    "9":  {"label": "German-language text / OCR noise", "section": "NON_ENGLISH",     "is_news": false},
+    "10": {"label": "City & local incidents",           "section": "LOCAL",           "is_news": true},
+    "11": {"label": "Markets & prices",                 "section": "BUSINESS",        "is_news": true, "unstable": true},
+    "12": {"label": "War & foreign affairs",            "section": "WAR_FOREIGN",     "is_news": true},
+    "13": {"label": "Education & schools",              "section": "EDUCATION",       "is_news": true},
+    "14": {"label": "Obituaries & funerals",            "section": "OBITUARIES",      "is_news": true},
+    "15": {"label": "National datelines",               "section": "NATIONAL",        "is_news": true},
+    "16": {"label": "Weddings & engagements",           "section": "SOCIETY",         "is_news": true, "unstable": true},
+    "17": {"label": "Courts & crime",                   "section": "COURTS_CRIME",    "is_news": true},
+    "18": {"label": "County government & land notices", "section": "GOVERNMENT_LOCAL","is_news": true},
+    "19": {"label": "Automobile classifieds",           "section": "ADS",             "is_news": false},
+    "20": {"label": "Organisations & officer elections","section": "CIVIC",           "is_news": true, "unstable": true},
+    "21": {"label": "Retail advertising",               "section": "ADS",             "is_news": false, "unstable": true},
+    "22": {"label": "Patent-medicine advertising",      "section": "ADS",             "is_news": false},
+    "23": {"label": "Politics & Congress",              "section": "POLITICS",        "is_news": true}
+  }
+}

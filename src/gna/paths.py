@@ -34,11 +34,13 @@ def free_gb(path: Path = ROOT) -> float:
     return shutil.disk_usage(path).free / 1e9
 
 
-def wait_for_space(min_gb: float = 1.5, max_wait_s: int = 3600, poll_s: int = 30) -> None:
+def wait_for_space(min_gb: float | None = None, max_wait_s: int = 3600, poll_s: int = 30) -> None:
     """Block until the volume has `min_gb` free.  The build machine's disk is shared with
     other jobs and routinely hovers near 0 GB free; a transient full disk should pause,
     not corrupt, a long run."""
     import time
+    if min_gb is None:
+        min_gb = float(os.environ.get("GNA_MIN_FREE_GB", "0.5"))
     waited = 0
     while free_gb() < min_gb and waited < max_wait_s:
         print(f"[disk] {free_gb():.2f} GB free < {min_gb} GB; waiting {poll_s}s", flush=True)

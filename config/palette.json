@@ -1,0 +1,15 @@
+{
+  "_note": "Single source for figure and site colours. Gender pair validated with the dataviz validate_palette.js six checks against the SITE paper surfaces (2026-09-10). Light #d95926/#4a3aa7 on #f9f6f1: CVD dE 27.3, normal 34.5, contrast 3.60 and 7.94. Dark #d95926/#9085e9 on #120f0c: CVD dE 26.0, normal 27.0, all >= 3:1. The first light-mode women step (#eb6834) measured 2.97:1 on this paper and was snapped to the next passing step. Women are NOT pink and men are NOT blue by design (study brief sec. 43). Every series also carries a dash pattern (portfolio MASTER.css redundant-encoding rule).",
+  "light": {
+    "surface": "#f9f6f1", "page": "#f9f6f1", "primary": "#1d1713", "secondary": "#4c4641", "muted": "#6e6862",
+    "grid": "#e4e0d9", "baseline": "#cfcac2",
+    "women": "#d95926", "men": "#4a3aa7", "neutral": "#4c4641",
+    "seq": ["#cde2fb", "#b7d3f6", "#9ec5f4", "#86b6ef", "#6da7ec", "#5598e7", "#3987e5", "#2a78d6", "#256abf", "#1c5cab", "#184f95", "#104281", "#0d366b"]
+  },
+  "dark": {
+    "surface": "#120f0c", "page": "#120f0c", "primary": "#ebe7e2", "secondary": "#c1bdb7", "muted": "#9c9792",
+    "grid": "#2a2622", "baseline": "#3b3732",
+    "women": "#d95926", "men": "#9085e9", "neutral": "#c1bdb7"
+  },
+  "dash": {"1": "none", "2": "6 4", "3": "1 4", "4": "10 4 2 4", "5": "2 2"}
+}

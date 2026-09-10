@@ -1,0 +1,109 @@
+/* Hallmark · genre: editorial · macrostructure: Stat-Led · theme: custom · enrichment: none (typography + data-viz) · nav: N6 · footer: Ft1
+ * vibe: "broadsheet archive meets research paper"
+ * paper oklch(97.4% 0.007 85) · accent oklch(46% 0.13 255) ink-blue
+ * display: Newsreader (roman) · body: IBM Plex Sans · outlier: IBM Plex Mono (issue line + hero figure only)
+ * axes: light / roman-serif / cool — differs from the last portfolio build (Almanac, warm) on accent hue
+ * contrast (measured WCAG 2.x on paper): ink 16.45 · secondary 8.62 · muted 5.10 · accent 6.63
+ *
+ * Cascade: design-system/master.css (portfolio MASTER v1.2, vendored verbatim)
+ *          -> this file (project tokens; unlayered, so it wins over MASTER's @layer tokens)
+ *          -> site.css
+ * Data colours (--viz-*) are the exact hex values validated by the dataviz six-check
+ * validator against these paper surfaces; they stay hex so that result applies verbatim.
+ */
+:root {
+  color-scheme: light;
+  --color-paper:     oklch(97.4% 0.007 85);
+  --color-paper-2:   oklch(94.5% 0.009 85);
+  --color-rule:      oklch(86% 0.010 80);
+  --color-muted:     oklch(52% 0.012 70);
+  --color-secondary: oklch(40% 0.012 65);
+  --color-ink:       oklch(21% 0.012 60);
+  --color-accent:    oklch(46% 0.13 255);
+  --color-focus:     oklch(50% 0.15 255);
+  --color-mark:      oklch(90% 0.07 85);
+
+  --viz-women:   #d95926;
+  --viz-men:     #4a3aa7;
+  --viz-neutral: var(--color-secondary);
+  --viz-grid:    oklch(91% 0.008 80);
+  --viz-axis:    oklch(82% 0.010 80);
+  --viz-cell-ink-dark:  var(--color-ink);
+  --viz-cell-ink-light: oklch(98% 0.005 85);
+
+  /* bridge to MASTER's colour contract */
+  --background: var(--color-paper);
+  --foreground: var(--color-ink);
+  --ring: var(--color-focus);
+  --input: oklch(60% 0.010 70);
+  --neutral-hue: 75;
+  --neutral-chroma: 0.008;
+
+  --font-display: "Newsreader", "Iowan Old Style", "Palatino Linotype", ui-serif, serif;
+  --font-body:    "IBM Plex Sans", "Segoe UI", ui-sans-serif, sans-serif;
+  --font-sans:    var(--font-body);
+  --font-mono:    "IBM Plex Mono", ui-monospace, "SF Mono", monospace;
+
+  /* type scale: major third from a 17px body */
+  --text-xs:   0.75rem;
+  --text-sm:   0.875rem;
+  --text-base: 1.0625rem;
+  --text-md:   1.25rem;
+  --text-lg:   1.5625rem;
+  --text-xl:   1.9531rem;
+  --text-2xl:  2.4414rem;
+  --text-display: clamp(2.25rem, 4vw + 1rem, 4.25rem);
+  --text-figure:  clamp(4.25rem, 11vw, 8.5rem);
+
+  --space-3xs: 0.125rem; --space-2xs: 0.25rem; --space-xs: 0.5rem; --space-sm: 0.75rem;
+  --space-md: 1rem; --space-lg: 1.5rem; --space-xl: 2.5rem; --space-2xl: 4rem; --space-3xl: 6rem;
+
+  --measure: 66ch;
+  --page-max: 76rem;
+  --page-gutter: clamp(1rem, 4vw, 2.5rem);
+  --rule-hair: 1px;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
+
+  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-tooltip: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme="light"])) {
+    color-scheme: dark;
+    --color-paper:     oklch(17% 0.008 70);
+    --color-paper-2:   oklch(21% 0.009 70);
+    --color-rule:      oklch(34% 0.010 70);
+    --color-muted:     oklch(68% 0.010 75);
+    --color-secondary: oklch(80% 0.010 80);
+    --color-ink:       oklch(93% 0.008 80);
+    --color-accent:    oklch(74% 0.11 255);
+    --color-focus:     oklch(76% 0.12 255);
+    --color-mark:      oklch(36% 0.05 85);
+    --viz-men:  #9085e9;
+    --viz-grid: oklch(25% 0.008 70);
+    --viz-axis: oklch(36% 0.010 70);
+    --viz-cell-ink-light: oklch(98% 0.005 85);
+    --input: oklch(55% 0.010 70);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper:     oklch(17% 0.008 70);
+  --color-paper-2:   oklch(21% 0.009 70);
+  --color-rule:      oklch(34% 0.010 70);
+  --color-muted:     oklch(68% 0.010 75);
+  --color-secondary: oklch(80% 0.010 80);
+  --color-ink:       oklch(93% 0.008 80);
+  --color-accent:    oklch(74% 0.11 255);
+  --color-focus:     oklch(76% 0.12 255);
+  --color-mark:      oklch(36% 0.05 85);
+  --viz-men:  #9085e9;
+  --viz-grid: oklch(25% 0.008 70);
+  --viz-axis: oklch(36% 0.010 70);
+  --viz-cell-ink-light: oklch(98% 0.005 85);
+  --input: oklch(55% 0.010 70);
+}

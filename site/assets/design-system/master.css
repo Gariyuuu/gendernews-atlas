@@ -1,0 +1,317 @@
+/* ============================================================================
+ * PORTFOLIO MASTER DESIGN SYSTEM  v1.2
+ * Seeded from ~/Projects/DESIGN-SYNTHESIS.md § CONSENSUS VALUES
+ * (43 projects, 9 audit windows). Every value below is the measured plurality
+ * of the portfolio, or an explicitly-flagged correction to it.
+ *
+ * HIERARCHY:  MASTER.css  ->  overrides/<project>.css  ->  project globals.css
+ * Import order matters. See README.md.
+ *
+ * THREE DEFAULTS ARE BAKED IN BECAUSE THE DATA SAYS NOBODY WRITES THEM BY TASTE:
+ *   G34  overflow: clip on html+body          -- 3 of 43 repos had it
+ *   G51  overflow-wrap: anywhere on display   -- 2 of 43 repos had it
+ *   G26  an authored :focus-visible           -- 2 of 43 repos authored one;
+ *                                                all 13 other passes were vendored shadcn
+ *
+ * SPACING IS DELIBERATELY ABSENT. It is the portfolio's healthiest axis
+ * (20 arbitrary utilities across 43 repos, 10 of them one shadcn artifact).
+ * Tailwind's 4px scale already works. Adding --space-* tokens here would
+ * reproduce chronos's dead-token problem. See README § "Why no spacing tokens".
+ * ========================================================================= */
+
+@layer tokens {
+  :root {
+    /* ---- TYPE ---------------------------------------------------------
+     * Consensus: Geist + Geist Mono via next/font (declared in ~26/43).
+     * CORRECTION BAKED IN: the token must point at a DIFFERENT variable name
+     * than itself. `--font-sans: var(--font-sans)` is the single most common
+     * defect in the portfolio (12 repos, 10 shipping dead type).
+     * Projects override --font-display with a real second face.            */
+    /* MASTER DELIBERATELY DOES NOT DECLARE --font-sans OR --font-mono.
+     *
+     * It did in v1.0, defaulting them to var(--font-geist-sans, <stack>). That
+     * looked harmless because 26 of 43 repos use Geist -- and it silently broke
+     * the first repo that does not. sakura-days binds --font-sans to
+     * var(--font-zen-maru); MASTER's later declaration won, --font-geist-sans
+     * was undefined there, and the whole app fell back to ui-sans-serif.
+     * Caught in the browser, not by the gate: G1 still read as PASS.
+     *
+     * That is the same defect class the font-fix wave just cleared from 16
+     * repos. A shared system must not have an opinion about which typeface a
+     * project loads -- it can only get that wrong. Projects own the binding.
+     *
+     * --font-display is a SLOT, not a default: it points at whatever the
+     * project already set, so declaring it here cannot break anything.
+     * 27 of 43 repos have no display face distinct from body; this names the
+     * gap without filling it wrongly. */
+    --font-display: var(--font-sans);
+
+    /* 12px floor. ~15 repos reach below it with text-[10px]/[9px];
+     * no Hallmark gate prices this, so the system does.                    */
+    --text-xs:   0.75rem;   /* 12px — FLOOR. Nothing smaller is a token.    */
+    --text-sm:   0.875rem;  /* 14px */
+    --text-base: 1rem;
+    --text-lg:   1.125rem;
+    --text-xl:   1.25rem;
+    --text-2xl:  1.5rem;
+    --text-3xl:  1.875rem;
+    --text-4xl:  2.25rem;
+    --text-5xl:  3rem;
+
+    /* ---- RADIUS -------------------------------------------------------
+     * Consensus: --radius 0.625rem + the derived calc ramp, verbatim in 7 repos.
+     * Kept DERIVED (not a fixed ladder) so a project retunes one number.   */
+    --radius:     0.625rem;                      /* 10px */
+    --radius-sm:  calc(var(--radius) * 0.6);     /* 6px  */
+    --radius-md:  calc(var(--radius) * 0.8);     /* 8px  */
+    --radius-lg:  var(--radius);                 /* 10px */
+    --radius-xl:  calc(var(--radius) * 1.4);     /* 14px */
+    --radius-2xl: calc(var(--radius) * 1.8);     /* 18px */
+    --radius-3xl: calc(var(--radius) * 2.2);     /* 22px */
+    --radius-4xl: calc(var(--radius) * 2.6);     /* 26px */
+    --radius-full: 9999px;
+
+    /* ---- MOTION -------------------------------------------------------
+     * Consensus: 150ms. Properties are ENUMERATED, never `all`.
+     * --transition-ui is the sanctioned replacement for transition-all.    */
+    --duration-fast: 120ms;
+    --duration:      150ms;
+    --duration-slow: 240ms;
+    --ease:          cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-physical: cubic-bezier(0.34, 1.56, 0.64, 1); /* PHYSICAL ONLY —
+        sliders, press feedback, direct manipulation. Never UI state (G12).
+        This exact value already appears verbatim in 6 repos.              */
+    --transition-ui: color var(--duration) var(--ease),
+                     background-color var(--duration) var(--ease),
+                     border-color var(--duration) var(--ease),
+                     opacity var(--duration) var(--ease);
+
+    /* ---- FOCUS (G26 + G39) --------------------------------------------
+     * outline-based, NOT border/box-shadow. Hallmark G39 fails the
+     * border+ring pattern; WCAG 2.2 Focus Appearance wants >=2px perimeter
+     * at >=3:1. --ring MUST clear 3:1 against every surface it lands on.   */
+    --ring-width:  2px;
+    --ring-offset: 2px;
+    --ring:        currentColor;  /* override per project; verify >= 3:1    */
+
+    /* ---- v1.1: --input IS A UI COMPONENT BOUNDARY (WCAG 1.4.11) --------
+     * (unchanged in v1.2; see CHANGELOG.md)
+     * SETTLED DECISION C7. See CONFLICTS.md.
+     *
+     * shadcn's vendored dark default is `--input: oklch(1 0 0 / 12%)`.
+     * Measured statically that reads ~19:1 and looks like a comfortable
+     * PASS. It is not measured statically in a browser: 12% white over a
+     * dark surface COMPOSITES to 1.36:1. The border that tells a user
+     * where the text field is has been invisible in every shadcn repo in
+     * this portfolio, and the audit could not see it because the tool was
+     * dropping the alpha channel. (tools/contrast.py now composites; its
+     * self-test refuses to report numbers if that regresses.)
+     *
+     * --border and --sidebar-border are deliberately NOT changed. Generic
+     * dividers are decorative under 1.4.11, and raising every hairline to
+     * 3:1 is the flattening-to-pass-a-number that README rule 2 bans.
+     * --input is different: it delineates a control.
+     *
+     * THE FIX IS OPAQUE, NOT A HIGHER ALPHA. White at 40% alpha also
+     * clears 3:1 -- but it stays backdrop-dependent, so the next surface
+     * silently breaks it again. That is the exact failure mode being
+     * closed. An opaque value cannot regress when a surface moves.
+     *
+     * ONE VALUE SERVES BOTH MODES. Verified against every surface an input
+     * sits on across all three pilots (background / card / popover /
+     * muted / accent / secondary, light and dark):
+     *     worst case dark  3.82:1      worst case light  3.59:1
+     * Safe band is L 0.542..0.645 at C=0. Projects may re-tint by hue:
+     * chroma up to 0.05 at any hue never drops below 3.50:1.
+     * Re-verify after tinting:  python3 tools/contrast.py <value> <surface>
+     * ------------------------------------------------------------------ */
+    --input: oklch(0.600 0 0);   /* re-tint per project, keep L in band    */
+
+    /* ---- COLOUR CONTRACT ----------------------------------------------
+     * The system does not dictate hues. It dictates the SLOTS that must
+     * exist, because the audit found the same three missing everywhere.    */
+    --accent-ink: var(--foreground); /* text ON a brand/accent fill.
+        1 of 43 repos defined this (fluent) and it was the only repo with a
+        clean contrast sweep. 16 of together-wellness's 20 presets fail
+        without it. OVERRIDE PER FILL — do not leave at the default.        */
+    --neutral-hue:    0;      /* tint your greys. oklch(L 0 0) fails G22 in ~15 repos */
+    --neutral-chroma: 0.006;  /* >0. friday/anime-sim/chamber-seven all do this */
+
+    /* ---- CHARTS -------------------------------------------------------
+     * Series are distinguished by STROKE PATTERN FIRST, hue second.
+     * See the CHARTS layer below for why this is a portfolio-wide rule.   */
+    --series-dash-1: none;      /* solid  */
+    --series-dash-2: 6 4;       /* dashed */
+    --series-dash-3: 1 4;       /* dotted */
+    --series-dash-4: 10 4 2 4;  /* dash-dot */
+    --series-dash-5: 2 2;       /* fine dotted */
+    --series-width:  2px;
+  }
+}
+
+@layer base {
+  /* ---- G34: horizontal-overflow containment ----------------------------
+   * `clip` not `hidden`: hidden creates a scroll container and breaks
+   * position:sticky/fixed descendants (4 repos hit exactly this).
+   * 3 of 43 repos declared this. It belongs in the system, not in taste.   */
+  html, body { overflow-x: clip; }
+
+  /* ---- G51: long-token resilience on display type ----------------------
+   * 41 of 43 repos fail this. min-width:0 is required alongside — without a
+   * shrinkable flex/grid child, overflow-wrap cannot take effect.          */
+  h1, h2, h3, h4,
+  [data-display], .display, .font-display {
+    overflow-wrap: anywhere;
+    min-width: 0;
+  }
+
+  /* ---- G10: the sanctioned transition ---------------------------------
+   * Authored code uses --transition-ui. `transition-all` is never correct
+   * in authored code; vendored components/ui/ is OUT OF SCOPE by policy.  */
+  .transition-ui { transition: var(--transition-ui); }
+
+}
+
+/* ---- Reduced motion (v1.2: MOVED OUT OF @layer base) ------------------------
+ * Deliberately NOT a blanket `animation: none`. Two verified traps:
+ *  - killing an animation whose final keyframe is opacity:0 resolves the
+ *    element to INVISIBLE (vantage-chess .fx-stamp)
+ *  - information-bearing feedback must survive (buildstrike hit markers)
+ * Opt OUT with [data-motion-critical] rather than opting everything in.
+ *
+ * DELIBERATELY UNLAYERED, and this one is not cosmetic -- v1.0 shipped it
+ * inside @layer base and that SILENTLY KILLED EVERY REPO'S OWN EXEMPTIONS.
+ *
+ * For `!important` declarations the cascade-layer order is REVERSED: an
+ * important declaration inside a layer BEATS an important unlayered one. So a
+ * repo's own hand-authored, unlayered
+ *     @media (prefers-reduced-motion: reduce) { .animate-spin { ... !important } }
+ * lost to this rule. Measured on promptforge in production: .animate-spin and
+ * .animate-pulse both resolved to animation-duration 1e-05s, iteration-count 1
+ * -- i.e. the loading spinners froze, which is precisely the "app looks
+ * frozen" failure README rule 3 exists to prevent, introduced BY the system.
+ *
+ * Unlayered, `*:not([data-motion-critical])` has the same (0,1,0) specificity
+ * as a repo's `.animate-spin`, and MASTER is imported FIRST -- so the repo's
+ * later rule wins on source order, exactly as it should. The system supplies a
+ * FLOOR a project can override, never a ceiling it cannot.
+ * Verified in a browser both ways before and after this change.
+ * -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *:not([data-motion-critical]),
+  *:not([data-motion-critical])::before,
+  *:not([data-motion-critical])::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  /* ---- THE EXEMPTIONS SHIP WITH THE GUARD (v1.2) ------------------------
+   * PLAYBOOK P02, stated as a portfolio rule: "never suppress loading
+   * spinners, skeleton shimmers, progress indicators, or any animation that
+   * is the only signal that work is in progress. Killing these makes the app
+   * look frozen. Reduced motion means less vestibular trigger, not less
+   * feedback." Three of five Phase 3 windows rediscovered this independently.
+   *
+   * v1.0 and v1.1 left exemptions to each repo. That is backwards: a repo with NO
+   * authored guard previously let its spinners run, and merely importing the
+   * system froze them. The floor must arrive with its own exemptions.
+   *
+   * Durations here are Tailwind's own defaults for these utilities
+   * (animate-spin 1s linear, animate-pulse 2s), so this restores the value
+   * the element already had rather than inventing one. Same specificity
+   * (0,1,0) as the clamp above but declared later, so it wins here -- and a
+   * REPO's rule, later still, wins over both. Override, never a ceiling.   */
+  .animate-spin,
+  [role="progressbar"],
+  [data-loading="true"] {
+    animation-duration: 1s !important;
+    animation-iteration-count: infinite !important;
+  }
+  .animate-pulse,
+  [class*="skeleton" i],
+  [class*="shimmer" i] {
+    animation-duration: 2s !important;
+    animation-iteration-count: infinite !important;
+  }
+}
+
+/* ---- G26 + G39 + G15: the authored focus state -----------------------------
+ * DELIBERATELY UNLAYERED. Two things beat a layered rule here:
+ *   1. Tailwind utilities live in @layer utilities, which outranks @layer base
+ *   2. shadcn's primitives ship `outline-none` + `focus-visible:ring-[3px]`
+ * A rule in @layer base -- especially one wrapped in :where(), which has zero
+ * specificity -- loses to both, so the gate passes in source while the browser
+ * still paints shadcn's ring. Verified: with the layered version, computed
+ * outline-style on an <a> was `none`.
+ * Per the cascade-layers spec, UNLAYERED normal declarations beat every layer,
+ * so this wins without !important. A project can still override it with a more
+ * specific selector.
+ * `transition: none` is required by G15: the ring must appear instantly, and it
+ * also neutralises shadcn's vendored transition-all WITHOUT editing that file.
+ * -------------------------------------------------------------------------- */
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, summary:focus-visible,
+[tabindex]:focus-visible, [role="button"]:focus-visible {
+  outline: var(--ring-width) solid var(--ring);
+  outline-offset: var(--ring-offset);
+  transition: none;
+}
+a:focus:not(:focus-visible), button:focus:not(:focus-visible),
+input:focus:not(:focus-visible), select:focus:not(:focus-visible),
+textarea:focus:not(:focus-visible), summary:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ============================================================================
+ * CHARTS — redundant encoding is mandatory, portfolio-wide
+ *
+ * WHY THIS IS A SYSTEM RULE AND NOT A PER-APP CHOICE:
+ * together-wellness is a charts product whose 20 brand presets double as its
+ * Recharts series colours. Measured: 21 of 40 strokes fall below 3:1 on the
+ * light background; 16 of 20 presets fail white-ink-on-fill; exactly one
+ * preset (rosewood) passes everything. Raising every hue until it clears 3:1
+ * would flatten 20 hand-picked palettes into a narrow band of dark saturated
+ * colours -- it would pass the numbers and destroy the personality.
+ *
+ * Redundant encoding removes the conflict. UI/UX Pro Max charts.csv row 1:
+ *   "Use solid, dashed, and dotted line styles plus direct series labels;
+ *    never distinguish series by hue alone."
+ * Once pattern carries the distinction, hue is free to stay expressive.
+ *
+ * This also fixes a defect axe cannot see: Recharts strokes are SVG `stroke`
+ * attributes on <path>, not colour/background-color pairs, so axe's contrast
+ * rule does not evaluate them at all. Pattern is verifiable in source.
+ *
+ * APPLIES TO: every chart in the portfolio -- together-wellness (Recharts),
+ * friday (Sparkline), quantdesk, edge-terminal, hyperliquid-bot-web,
+ * sports-betting-web, careeratlas (8-colour CVD-safe palette -- already the
+ * portfolio's best colour thinking, and still hue-only).
+ * ========================================================================= */
+@layer base {
+  /* 1 · Pattern before hue. Series n gets --series-dash-n. */
+  [data-series="1"] { stroke-dasharray: var(--series-dash-1); }
+  [data-series="2"] { stroke-dasharray: var(--series-dash-2); }
+  [data-series="3"] { stroke-dasharray: var(--series-dash-3); }
+  [data-series="4"] { stroke-dasharray: var(--series-dash-4); }
+  [data-series="5"] { stroke-dasharray: var(--series-dash-5); }
+
+  /* 2 · Strokes are UI, not text: 3:1 minimum against the plot background.
+   *     A stroke thinner than 2px reads lighter than its nominal contrast. */
+  .recharts-line-curve,
+  .recharts-area-curve,
+  [data-series] { stroke-width: var(--series-width); }
+
+  /* 3 · Direct labels beat legends. A legend forces a colour->name lookup,
+   *     which is the exact operation a low-contrast or CVD user cannot do. */
+}
+
+/* CHART RULES THAT ARE NOT CSS -- enforce in review, not in a stylesheet:
+ *   - Label series directly at the line end; never rely on a colour legend alone.
+ *   - Provide the underlying numbers as a table or an accessible summary.
+ *   - Never encode a category by fill colour alone (bars, pie, heatmap cells):
+ *     add a pattern, an outline, or a printed value.
+ *   - Keyboard: focus must reveal the value at a point.
+ * Source: ui-ux-pro-max/data/charts.csv, accessibility columns, rows 1-7.
+ */
