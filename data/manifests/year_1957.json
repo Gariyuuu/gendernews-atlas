@@ -1,0 +1,16 @@
+{
+  "year": 1957,
+  "source_url": "https://huggingface.co/datasets/dell-research-harvard/AmericanStories/resolve/main/faro_1957.tar.gz",
+  "dataset": "AmericanStories",
+  "license": "CC-BY-4.0",
+  "quota": 10000,
+  "max_mb": 90,
+  "n_scans_read": 1063,
+  "n_articles": 10009,
+  "quota_met": true,
+  "content_sha256": "8d209a5254a2b23efac52805d05969c18fa5efc162dc1d68da5a6c5a6d76bb6c",
+  "processing_version": "ingest-v2",
+  "seconds": 2.2,
+  "fetched_utc": "2026-09-10T08:36:35Z",
+  "cached": false
+}

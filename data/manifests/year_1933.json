@@ -1,0 +1,16 @@
+{
+  "year": 1933,
+  "source_url": "https://huggingface.co/datasets/dell-research-harvard/AmericanStories/resolve/main/faro_1933.tar.gz",
+  "dataset": "AmericanStories",
+  "license": "CC-BY-4.0",
+  "quota": 10000,
+  "max_mb": 90,
+  "n_scans_read": 735,
+  "n_articles": 10008,
+  "quota_met": true,
+  "content_sha256": "c3df3a911698e4d1a7c3dbb0685c07bea4879dcb7f28e14ff3497aa60557f5b5",
+  "processing_version": "ingest-v2",
+  "seconds": 2.6,
+  "fetched_utc": "2026-09-10T08:36:16Z",
+  "cached": false
+}

@@ -1,0 +1,17 @@
+{
+  "version": "v1",
+  "seed": 20260910,
+  "periods": [[1900, 1915], [1918, 1930], [1933, 1945], [1948, 1963]],
+  "strata": ["period", "hclass", "has_role_b"],
+  "per_cell": 25,
+  "consistency_fraction": 0.2,
+  "population": "entities with >= 1 NER mention (primary analysis population)",
+  "annotator_v1": "AI build agent (Claude Opus 5) following research/annotation_protocol.md; NOT human, NOT expert",
+  "label_schema": {
+    "is_person": ["yes", "no", "unsure"],
+    "gender_text": ["F", "M", "UNKNOWN"],
+    "roles": ["PUBLIC_OFFICE", "MILITARY", "BUSINESS", "LABOR", "PROFESSIONAL", "ARTS_SPORTS", "CIVIC", "SOCIAL", "FAMILY", "CRIME_ACCIDENT"],
+    "quoted": ["yes", "no"],
+    "confidence": [1, 2, 3]
+  }
+}

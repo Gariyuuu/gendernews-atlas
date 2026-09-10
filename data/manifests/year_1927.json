@@ -1,0 +1,16 @@
+{
+  "year": 1927,
+  "source_url": "https://huggingface.co/datasets/dell-research-harvard/AmericanStories/resolve/main/faro_1927.tar.gz",
+  "dataset": "AmericanStories",
+  "license": "CC-BY-4.0",
+  "quota": 10000,
+  "max_mb": 90,
+  "n_scans_read": 871,
+  "n_articles": 10003,
+  "quota_met": true,
+  "content_sha256": "fa84c1eba1e5f7b32865f334eca8123a29a34ffe7234df167fba69445fa88b80",
+  "processing_version": "ingest-v2",
+  "seconds": 5.1,
+  "fetched_utc": "2026-09-10T02:02:20Z",
+  "cached": false
+}

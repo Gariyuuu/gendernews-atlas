@@ -1,0 +1,16 @@
+{
+  "year": 1960,
+  "source_url": "https://huggingface.co/datasets/dell-research-harvard/AmericanStories/resolve/main/faro_1960.tar.gz",
+  "dataset": "AmericanStories",
+  "license": "CC-BY-4.0",
+  "quota": 10000,
+  "max_mb": 90,
+  "n_scans_read": 1125,
+  "n_articles": 10008,
+  "quota_met": true,
+  "content_sha256": "d0acf11f0bcaa1eeace51c19556791cd3659ecde3da729b0d13e16a08def4b33",
+  "processing_version": "ingest-v2",
+  "seconds": 2.4,
+  "fetched_utc": "2026-09-10T08:36:38Z",
+  "cached": false
+}

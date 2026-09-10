@@ -1,0 +1,64 @@
+{
+  "full_year_1963": {
+    "n_scans_full_year": 51600,
+    "n_scans_prefix_used": 1213,
+    "comparison_prefix_vs_full": {
+      "lccn": {
+        "tvd_observed": 0.0483,
+        "tvd_null_median": 0.0477,
+        "tvd_null_p95": 0.0613,
+        "p_value_one_sided": 0.476,
+        "within_null_95": true
+      },
+      "month": {
+        "tvd_observed": 0.0433,
+        "tvd_null_median": 0.0372,
+        "tvd_null_p95": 0.0535,
+        "p_value_one_sided": 0.232,
+        "within_null_95": true
+      },
+      "page_band": {
+        "tvd_observed": 0.0199,
+        "tvd_null_median": 0.0167,
+        "tvd_null_p95": 0.0346,
+        "p_value_one_sided": 0.348,
+        "within_null_95": true
+      }
+    },
+    "top_lccn_share_full": 0.6022286821705426,
+    "top_lccn_share_prefix": 0.6059356966199505
+  },
+  "deep_stream_1900": {
+    "n_scans_streamed": 32882,
+    "n_scans_prefix_used": 626,
+    "note": "population = all scans in the first 700 MB of a 5.7 GB shard; tests ordering homogeneity, not full-year representativeness",
+    "comparison_prefix_vs_streamed": {
+      "lccn": {
+        "tvd_observed": 0.2904,
+        "tvd_null_median": 0.3111,
+        "tvd_null_p95": 0.3292,
+        "p_value_one_sided": 0.986,
+        "within_null_95": true
+      },
+      "month": {
+        "tvd_observed": 0.0713,
+        "tvd_null_median": 0.0511,
+        "tvd_null_p95": 0.0727,
+        "p_value_one_sided": 0.066,
+        "within_null_95": true
+      },
+      "page_band": {
+        "tvd_observed": 0.0231,
+        "tvd_null_median": 0.0237,
+        "tvd_null_p95": 0.0473,
+        "p_value_one_sided": 0.532,
+        "within_null_95": true
+      }
+    },
+    "comparison_prefix_vs_later_only": {
+      "lccn": 0.296,
+      "month": 0.0727,
+      "page_band": 0.0235
+    }
+  }
+}

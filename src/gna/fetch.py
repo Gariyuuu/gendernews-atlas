@@ -39,7 +39,8 @@ _PAGE_RE = re.compile(r"_p(\d+)_")
 # Upstream title strings are inconsistent across year shards, e.g.
 #   "Evening star."  vs  "Evening star. [volume] (Washington, D.C.) 1854-1972".
 # Normalising at ingest keeps `publication` a stable grouping key across decades.
-_TITLE_NOISE = re.compile(r"\s*(\[[^\]]*\]|\([^)]*\)|\d{4}\s*-\s*(\d{4}|current|\?{2,4}))\s*", re.I)
+_TITLE_NOISE = re.compile(
+    r"\s*(\[[^\]]*\]|\([^)]*\)|\d{2}[\d?]{2}\s*-\s*(\d{2}[\d?]{2}|current|\?{2,4}))\s*", re.I)
 
 
 def normalize_title(raw: str) -> str:

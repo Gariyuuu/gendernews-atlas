@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenderNews Atlas — Annotator</title>
+<style>
+  :root { --ink:#1d1b18; --paper:#f6f3ec; --rule:#d8d2c4; --mute:#6b655a; --mark:#f3dfa2; --accent:#7a2e1f; }
+  * { box-sizing: border-box; }
+  body { margin:0; font: 15px/1.55 Georgia, "Iowan Old Style", serif; color:var(--ink); background:var(--paper); }
+  header { padding:14px 22px; border-bottom:1px solid var(--rule); display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
+  header h1 { font-size:17px; margin:0; letter-spacing:.02em; }
+  header .meta { color:var(--mute); font:13px/1.4 ui-monospace, Menlo, monospace; }
+  main { max-width: 980px; margin: 0 auto; padding: 18px 22px 80px; }
+  .card { background:#fffdf8; border:1px solid var(--rule); padding:18px 20px; }
+  .src { color:var(--mute); font:12px ui-monospace, Menlo, monospace; margin-bottom:8px; }
+  .text { font-size:17px; line-height:1.7; white-space:pre-wrap; word-break:break-word; }
+  .text mark { background:var(--mark); padding:0 2px; border-bottom:2px solid var(--accent); }
+  fieldset { border:none; border-top:1px solid var(--rule); margin:16px 0 0; padding:12px 0 0; }
+  legend { font: 600 12px/1 ui-monospace, Menlo, monospace; text-transform:uppercase; letter-spacing:.08em; color:var(--mute); padding-right:8px; }
+  label { display:inline-flex; gap:6px; align-items:center; margin:4px 14px 4px 0; cursor:pointer; font-size:14px; }
+  textarea { width:100%; min-height:48px; font:14px Georgia, serif; border:1px solid var(--rule); padding:6px; background:#fff; }
+  .bar { display:flex; gap:10px; align-items:center; margin-top:16px; flex-wrap:wrap; }
+  button { font: 13px ui-monospace, Menlo, monospace; padding:7px 12px; border:1px solid var(--ink); background:#fff; cursor:pointer; }
+  button.primary { background:var(--ink); color:var(--paper); }
+  .progress { height:3px; background:var(--rule); margin-top:10px; } .progress i { display:block; height:100%; background:var(--accent); }
+  .help { color:var(--mute); font-size:13px; margin-top:22px; }
+  kbd { font: 11px ui-monospace, Menlo, monospace; border:1px solid var(--rule); padding:0 4px; background:#fff; }
+</style>
+</head>
+<body>
+<header>
+  <h1>GenderNews Atlas · reference annotator</h1>
+  <input type="file" id="file" accept=".jsonl,.json">
+  <span class="meta" id="status">Load data/annotation/sample_blind.jsonl</span>
+  <button id="export">Export labels (.jsonl)</button>
+</header>
+<main>
+  <div class="card" id="card" hidden>
+    <div class="src" id="src"></div>
+    <div class="text" id="text"></div>
+    <form id="form">
+      <fieldset><legend>Is the marked span a person?</legend>
+        <label><input type="radio" name="is_person" value="yes"> yes <kbd>1</kbd></label>
+        <label><input type="radio" name="is_person" value="no"> no <kbd>2</kbd></label>
+        <label><input type="radio" name="is_person" value="unsure"> unsure <kbd>3</kbd></label>
+      </fieldset>
+      <fieldset><legend>Gender signalled in the text (no first names)</legend>
+        <label><input type="radio" name="gender_text" value="F"> F <kbd>f</kbd></label>
+        <label><input type="radio" name="gender_text" value="M"> M <kbd>m</kbd></label>
+        <label><input type="radio" name="gender_text" value="UNKNOWN"> UNKNOWN <kbd>u</kbd></label>
+      </fieldset>
+      <fieldset><legend>Roles attributed to this person</legend><div id="roles"></div></fieldset>
+      <fieldset><legend>Speech attributed to this person?</legend>
+        <label><input type="radio" name="quoted" value="yes"> yes <kbd>q</kbd></label>
+        <label><input type="radio" name="quoted" value="no"> no <kbd>w</kbd></label>
+      </fieldset>
+      <fieldset><legend>Confidence</legend>
+        <label><input type="radio" name="confidence" value="1"> 1 guess</label>
+        <label><input type="radio" name="confidence" value="2"> 2</label>
+        <label><input type="radio" name="confidence" value="3"> 3 certain</label>
+      </fieldset>
+      <fieldset><legend>Notes</legend><textarea name="notes"></textarea></fieldset>
+    </form>
+    <div class="bar">
+      <button id="prev">← prev</button>
+      <button class="primary" id="next">save &amp; next →</button>
+      <span class="meta" id="pos"></span>
+    </div>
+    <div class="progress"><i id="bar" style="width:0"></i></div>
+  </div>
+  <p class="help">Protocol: <code>research/annotation_protocol.md</code>. The file you load contains no model outputs, which keeps
+  annotation blind. Progress is saved in this browser. Export writes one JSON line per labelled entity, with
+  <code>annotator</code> set to the name you enter on first export. <kbd>Enter</kbd> saves and moves to the next item.</p>
+</main>
+<script>
+const ROLES = ["PUBLIC_OFFICE","MILITARY","BUSINESS","LABOR","PROFESSIONAL","ARTS_SPORTS","CIVIC","SOCIAL","FAMILY","CRIME_ACCIDENT"];
+let items = [], labels = {}, i = 0, KEY = "gna-annot";
+const $ = s => document.querySelector(s);
+const esc = s => s.replace(/[&<>]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+$("#roles").innerHTML = ROLES.map(r => `<label><input type="checkbox" name="roles" value="${r}"> ${r}</label>`).join("");
+function load() { try { labels = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch { labels = {}; } }
+function persist() { try { localStorage.setItem(KEY, JSON.stringify(labels)); } catch {} }
+function render() {
+  if (!items.length) return;
+  const it = items[i]; $("#card").hidden = false;
+  $("#src").textContent = `#${it.n} · ${it.year} · ${it.publication} · ${it.entity_id}`;
+  $("#text").innerHTML = esc(it.text).replace("⟦", "<mark>").replace("⟧", "</mark>");
+  const f = $("#form"); f.reset();
+  const l = labels[it.entity_id];
+  if (l) {
+    for (const k of ["is_person","gender_text","quoted","confidence"]) { const el = f.querySelector(`[name=${k}][value="${l[k]}"]`); if (el) el.checked = true; }
+    for (const r of l.roles || []) f.querySelector(`[name=roles][value=${r}]`).checked = true;
+    f.notes.value = l.notes || "";
+  }
+  const done = Object.keys(labels).length;
+  $("#pos").textContent = `${i + 1} / ${items.length} · labelled ${done}`;
+  $("#bar").style.width = `${100 * done / items.length}%`;
+}
+function save() {
+  const f = $("#form"), it = items[i], v = n => (f.querySelector(`[name=${n}]:checked`) || {}).value;
+  if (!v("is_person")) return false;
+  labels[it.entity_id] = { entity_id: it.entity_id, is_person: v("is_person"), gender_text: v("gender_text") || "UNKNOWN",
+    roles: [...f.querySelectorAll("[name=roles]:checked")].map(x => x.value), quoted: v("quoted") || "no",
+    confidence: Number(v("confidence") || 2), notes: f.notes.value.trim(), ts: new Date().toISOString() };
+  persist(); return true;
+}
+$("#file").onchange = async e => {
+  const txt = await e.target.files[0].text();
+  items = txt.trim().split("\n").map(l => JSON.parse(l)); load();
+  i = Math.max(0, items.findIndex(it => !labels[it.entity_id])); if (i < 0) i = 0;
+  $("#status").textContent = `${items.length} items loaded`; render();
+};
+$("#next").onclick = () => { if (save() && i < items.length - 1) i++; render(); };
+$("#prev").onclick = () => { if (i > 0) i--; render(); };
+$("#export").onclick = () => {
+  let who = localStorage.getItem(KEY + "-who"); if (!who) { who = prompt("Annotator name (recorded in each label)") || "anonymous"; try { localStorage.setItem(KEY + "-who", who); } catch {} }
+  const out = Object.values(labels).map(l => JSON.stringify({ ...l, annotator: who, protocol: "v1" })).join("\n") + "\n";
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([out], { type: "application/jsonl" }));
+  a.download = "labels_human.jsonl"; a.click();
+};
+document.addEventListener("keydown", e => {
+  if (e.target.tagName === "TEXTAREA") return;
+  const f = $("#form"), pick = (n, v) => { const el = f.querySelector(`[name=${n}][value="${v}"]`); if (el) el.checked = true; };
+  const map = { "1": ["is_person","yes"], "2": ["is_person","no"], "3": ["is_person","unsure"], f: ["gender_text","F"],
+    m: ["gender_text","M"], u: ["gender_text","UNKNOWN"], q: ["quoted","yes"], w: ["quoted","no"] };
+  if (map[e.key]) pick(...map[e.key]);
+  if (e.key === "Enter") { e.preventDefault(); $("#next").click(); }
+});
+</script>
+</body>
+</html>
