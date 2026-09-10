@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+data/raw/
+data/interim/
+data/cache/
+*.tar.gz
+*.part
+site/node_modules/
+site/.next/
+site/out/
+site/.vercel/
+.DS_Store

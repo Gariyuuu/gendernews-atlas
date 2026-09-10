@@ -1,0 +1,26 @@
+{
+  "dataset": {
+    "name": "AmericanStories",
+    "hf_repo": "dell-research-harvard/AmericanStories",
+    "hf_revision": "main",
+    "license": "CC-BY-4.0",
+    "source_collection": "Chronicling America (Library of Congress, National Digital Newspaper Program)",
+    "source_rights": "Public domain (pre-1964 U.S. newspapers)",
+    "citation": "Dell, M., Carlson, J., Bryan, T., Silcock, E., Arora, A., Shen, Z., D'Amico-Wong, L., Le, Q., Querubin, P., Heldring, L. (2023). American Stories: A Large-Scale Structured Text Dataset of Historical U.S. Newspapers. NeurIPS 2023 Datasets and Benchmarks Track."
+  },
+  "tiers": {
+    "smoke":    {"years": [1900, 1930, 1963], "articles_per_year": 300,   "max_mb_per_year": 8},
+    "standard": {"years": "grid", "articles_per_year": 10000, "max_mb_per_year": 90},
+    "extended": {"years": "grid", "articles_per_year": 30000, "max_mb_per_year": 260}
+  },
+  "year_grid": [1900,1903,1906,1909,1912,1915,1918,1921,1924,1927,1930,1933,1936,1939,1942,1945,1948,1951,1954,1957,1960,1963],
+  "ingest_filters": {
+    "min_chars": 200,
+    "max_chars": 20000,
+    "keep_legibility": ["Legible", "Questionable", "NA"]
+  },
+  "representativeness_audit": {
+    "full_download_year": 1963,
+    "note": "Tar member order is date-shuffled; the streamed-prefix sampler is validated against a complete single-year download."
+  }
+}
