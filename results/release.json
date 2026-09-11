@@ -1,8 +1,8 @@
 {
  "project": "GenderNews Atlas",
- "frozen_utc": "2026-09-10T16:45:21Z",
+ "frozen_utc": "2026-09-11T03:54:50Z",
  "git": {
-  "sha": "c1627ceca6b86455059e3780667fcb28ed3bfa10",
+  "sha": "2dfc1b5360ad9e88cab8b6de7bc1a850be680569",
   "dirty": true
  },
  "corpus": {
@@ -60,8 +60,8 @@
     "last_ts": "2026-09-10T15:35:20Z"
    },
    "data/interim/llm_apply.jsonl": {
-    "n": 460,
-    "n_parse_ok": 452,
+    "n": 575,
+    "n_parse_ok": 558,
     "models": [
      "Yuu no Sekai"
     ],
@@ -69,7 +69,7 @@
      "d077f00586a629fc"
     ],
     "first_ts": "2026-09-10T16:03:28Z",
-    "last_ts": "2026-09-10T16:43:39Z"
+    "last_ts": "2026-09-11T03:53:51Z"
    }
   }
  },
@@ -153,7 +153,7 @@
  },
  "paper_sha256": {
   "paper/discussion.md": "1398647d157feeb507e64081484bdf56d51a177ab4ec307e61f57885919285af",
-  "paper/paper.md": "038bba243f951b2f99793cd4e135d257f9f6b9a947acb0a8a4ccf7c8662440fe"
+  "paper/paper.md": "498e428529a12e031939e889f8db85c98da16781415d678823725d689f6af3d0"
  },
  "headline": {
   "corpus": {

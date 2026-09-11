@@ -1,6 +1,6 @@
 # GenderNews Atlas: How Robust Are NLP Measurements of Changing Gender Representation in News?
 
-_Gary Wang · GenderNews Atlas project · manuscript generated from frozen results (git `c1627ce`, frozen 2026-09-10)_
+_Gary Wang · GenderNews Atlas project · manuscript generated from frozen results (git `2dfc1b5`, frozen 2026-09-11)_
 
 > **Disclosure.** The pipeline, analyses, reference annotations and first draft of this text were produced by an AI research agent (Claude) working under the author's direction. The reference labels used for validation are therefore AI-produced, not human annotations (§5). Every number in this document is generated from the repository's result files.
 
