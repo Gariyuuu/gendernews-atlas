@@ -204,6 +204,9 @@ class Site:
 <meta name="description" content="{E(desc)}">
 <meta property="og:title" content="{E(title)} · GenderNews Atlas">
 <meta property="og:description" content="{E(desc)}">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=Newsreader:opsz,wght@6..72,400;6..72,700&display=swap">
@@ -945,6 +948,7 @@ def main() -> int:
         shutil.rmtree(DIST)
     DIST.mkdir(parents=True)
     shutil.copytree(ASSETS, DIST / "assets")
+    shutil.copy(ASSETS / "favicon.ico", DIST / "favicon.ico")   # browsers request /favicon.ico unprompted
     shutil.copytree(DATA, DIST / "data")
     figs = ROOT / "figures"
     if figs.exists():

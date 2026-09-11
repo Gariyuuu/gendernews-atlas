@@ -53,6 +53,9 @@ robustness:
 figures:
 	$(PY) scripts/figures.py
 
+favicon:                   ## site mark; outputs are committed, re-run only when the mark changes
+	$(PY) scripts/make_favicon.py
+
 freeze:
 	$(PY) scripts/freeze.py
 
