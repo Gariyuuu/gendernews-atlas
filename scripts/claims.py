@@ -43,7 +43,7 @@ def main() -> int:
 
     def robust(estimand, method=None):
         s = summ[(summ["estimand"] == estimand) & (summ["method"].isna() if method is None else summ["method"] == method)]
-        s = s[s.filter(["adjust", "tier", "papers"]).isna().all(axis=1)] if len(s) else s
+        s = s[s.filter(["adjust", "tier", "papers", "resolution"]).isna().all(axis=1)] if len(s) else s
         return None if s.empty else s.iloc[0]
 
     # ---------------------------------------------------------------- H1

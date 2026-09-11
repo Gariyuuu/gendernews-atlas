@@ -1,7 +1,19 @@
 import numpy as np
 import pandas as pd
 
-from gna.frame import cap_flag, is_f, page_band, role_flags
+from gna.frame import apply_mixed_title_rule, cap_flag, is_f, mixed_title, page_band, role_flags
+
+
+def test_mixed_title_rule_unsets_gender_of_couple_clusters():
+    df = pd.DataFrame({"titles": [["mrs"], ["capt", "mrs"], ["mrs", "jr"], ["senator"], ["dr", "mrs"], None],
+                       "gender_h": ["F", "F", "F", "UNKNOWN", "F", "UNKNOWN"],
+                       "gender_hp": ["F", "F", "F", "M", "F", "F"]})
+    out = apply_mixed_title_rule(df)
+    assert out["mixed_title"].tolist() == [False, True, False, False, True, False]
+    assert out["gender_hp"].tolist() == ["F", "UNKNOWN", "F", "M", "UNKNOWN", "F"]
+    assert out["gender_h"].tolist() == ["F", "UNKNOWN", "F", "UNKNOWN", "UNKNOWN", "UNKNOWN"]
+    assert df["gender_hp"].iloc[1] == "F"          # input is not mutated
+    assert mixed_title(["misses", "mrs"]) is False  # plural honorific is not a role title
 
 
 def test_role_flags_and_authority_composite():

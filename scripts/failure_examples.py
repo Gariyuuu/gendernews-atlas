@@ -15,6 +15,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 import pandas as pd  # noqa: E402
 
+from gna.frame import apply_mixed_title_rule  # noqa: E402
 from gna.lexicons import AUTHORITY  # noqa: E402
 from gna.paths import DATA, RESULTS, safe_write  # noqa: E402
 from role_methods import ENT_COLS, load_entities  # noqa: E402
@@ -31,7 +32,7 @@ def trim(ctx: str, s: int, e: int, pad: int = 200):
 
 def main() -> int:
     lab = pd.DataFrame([json.loads(x) for x in open(ANN / "labels_v1.jsonl") if x.strip()])
-    ents = load_entities(set(lab["entity_id"]), cols=ENT_COLS + ["src_hp"])
+    ents = apply_mixed_title_rule(load_entities(set(lab["entity_id"]), cols=ENT_COLS + ["src_hp"]))
     d = lab.merge(ents, on="entity_id", how="inner").sample(frac=1.0, random_state=11)
     d["ref_auth"] = d["roles"].map(lambda r: bool(set(r) & AUTHORITY))
     d["b_auth"] = d["roles_b"].map(lambda r: bool(set(r) & AUTHORITY))
@@ -44,6 +45,9 @@ def main() -> int:
                                              & (d["gender_hp"] != d["gender_text"])],
          lambda r: f"Reference gender: {r['gender_text']}. Pipeline (honorific + pronoun): {r['gender_hp']} via {r['src_hp']}."),
         ("Role: authority missed by rules (B)", d[(d["is_person"] == "yes") & d["ref_auth"] & ~d["b_auth"]],
+         lambda r: f"Reference roles: {', '.join(r['roles']) or 'none'}. Method B roles: {', '.join(r['roles_b']) or 'none'}."),
+        ("Role: authority assigned by rules (B) to a woman the reference gives none",
+         d[(d["is_person"] == "yes") & (d["gender_hp"] == "F") & d["b_auth"] & ~d["ref_auth"]],
          lambda r: f"Reference roles: {', '.join(r['roles']) or 'none'}. Method B roles: {', '.join(r['roles_b']) or 'none'}."),
         ("Role: public office inherited by the lexical window (A)", d[(d["is_person"] == "yes") & d["a_po"] & ~d["ref_po"]],
          lambda r: f"Reference roles: {', '.join(r['roles']) or 'none'}. Method A found PUBLIC_OFFICE nearby; method B: {', '.join(r['roles_b']) or 'none'}."),

@@ -24,7 +24,7 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 from sklearn.metrics import cohen_kappa_score  # noqa: E402
 
-from gna.frame import ROLE_COLS, is_f, role_flags  # noqa: E402
+from gna.frame import ROLE_COLS, is_f, load, role_flags  # noqa: E402
 from gna.lexicons import AUTHORITY, ROLES  # noqa: E402
 from gna.models import hac_trend  # noqa: E402
 from gna.paths import INTERIM, RESULTS, safe_write  # noqa: E402
@@ -59,11 +59,24 @@ def load_llm(path: Path) -> pd.DataFrame | None:
 
 def main() -> int:
     m = pd.read_parquet(INTERIM / "method_labels.parquet")
+    # the sample was drawn on the v2 gender signal; mixed-title clusters lose it (decision D17)
+    m = m.merge(load(["entity_id", "mixed_title"]), on="entity_id", how="left")
+    mixed = m["mixed_title"].fillna(False).astype(bool)
+    print(f"application sample: {len(m)} entities, {int(mixed.sum())} dropped as mixed-title clusters", flush=True)
+    app_ids = set(m["entity_id"])                 # the drawn sample, before the D17 drop
+    m = m[~mixed].reset_index(drop=True)
     m["f"] = is_f(m["gender_hp"])
     m["period"] = pd.cut(m["year"], [1899, 1915, 1930, 1945, 1963], labels=["1900-15", "1918-30", "1933-45", "1948-63"])
     flags = method_flags(m)
     llm = load_llm(INTERIM / "llm_apply.jsonl")
     if llm is not None:
+        # run_llm.py can select its subsample before method_labels exists; it must be a subset of it
+        outside = int((~llm["entity_id"].isin(app_ids)).sum())
+        n_mixed = int((~llm["entity_id"].isin(m["entity_id"])).sum()) - outside
+        print(f"LLM subsample: {len(llm)} parsed entities, {outside} outside the C/D application sample, "
+              f"{n_mixed} dropped as mixed-title clusters", flush=True)
+        if outside:
+            raise SystemExit("LLM subsample is not a subset of the application sample; rerun run_llm.py --mode apply")
         m = m.merge(llm, on="entity_id", how="left")
         has_e = m["E_roles"].notna()
         ef = role_flags(m.loc[has_e, "E_roles"], "E").rename(columns=lambda c: c[2:])

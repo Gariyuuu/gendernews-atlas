@@ -36,7 +36,7 @@ ROLE_LABEL = {"PUBLIC_OFFICE": "Public office", "MILITARY": "Military", "BUSINES
 
 plt.rcParams.update({
     "font.family": "sans-serif", "font.sans-serif": ["Helvetica Neue", "Helvetica", "Arial", "DejaVu Sans"],
-    "font.size": 9.5, "axes.titlesize": 10.5, "axes.titleweight": "semibold", "axes.titlelocation": "left",
+    "font.size": 9.5, "axes.titlesize": 10.5, "axes.titleweight": "bold", "axes.titlelocation": "left",
     "axes.titlecolor": P["primary"], "axes.labelcolor": P["secondary"], "axes.labelsize": 9,
     "axes.facecolor": P["surface"], "figure.facecolor": P["surface"], "savefig.facecolor": P["surface"],
     "axes.edgecolor": P["baseline"], "axes.linewidth": 1.0,
@@ -57,7 +57,11 @@ def rd(name: str) -> pd.DataFrame | None:
 
 def save(fig, name: str, note: str = SOURCE) -> None:
     if note:
-        fig.text(0.0, -0.02, note, fontsize=7.5, color=P["muted"], ha="left", va="top", transform=fig.transFigure)
+        # place the source line under everything already drawn (tick labels, x-labels), never on top of it
+        fig.canvas.draw()
+        bb = fig.get_tightbbox(fig.canvas.get_renderer())
+        fig.text(bb.x0 / fig.get_figwidth(), bb.y0 / fig.get_figheight() - 0.015, note, fontsize=7.5,
+                 color=P["muted"], ha="left", va="top", transform=fig.transFigure)
     fig.savefig(FIGURES / f"{name}.png")
     fig.savefig(FIGURES / f"{name}.svg")
     plt.close(fig)
@@ -104,8 +108,8 @@ def fig_corpus():
     series(axes[1], cs["year"], cs["evening_star_share"], N, label=None)
     pct(axes[1], 0, 0.7)
     axes[1].set_title("Share of sampled articles from the Washington Evening Star")
-    series(axes[2], cs["year"], cs["share_legible"], N, label="legible", end_label=True)
-    series(axes[2], cs["year"], cs["dict_rate_median"], N, dash=2, label="dictionary rate", end_label=True)
+    series(axes[2], cs["year"], cs["share_legible"], N, label="legible", end_label=False)
+    series(axes[2], cs["year"], cs["dict_rate_median"], N, dash=2, label="dictionary rate", end_label=False)
     pct(axes[2], 0.6, 1.0)
     axes[2].set_title("OCR quality proxies (article share labelled legible; median dictionary-word rate)")
     axes[2].legend(loc="lower left", ncols=2)
@@ -147,17 +151,16 @@ def fig_h1():
     pct(ax)
     years_axis(ax)
     ax.set_title("Women's share of gender-signalled person entities")
-    ax.legend(loc="upper left", ncols=3)
+    ax.legend(loc="lower right", ncols=1)
     if ex is not None:
         a2 = axes[1]
         a2.fill_between(ex["year"], ex["female_share_lower_bound"], ex["female_share_upper_bound"], color=W, alpha=0.12,
-                        lw=0, label="bounds: all UNKNOWN = men … all UNKNOWN = women")
-        series(a2, ex["year"], ex["female_share_lower_bound"], W, dash=2, label="lower bound", end_label=False, lw=1.5)
-        series(a2, ex["year"], ex["female_share_upper_bound"], W, dash=2, label="upper bound", end_label=False, lw=1.5)
+                        lw=0)
+        series(a2, ex["year"], ex["female_share_upper_bound"], W, dash=2, label="if every UNKNOWN were a woman", lw=1.5)
+        series(a2, ex["year"], ex["female_share_lower_bound"], W, dash=3, label="if every UNKNOWN were a man", lw=1.5)
         pct(a2, 0, 1)
         years_axis(a2)
-        a2.set_title("Same share among ALL person entities, under extreme UNKNOWN allocations")
-        a2.legend(loc="upper left", ncols=1)
+        a2.set_title("Women's share of ALL person entities, under the two extreme treatments of UNKNOWN")
     save(fig, "fig03_female_share")
 
 
@@ -187,7 +190,7 @@ def fig_roles():
         ax.set_visible(False)
     axes[0].legend(loc="upper left", fontsize=7.5)
     fig.suptitle("Women's share of gender-signalled people in each role, by role method", x=0.01, ha="left",
-                 fontsize=10.5, fontweight="semibold")
+                 fontsize=10.5, fontweight="bold")
     save(fig, "fig04_roles_female_share")
 
 
@@ -207,7 +210,7 @@ def fig_role_rates():
         ax.set_visible(False)
     axes[0].legend(loc="upper left", fontsize=7.5)
     fig.suptitle("Share of women and of men placed in each role (method B)", x=0.01, ha="left", fontsize=10.5,
-                 fontweight="semibold")
+                 fontweight="bold")
     save(fig, "fig05_role_rates_by_gender")
 
 
@@ -234,7 +237,8 @@ def fig_adjusted():
         ax.set_xlabel("trend, percentage points per decade (95% CI)")
         ax.grid(axis="x")
         ax.grid(axis="y", visible=False)
-    axes[0].legend(loc="lower right", fontsize=7.5)
+    h, lab = axes[0].get_legend_handles_labels()
+    fig.legend(h, lab, loc="lower center", bbox_to_anchor=(0.5, 1.0), ncols=2, fontsize=8)
     save(fig, "fig06_raw_vs_adjusted")
 
 
@@ -261,7 +265,7 @@ def fig_decomp():
         ax.invert_yaxis()
         ax.axvline(0, color=P["baseline"], lw=1)
         ax.set_title(t)
-        ax.set_xlabel("change 1900–21 → 1948–63, percentage points")
+        ax.set_xlabel("change from 1900–21 to 1948–63, percentage points")
         ax.grid(axis="x")
         ax.grid(axis="y", visible=False)
     save(fig, "fig07_decomposition")
@@ -273,15 +277,20 @@ def fig_methods():
         return
     yr = ma[(ma["kind"] == "yearly") & (ma["role"] == "AUTHORITY")]
     methods = [m for m in ["A", "B", "C", "D", "E"] if m in set(yr["method"])]
-    names = {"A": "A lexical window", "B": "B dependency rules", "C": "C bag-of-words classifier",
-             "D": "D contextual embeddings", "E": "E LLM (Qwen3-8B)"}
-    fig, axes = plt.subplots(1, len(methods) + 1, figsize=(10, 2.8), gridspec_kw={"wspace": 0.18,
+    names = {"A": "A · lexical", "B": "B · dependency", "C": "C · bag-of-words", "D": "D · embeddings", "E": "E · LLM"}
+    fig, axes = plt.subplots(1, len(methods) + 1, figsize=(11, 2.8), gridspec_kw={"wspace": 0.22,
                                                                                     "width_ratios": [1] * len(methods) + [1.3]})
     for ax, m in zip(axes, methods):
         d = yr[yr["method"] == m].sort_values("year")
-        d = d[d["n"] >= 20]
+        if m == "E":                              # thin LLM subsample: pool the four periods
+            per = pd.cut(d["year"], [1899, 1915, 1930, 1945, 1963])
+            d = d.groupby(per, observed=True).agg(year=("year", "mean"), n=("n", "sum"), k=("k", "sum"))
+            d = d.assign(share=d["k"] / d["n"])
+            ax.plot(d["year"], d["share"], "o", ms=5, color=W)
+        else:
+            d = d[d["n"] >= 20]
         series(ax, d["year"], d["share"], W, label=None)
-        ax.set_title(names[m], fontsize=8.5)
+        ax.set_title(names[m] + (" (4 periods)" if m == "E" else ""), fontsize=8.5, loc="left")
         pct(ax, 0, 0.6)
         ax.set_xticks([1900, 1930, 1960])
         if ax is not axes[0]:
@@ -298,7 +307,7 @@ def fig_methods():
     ax.grid(axis="x")
     ax.grid(axis="y", visible=False)
     fig.suptitle("Women's share of authority roles on the same entities, measured five ways", x=0.01, ha="left",
-                 fontsize=10.5, fontweight="semibold", y=1.06)
+                 fontsize=10.5, fontweight="bold", y=1.06)
     save(fig, "fig08_method_comparison")
 
 
@@ -354,8 +363,7 @@ def fig_robust():
         if d.empty:
             continue
         ax.plot(d["slope_pp_dec"], i + rng.uniform(-0.18, 0.18, len(d)), "o", ms=3.2, color=W, alpha=0.45, mew=0)
-        pos = (d["slope_pp_dec"] > 0).mean()
-        ax.annotate(f"{100 * pos:.0f}% > 0  (n={len(d)})", (1.0, i), xycoords=("axes fraction", "data"),
+        ax.annotate(f"{int((d['slope_pp_dec'] > 0).sum()):,} of {len(d):,} > 0", (1.0, i), xycoords=("axes fraction", "data"),
                     xytext=(6, 0), textcoords="offset points", va="center", fontsize=7.8, color=P["secondary"])
     ax.axvline(0, color=P["baseline"], lw=1)
     ax.set_yticks(range(len(groups)), [g[2] for g in groups])
@@ -392,7 +400,7 @@ def fig_quotes():
     pct(ax)
     years_axis(ax)
     ax.set_title("Women's share among people mentioned vs people quoted")
-    ax.legend(loc="upper left", ncols=2)
+    ax.legend(loc="center left", bbox_to_anchor=(0.0, 0.42), ncols=1)
     save(fig, "fig12_quotes")
 
 

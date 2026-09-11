@@ -32,6 +32,7 @@ GRID = {
     "papers": ["all", "excl_evening_star", "capped"],
     "bins": ["year", "bin5", "decade"],
     "content": ["all", "news_only"],
+    "resolution": ["mixed_unknown", "v2_merge"],   # decision D17: mixed-title clusters UNKNOWN vs kept
 }
 
 
@@ -85,7 +86,7 @@ def main() -> int:
     for combo in itertools.product(*GRID.values()):
         c = dict(zip(keys, combo))
         d = select(df, c)
-        y = f"f_{c['tier']}"
+        y = f"f_{c['tier']}" + ("_v2" if c["resolution"] == "v2_merge" else "")
         cells.append({"estimand": "H1_female_share", "method": "-", **c, **binned_trend(d, y, c["bins"])})
         for m in ("A", "B"):
             dd = d[d[f"{m}_AUTHORITY"]]
@@ -130,9 +131,13 @@ def main() -> int:
 
     cell_df = pd.DataFrame(cells)
     cell_df["adjust"] = cell_df["adjust"].fillna("raw")
+    cell_df["resolution"] = cell_df["resolution"].fillna("mixed_unknown")
     cell_df["kind"] = "cell"
     summ = pd.concat([
         summarize(cell_df, ["estimand"]),
+        # like-for-like: only the aggregate grid is run under both resolutions (FE and app cells are primary-only)
+        summarize(cell_df[cell_df["population"].isin(["ner", "ner+pattern"]) & (cell_df["adjust"] == "raw")],
+                  ["estimand", "resolution"]),
         summarize(cell_df, ["estimand", "method"]),
         summarize(cell_df, ["estimand", "adjust"]),
         summarize(cell_df, ["estimand", "tier"]),

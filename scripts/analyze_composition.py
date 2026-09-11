@@ -120,7 +120,8 @@ def main() -> int:
                 if sname in ("pre_1922", "post_1923") and fname not in ("none", "topic+paper"):
                     continue
                 r = lpm_trend(sd, "f_hp", fe=fe, cluster="publication", cluster2="year")
-                rows.append({"kind": "lpm", "outcome": oname, "sample": sname, "fe": fname, **r})
+                # spec name last: lpm_trend returns its own "fe" (column names), which must not win
+                rows.append({"kind": "lpm", "outcome": oname, "sample": sname, **r, "fe_columns": r["fe"], "fe": fname})
                 print(f"{oname:30s} {sname:18s} {fname:18s} slope={r['slope_pp_dec']:+.2f} "
                       f"[{r['ci_lo']:+.2f},{r['ci_hi']:+.2f}] n={r['n']}", flush=True)
 

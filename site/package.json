@@ -4,7 +4,7 @@
   "type": "module",
   "description": "Zero-dependency static site; built by site/build.py",
   "scripts": {
-    "test": "node --test tests/",
+    "test": "node --test tests/*.test.mjs",
     "check": "node --check assets/charts.js && node --check assets/app.js"
   }
 }

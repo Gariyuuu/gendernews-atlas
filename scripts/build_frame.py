@@ -10,7 +10,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import pandas as pd  # noqa: E402
 
-from gna.frame import CLEAN_DICT_RATE, FRAME, LANG, cap_flag, is_f, page_band, role_flags  # noqa: E402
+from gna.frame import (CLEAN_DICT_RATE, FRAME, LANG, apply_mixed_title_rule, cap_flag, is_f,  # noqa: E402
+                       page_band, role_flags)
 from gna.paths import CONFIG, INTERIM, safe_write  # noqa: E402
 
 KEEP = ["entity_id", "article_id", "year", "publication", "page_number", "hclass", "n_mentions", "n_ner_mentions",
@@ -43,6 +44,10 @@ def main() -> int:
     miss = df["dict_rate"].isna().mean(), df["topic"].isna().mean()
     print(f"entities={len(df):,}  missing meta={miss[0]:.4f}  missing topic={miss[1]:.4f}")
 
+    for t in ("h", "hp", "hpn"):                      # before the mixed-title rule: robustness spec "v2_merge"
+        df[f"f_{t}_v2"] = is_f(df[f"gender_{t}"])
+    df = apply_mixed_title_rule(df)                   # decision D17
+    print(f"mixed-title clusters set to UNKNOWN: {int(df['mixed_title'].sum()):,}")
     for t in ("h", "hp", "hpn"):
         df[f"f_{t}"] = is_f(df[f"gender_{t}"])
     df = pd.concat([df, role_flags(df["roles_a"], "A"), role_flags(df["roles_b"], "B")], axis=1)

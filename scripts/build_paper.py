@@ -18,7 +18,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
 import pandas as pd  # noqa: E402
 
-from gna.paths import CONFIG, MANIFESTS, PAPER, RESEARCH, RESULTS, ROOT  # noqa: E402
+from gna.paths import CONFIG, MANIFESTS, PAPER, RESEARCH, RESULTS  # noqa: E402
 
 MINUS = "−"
 
@@ -41,6 +41,15 @@ def ci(lo, hi, d=2):
 
 def num(v):
     return f"{int(round(v)):,}" if ok(v) else "—"
+
+
+def d2(v):
+    return f"{v:.2f}" if ok(v) else "—"
+
+
+def npos(share, n):
+    """Count of positive cells, from a share and a count (no rounding of 99.9% up to 100%)."""
+    return num(share * n) if ok(share) and ok(n) else "—"
 
 
 def dirw(s, lo, hi, up="increased", down="decreased"):
@@ -88,7 +97,7 @@ def main() -> int:
     slopes = {r["method"]: r for r in trA.to_dict("records")}
     s_vals = [r["slope_pp_dec"] for m, r in slopes.items() if m in "ABCDE" and ok(r["slope_pp_dec"])]
     summ = rb[rb["kind"] == "summary"] if len(rb) else pd.DataFrame()
-    rh1 = summ[(summ["estimand"] == "H1_female_share") & summ[["method", "adjust", "tier", "papers"]].isna().all(axis=1)]
+    rh1 = summ[(summ["estimand"] == "H1_female_share") & summ[["method", "adjust", "tier", "papers", "resolution"]].isna().all(axis=1)]
     rh1 = rh1.iloc[0].to_dict() if len(rh1) else {}
     lp = ta[ta["kind"] == "lpm"] if len(ta) else pd.DataFrame()
     raw = row(lp, outcome="female_share", sample="all", fe="none")
@@ -129,7 +138,7 @@ def main() -> int:
       f"people: rule-based lexical and dependency methods, a supervised bag-of-words model, a contextual-embedding classifier, "
       f"and an open-weights LLM. The estimated trend in women's share of authority roles ranges from "
       f"{sg(min(s_vals)) if s_vals else '—'} to {sg(max(s_vals)) if s_vals else '—'} points per decade across methods. Across "
-      f"{num(rh1.get('n_cells'))} analysis specifications, {pct(rh1.get('share_positive'), 0)} give a rising women's share. Of seven "
+      f"{num(rh1.get('n_cells'))} analysis specifications, {npos(rh1.get('share_positive'), rh1.get('n_cells'))} give a rising women's share. Of seven "
       f"pre-registered hypotheses, {sum(v == 'supported' for v in st.values())} are supported, "
       f"{sum(v == 'tentative' for v in st.values())} tentative and {sum(v == 'unsupported' for v in st.values())} unsupported. "
       f"The largest measurement risks are the UNKNOWN pool, differential classifiability by gender, and the 1923 change in "
@@ -151,7 +160,6 @@ def main() -> int:
     A("")
     A("## 2. Related work")
     A("")
-    by = {r["citation"].split(".")[0]: r for r in lit}
     A("Contemporary news counts find men mentioned and especially quoted far more often than women. The Gender Gap Tracker "
       "(Asr et al. 2021) reports men quoted about three times as often as women in Canadian online news. Jia et al. (2016) "
       "find women “seen more than heard”. The Global Media Monitoring Project reports women as about a quarter of people "
@@ -192,7 +200,12 @@ def main() -> int:
     A("")
     A("**Entity resolution.** Mentions carrying different courtesy-honorific classes are never merged. This keeps "
       "“Mrs. Robert Jones” (a period convention for naming wives) apart from “Senator Robert Jones”, so his office cannot "
-      "attach to her. Surname-only mentions attach only when the attachment is unique.")
+      "attach to her. Surname-only mentions attach only when the attachment is unique. One construction defeats this: in "
+      "“Capt. Clayton Bissell … Mrs. Bissell” the surname-only *Mrs.* attaches to the husband's titled full name. A cluster "
+      "that joins a female honorific with any other title is therefore treated as more than one person, and all its gender "
+      "tiers are set to UNKNOWN. This rule (decision D17) was added after the first results were seen; the earlier behaviour "
+      "is kept as a robustness dimension. Couples named without a title cannot be detected this way and remain an error "
+      "source.")
     A("")
     A("**Gender signal.** Tier 1 is a courtesy or noble honorific. Tier 2 is the first *he/she*-family pronoun after a "
       "salient mention, within the next sentence, with no intervening person or human noun; salience means subject "
@@ -222,6 +235,24 @@ def main() -> int:
       f"reference labels: A {sg(fvf1('A_lexical'))}, B {sg(fvf1('B_dependency'))}, C {sg(fvf1('C_bow@0.5'))}, "
       f"D {sg(fvf1('D_embed@0.5'))}, E {sg(fvf1('E_llm'))} (Figure 9).".replace("+", ""))
     A("")
+    bF, bM = row(val, method="B_dependency", target="AUTHORITY|F"), row(val, method="B_dependency", target="AUTHORITY|M")
+    aF, aM = row(val, method="A_lexical", target="AUTHORITY|F"), row(val, method="A_lexical", target="AUTHORITY|M")
+    prec_pairs = {m[0]: (row(val, method=m, target="AUTHORITY|F").get("precision"),
+                         row(val, method=m, target="AUTHORITY|M").get("precision"))
+                  for m in ("A_lexical", "B_dependency", "C_bow@0.5", "D_embed@0.5", "E_llm")}
+    prec_pairs = {k: v for k, v in prec_pairs.items() if ok(v[0]) and ok(v[1])}
+    n_lower = sum(f < m for f, m in prec_pairs.values())
+    prec_txt = "; ".join(f"{k} {d2(f)} vs {d2(m)}" for k, (f, m) in prec_pairs.items())
+    A(f"**Error differs by gender.** Among people the primary rule signals as women, method B's authority precision is "
+      f"{d2(bF.get('precision'))} (recall {d2(bF.get('recall'))}, {num(bF.get('n_pred_pos'))} predicted positives); among men "
+      f"it is {d2(bM.get('precision'))} (recall {d2(bM.get('recall'))}, {num(bM.get('n_pred_pos'))}). For method A the "
+      f"figures are {d2(aF.get('precision'))} and {d2(aM.get('precision'))}. Authority precision is lower among women than "
+      f"among men for {n_lower} of the {len(prec_pairs)} methods ({prec_txt}), on only {num(bF.get('n_pos_ref'))} reference "
+      f"women who hold an authority role. False positives among women, such as officers of "
+      "clubs and church societies read as holders of office, inflate the *level* of women's measured share of authority roles. "
+      "The reference sample is too small to say whether they also move its trend, so the H2 results below are read with this "
+      "bias in view.")
+    A("")
     A("![Figure 9. Role F1 against reference labels.](../figures/fig09_validation_f1.png)")
     A("")
     A("## 6. NLP methods")
@@ -247,7 +278,8 @@ def main() -> int:
     c = claims["H1"]
     A(f"**Visibility (H1, {c['status']}).** Women's share of gender-signalled people {dirw(h1.get('slope_pp_dec'), h1.get('ci_lo'), h1.get('ci_hi'))} "
       f"({sg(h1.get('slope_pp_dec'))} pp/decade, {ci(h1.get('ci_lo'), h1.get('ci_hi'))}; Figure 3). Across the multiverse, "
-      f"{pct(c['evidence'].get('multiverse_share_positive'), 0)} of {num(c['evidence'].get('multiverse_cells'))} specifications give "
+      f"{npos(c['evidence'].get('multiverse_share_positive'), c['evidence'].get('multiverse_cells'))} of "
+      f"{num(c['evidence'].get('multiverse_cells'))} specifications give "
       f"a positive slope; the range is {sg((c['evidence'].get('multiverse_slope_range') or [None, None])[0])} to "
       f"{sg((c['evidence'].get('multiverse_slope_range') or [None, None])[1])}.")
     A("")
@@ -286,9 +318,12 @@ def main() -> int:
     A("## 9. Method disagreement")
     A("")
     c4, c5 = claims["H4"], claims["H5"]
-    A(f"On one shared population, the five methods give authority-role trends of " +
+    ey = ma[(ma["kind"] == "yearly") & (ma["method"] == "E") & (ma["role"] == "AUTHORITY")] if len(ma) else pd.DataFrame()
+    e_pop = float(ey["n_pop"].sum()) if len(ey) else None
+    A("On one shared population, the five methods give authority-role trends of " +
       ", ".join(f"{m} {sg(r['slope_pp_dec'])} ({ci(r['ci_lo'], r['ci_hi'])})" for m, r in sorted(slopes.items()) if m in "ABCDE") +
-      f" pp/decade (Figure 8). H4, material divergence for at least one headline role, is **{c4['status']}**. H5, that the "
+      f" pp/decade (Figure 8). Method E's estimate rests on only {num(e_pop)} people, a year-balanced random subsample "
+      f"of the others, so its interval is wide. H4, material divergence for at least one headline role, is **{c4['status']}**. H5, that the "
       f"lexical method gives the largest absolute trend, is **{c5['status']}** "
       f"({c5['evidence'].get('n_roles_lexical_largest')} of {c5['evidence'].get('n_roles')} headline roles).")
     A("")

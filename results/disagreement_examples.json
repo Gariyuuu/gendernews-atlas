@@ -1,0 +1,3176 @@
+{
+ "note": "Cases where role methods disagree. Excerpts are public-domain newspaper OCR (1900-1963), unedited; they may contain offensive historical language.",
+ "examples": [
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-cf4970e1d88cb6ad#17",
+   "year": 1903,
+   "publication": "the anderson intelligencer",
+   "gender_signal": "M",
+   "excerpt": "… Misses Lila and Lizzie Sherard, two very popular young ladies of Anderson, have beer visiting relatives in town. Among the number that went to Augusts on the excursion from this place were Mr. Haddon Burriss and family, Mr. L. Reid and family, T. G. jack son, Amos and Reese Mcdonald and s:s:ec, Kiss Sadie. Mrs. T. B; Magldin has returned from a tip to Wellington where che IN Mr. : Prpe % Sloan.…",
+   "hl_start": 191,
+   "hl_end": 209,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-7c34b5538fc650a9#3",
+   "year": 1960,
+   "publication": "milford chronicle",
+   "gender_signal": "M",
+   "excerpt": "… in the parish house on Sunday, December 18th, DR.. John Glenn and Mr. Horace Rid ings were elected to the vestry to serve a term of two years. Reelected for a second term of two years were Mr. James Humes and Mr. Russell Kirby. Parishioners braved hazardous driving conditions to attend this important an nual parish meeting. Those pres ent were privileged to see documents dating back to",
+   "hl_start": 191,
+   "hl_end": 206,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-7990bae26c7774a9#0",
+   "year": 1930,
+   "publication": "the indianapolis times",
+   "gender_signal": "F",
+   "excerpt": "Frederick C. Kelly, Peninsula, O., spoke Wednesday night before members and guests of the Contemporary club at the Woman'S Department club at 8:15. Mrs Kelly S subject was Our Debt to the Stupid. or How the S…",
+   "hl_start": 0,
+   "hl_end": 18,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-13b49ad19922d0b1#25",
+   "year": 1915,
+   "publication": "harrisburg telegraph",
+   "gender_signal": "F",
+   "excerpt": "(resigned), j. William Bowman elected to hn vacancy, Jennings) Park Commissioners Reservoir Park Commission: 1897 19O2-John A. Affleck, William K. AL Doehne. John Hoffer. Mrs. Caroline r. Haldeman. George ]. Hutton, Henry NJ Kelley Edmund Mather. Harrisburg Park Commission = 1903-1907--John T. Brady, Chas. A Disbrow, John Hoffer Samuel Kunkel, Joseph P. Luce.",
+   "hl_start": 171,
+   "hl_end": 196,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-372da15cdbd30961#1",
+   "year": 1951,
+   "publication": "arkansas state press",
+   "gender_signal": "F",
+   "excerpt": "kfs, B. B. Colliers's room and the tkuss grade pupils of Mrs. r. L. yxetries room made a trip to Mr. airport to view the planes xfs<r studying the Aircraft unit. THE guide and Mrs. Allene Wafrxs were very kind and helpful 10 the pupils. The pupils walked To school and observed the conrnuusity resources. Cassie Thomas fs reporter for the class. The third grade pupils of Mr. Ruth l..…",
+   "hl_start": 176,
+   "hl_end": 194,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-a81bd473612fa975#17",
+   "year": 1945,
+   "publication": "detroit evening times",
+   "gender_signal": "M",
+   "excerpt": "LONDON, Aug. a tINS)-Prime Minister Attlee completed his new labor party cabinet today with the appointment Of 20 junior ministers and assistants, including two women. DR.. Edith Summerskill. 44-yearold member of parliament since 18…",
+   "hl_start": 36,
+   "hl_end": 42,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-afc0a985375b9fbb#1",
+   "year": 1936,
+   "publication": "evening star",
+   "gender_signal": "F",
+   "excerpt": "when I told the father the news\" DR.. Jani remarked, \"he was absolutely Unconditional, stoical, unresponsive. All he said was, oh yeahP'\" The physician said he had told Kasper to expect twins DR.. Jani had previously delivered two chill dren of the Kaspers. Ellen, now 3, and Ralph, u years old. Mrs. Kasper bore up we'll until the fourth baby arrived, nearly three…",
+   "hl_start": 169,
+   "hl_end": 175,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-5aa404f07e4a2bcd#1",
+   "year": 1927,
+   "publication": "the daily worker",
+   "gender_signal": "F",
+   "excerpt": "Seven Hundred Students On Strike. Charles r. McClinn, Principal Of New Albany High School and Miss Alice Funk teacher of botany are dis missed as they approached age for pension. Seven hundred students go out on strike as protest. This game has been played many time and often.",
+   "hl_start": 94,
+   "hl_end": 109,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-b486d5739744f8e6#0",
+   "year": 1903,
+   "publication": "the washington times",
+   "gender_signal": "M",
+   "excerpt": "he should say they we're mere anecdotesi The calf was born seventeen years ago on the farm of Mr. Lockhart, who has liven in the immediate neighborhood for thirty-five years. Mr. Lockhart's son was a taxidermist, which circumstance accounts for the preservation of this freak. which lived only an…",
+   "hl_start": 94,
+   "hl_end": 106,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-54648bf70a12084f#7",
+   "year": 1945,
+   "publication": "filipino forum",
+   "gender_signal": "M",
+   "excerpt": "…to come. As in the dark years behind, we shall keep faith with America as she has kept faith with us. The message was wired to V. A. Nelasco, President of the Filipino Community Council, by Mr. Man uel a. Adeva, Chief Of the Ma tionals Division of the Office of the President (of the Philippines) Other Speakers Among other speakers of the evening were Brig. General Eley P. benson, Comm…",
+   "hl_start": 191,
+   "hl_end": 198,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": true,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-1841f1625da0d442#7",
+   "year": 1924,
+   "publication": "phillips county herald",
+   "gender_signal": "F",
+   "excerpt": "and Mrs. F. A. Woodlands and daughter Anna were Holyoke callers Tuesday afternoon. Clifford and Harold Woodlands he'll ped F. A. Woodlands butcher beef Wednesday. The A. B. C. club met with Mrs. F. n. Austin Thursday afternoon. There were twelve ladies and eight children present and the yreport fine time. Most OF the men folks firm this community attended the Fred Padgett sale Thursday.",
+   "hl_start": 190,
+   "hl_end": 207,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-9872c189c392beb7#7",
+   "year": 1900,
+   "publication": "north park union",
+   "gender_signal": "M",
+   "excerpt": "…torney Frank j. Annis and |. N. Gar bett came into Walden Thursday. Legal business brought them into the Park, and possibly little politics was mixed with it. Mr. William Tilton and family, Mr. B. F. Flowers and family and Gus. Lindholm, al Of Bellvue, tarried in town over night Thursday. They arc on the road TO Steamboat Springs. Mrs. Flowers is . sister to Mrs. Norm Davis Of Walden.",
+   "hl_start": 191,
+   "hl_end": 208,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-ac4512cfe4e1f524#1",
+   "year": 1906,
+   "publication": "the vinita daily chieftain",
+   "gender_signal": "M",
+   "excerpt": "Brother Murphy privileged to do anything else with that he peases without disturbing good humor but when he decends the base ngratitude Of Major Nc Cntock it is too, too muchl What has the meek and humble…",
+   "hl_start": 0,
+   "hl_end": 14,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "AUTHORITY",
+   "entity_id": "as1-5248069e92314212#53",
+   "year": 1909,
+   "publication": "the cecil whig",
+   "gender_signal": "F",
+   "excerpt": "Church. on Wednesday evening. November \", nj six o'clock Miss Mary G. Norwood. M:ss Phil ena Hutton. Miss May Cornelius. MISS Edith Gccscy. Miss Ruth u. Wilde. Miss Marion T, Maddocks oi the fac ulty 81 the Jacob Tome Institute at Port Deposit. attended the Teachers destitute here. last week. Chester s. Courscy. of Centreville, well known here. and Democrats …",
+   "hl_start": 160,
+   "hl_end": 171,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {}
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-1ea89dc91121d8d3#2",
+   "year": 1960,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "CARPENTERS Bethesda area housing project: prevailing wages. Must be sober and industrious. Apply to Mr. SORDER; Directions: From D. c, nne at western ave. proceed out River rd, to Wilson lane C2nd traHc light. turn right on Wilson blocks to Maryknoll ave, left on Maryknoll",
+   "hl_start": 100,
+   "hl_end": 110,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.082,
+    "D": 0.976
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-a9b6df4ac1f6ad49#1",
+   "year": 1951,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "last night the planning commission reviewed q committee report on plans for the area bounded by Columbia pike Glebe road, Fillmore street and Walter Reed drive. Charles Sher. vice president o1 the Columbia Pike Business anc professional Association, said his group wants to have a solution tc traffic and parking problems \"before they become serious\" He said the …",
+   "hl_start": 161,
+   "hl_end": 173,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.016,
+    "D": 0.998
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-f0c45e6e6763837d#3",
+   "year": 1912,
+   "publication": "the citizen",
+   "gender_signal": "M",
+   "excerpt": "…m with the murder of Thos. Dolphin last July at Keens, as to Shether he was guilty or not guilty. He answered Not Guilty\" Hub bard sat at his counsel's table with attorneys F. P. Kimble and W. H. lee. He was told to stand up which be promptly did. Prothonotary w. J. Barnes pronounced the customary nterrogations: Are you ready for your trial?\" Yes\" replied Hubbard.",
+   "hl_start": 191,
+   "hl_end": 200,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.868
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-13b49ad19922d0b1#25",
+   "year": 1915,
+   "publication": "harrisburg telegraph",
+   "gender_signal": "F",
+   "excerpt": "(resigned), j. William Bowman elected to hn vacancy, Jennings) Park Commissioners Reservoir Park Commission: 1897 19O2-John A. Affleck, William K. AL Doehne. John Hoffer. Mrs. Caroline r. Haldeman. George ]. Hutton, Henry NJ Kelley Edmund Mather. Harrisburg Park Commission = 1903-1907--John T. Brady, Chas. A Disbrow, John Hoffer Samuel Kunkel, Joseph P. Luce.",
+   "hl_start": 171,
+   "hl_end": 196,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.002,
+    "D": 0.086
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-ac52cbe584c06e49#7",
+   "year": 1942,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "explosives. One of the two saboteurs who escaped death, Ernest Peter Burger. was expected to be the Governments most important witness. United States Attorney ]. Albert Woll said Burger, once mechanic in Detroit and Milwaukee, would be brought here secretly from his place of decentlon. There were indications that ne might disclose by his testimony many angles o…",
+   "hl_start": 162,
+   "hl_end": 173,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.973,
+    "D": 0.005
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-17fe32a1cfeebe9c#3",
+   "year": 1945,
+   "publication": "the waterbury democrat",
+   "gender_signal": "M",
+   "excerpt": "stationed in Brooklyn and sgt. Patrick O'Rourke took charge Of the Exchange Place detail. Four men from the regular force were absent because of illness. Supt. Daniel Carson gave orders to the officers at police headquarters last night and his instructions con- cluded with. I'm glad this is finish ed\" He added. \"It's a tough thing for a lot of mothers whose boy…",
+   "hl_start": 154,
+   "hl_end": 173,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.006,
+    "D": 0.75
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-64bbbfb09617a51b#0",
+   "year": 1915,
+   "publication": "the lynden tribune",
+   "gender_signal": "M",
+   "excerpt": "A bill to reduce the 15 per cent charged on delinquent taxes to 10 per cent will be introduced into the legislature by one of Whatcom County's representatives., F. D. Yale. 1.-THE state law makes 1t usury for money loaners to charge more than IL per cent interest, but turns around and charges Is per cent on delinquent taxes, which",
+   "hl_start": 161,
+   "hl_end": 171,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.436,
+    "D": 0.432
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-7c34b5538fc650a9#3",
+   "year": 1960,
+   "publication": "milford chronicle",
+   "gender_signal": "M",
+   "excerpt": "… in the parish house on Sunday, December 18th, DR.. John Glenn and Mr. Horace Rid ings were elected to the vestry to serve a term of two years. Reelected for a second term of two years were Mr. James Humes and Mr. Russell Kirby. Parishioners braved hazardous driving conditions to attend this important an nual parish meeting. Those pres ent were privileged to see documents dating back to",
+   "hl_start": 191,
+   "hl_end": 206,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.027,
+    "D": 0.989
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-ac4512cfe4e1f524#1",
+   "year": 1906,
+   "publication": "the vinita daily chieftain",
+   "gender_signal": "M",
+   "excerpt": "Brother Murphy privileged to do anything else with that he peases without disturbing good humor but when he decends the base ngratitude Of Major Nc Cntock it is too, too muchl What has the meek and humble…",
+   "hl_start": 0,
+   "hl_end": 14,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.032,
+    "D": 0.684
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-c0c9311860dfce79#4",
+   "year": 1939,
+   "publication": "the washington times",
+   "gender_signal": "M",
+   "excerpt": "dinner part nerS. Alone among the male guests the representatives Of the Army and Navy wear black ties instead Of white. So do their superior officers-usually. General Craig was the excepton who recently arrived at a stately White House function, complete with gold braid and decorations, but wearing a white tie. This deviation from established practice did not …",
+   "hl_start": 160,
+   "hl_end": 173,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.05,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-e9eb2e0d4ef8a563#0",
+   "year": 1942,
+   "publication": "the waterbury democrat",
+   "gender_signal": "M",
+   "excerpt": "On the dawn patrol. =. If you see guy roaming man with the net. It's only Jimmie Buzzuto popular afraid warden surveying his territory for better pecau tionary measures just in case of blackout. Chief Curtin should be proud of his staff Joe Bagley, IT, touring around town with …",
+   "hl_start": 74,
+   "hl_end": 88,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.352,
+    "D": 0.003
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-a0122d35bff65e6f#8",
+   "year": 1954,
+   "publication": "minneapolis spokesman",
+   "gender_signal": "M",
+   "excerpt": "…tive state, Val BIornaon had had his eye on tho governorship for several years and was hiding his time by getting elected To state treas urerc In 1850 and 1909 hut now the Governor G. Elmer Anderson has made up his mind TO seek an other term. and the fact that the apparently has done no harm and has good Scandinavian name, made for hurried consultation last week. Up came the announceme…",
+   "hl_start": 191,
+   "hl_end": 199,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.998,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-d4571123842dba8a#0",
+   "year": 1960,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "Arlington Juvenile Court Judge Hugh Reid today ordered the Children's Shelter closed and declared that some teen ayers it normally would have housed will face Jail. Budget miScalculations by Arlington officials which left the shel…",
+   "hl_start": 25,
+   "hl_end": 40,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.444,
+    "D": 0.996
+   }
+  },
+  {
+   "role": "PUBLIC_OFFICE",
+   "entity_id": "as1-2ffb1b4df3254bb0#1",
+   "year": 1927,
+   "publication": "seward daily gateway",
+   "gender_signal": "M",
+   "excerpt": "…enting the Caro Company of Juneau, and former U. of Wn. football star. And the reason his arrival has been looked forward to is because previous to leaving for the Interior, few weeks ago, \"Bill\", who is the champ ion handball player of the Capitol City, taught a few local chaps some of the finer points in the gentle in- door sport. Tonight at 5 bells they hope to get their revenge…",
+   "hl_start": 191,
+   "hl_end": 195,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.032,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-1ea89dc91121d8d3#2",
+   "year": 1960,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "CARPENTERS Bethesda area housing project: prevailing wages. Must be sober and industrious. Apply to Mr. SORDER; Directions: From D. c, nne at western ave. proceed out River rd, to Wilson lane C2nd traHc light. turn right on Wilson blocks to Maryknoll ave, left on Maryknoll",
+   "hl_start": 100,
+   "hl_end": 110,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.007,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-ac4512cfe4e1f524#1",
+   "year": 1906,
+   "publication": "the vinita daily chieftain",
+   "gender_signal": "M",
+   "excerpt": "Brother Murphy privileged to do anything else with that he peases without disturbing good humor but when he decends the base ngratitude Of Major Nc Cntock it is too, too muchl What has the meek and humble…",
+   "hl_start": 0,
+   "hl_end": 14,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.002
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-ed239bf71bc32922#1",
+   "year": 1903,
+   "publication": "the newtown bee",
+   "gender_signal": "M",
+   "excerpt": "Luther Eaton's land at North Kent. The river is closed up with ice from Kent Furnace to Bulls Bridge, (which is something very unusual at this time of the year. Rev George Curtis spent Thanks giving with his daughter, Mrs H. K. Job. Mrs Job also entertained Will liam Adams, a cousin of Rev MT Job, over Thanksgiving.",
+   "hl_start": 161,
+   "hl_end": 178,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.065,
+    "D": 0.007
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-3cfa93d02b84e083#2",
+   "year": 1909,
+   "publication": "the topeka state journal",
+   "gender_signal": "M",
+   "excerpt": "…ir own. He has started at the task. During the past year the society refused to sell the tobacco raised and owned by the members for less than a certain price The tobac co kings bucked, but Emmerton had tobacco sheds built in southwestern Wisconsin where the tobacco of the members was pooled and boxed ready for sale. The insurance companies insured the tobacco against losses by fires a…",
+   "hl_start": 191,
+   "hl_end": 199,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.004,
+    "D": 0.739
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-b372835778a6726e#0",
+   "year": 1942,
+   "publication": "detroit evening times",
+   "gender_signal": "M",
+   "excerpt": "… today because of disagreement with terms of peace plan. The rtouBILE centers around performance OF electrical work in the factories by UAW-CIO members. In an attempt to solve the prob lem, Ed Thai, secretary of the Building Trades Council, called a meetin gof his organization late today at the Labor Temple. CARPENTERS OUT Meanwhile, AFL carpenters refused TO lay a tool to their conIs…",
+   "hl_start": 191,
+   "hl_end": 198,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.073,
+    "D": 0.989
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-afc0a985375b9fbb#1",
+   "year": 1936,
+   "publication": "evening star",
+   "gender_signal": "F",
+   "excerpt": "when I told the father the news\" DR.. Jani remarked, \"he was absolutely Unconditional, stoical, unresponsive. All he said was, oh yeahP'\" The physician said he had told Kasper to expect twins DR.. Jani had previously delivered two chill dren of the Kaspers. Ellen, now 3, and Ralph, u years old. Mrs. Kasper bore up we'll until the fourth baby arrived, nearly three…",
+   "hl_start": 169,
+   "hl_end": 175,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-c680e0f83e04df57#11",
+   "year": 1936,
+   "publication": "the redwood gazette",
+   "gender_signal": "F",
+   "excerpt": "…ce Lyslo were entertained at the A. o. Gimmestad home Wednesday evening. Mr. and Mrs. Albert Nelson and son, Hugh, Lawrence Rydquist, Mr. and Mrs. Thomas Matson and daughter, Joan, DR.. and Mrs. R. A. Peterson and daughter, June, helped Mrs. William Peterson celebrate her birthday Sunday at the Peterson farm. Mr. and Mrs. H. B. Hegdahl and Burton Lyslo were dinner guests at the A. o. Gimmestad ho…",
+   "hl_start": 191,
+   "hl_end": 210,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-55325a6cadf7f613#3",
+   "year": 1900,
+   "publication": "daily new dominion",
+   "gender_signal": "M",
+   "excerpt": "…ned. REMEMBER 1 off on all mattings, during rebuilding sale Hirschmans Brown, French, Home made and Rye bread, our own make. StGlaiv's II has not vet been definitely de cided whether or not Prof r. t. Kline will return to Morgantown next year or not to resume his work in the public schools. He is very anxious to return and the the board is also very anxious to have him but he was troubled grea…",
+   "hl_start": 191,
+   "hl_end": 207,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.013,
+    "D": 0.37
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-f21c851f9de50f3a#1",
+   "year": 1900,
+   "publication": "the national tribune",
+   "gender_signal": "F",
+   "excerpt": "…n might we'll be proud TO have saved one poor soul from the shackleS oil drink, out Mrs Has .ins has redeemed thousands by her nozzle aud practical work among those who have been victims OF Mrs Hawkins for years suffered the rrsf n nd anguish shared by many true ana faithful women of America to-day, who have dr,nK-ahcted fathers husbands sons. she determined to over CONS this fearful evil…",
+   "hl_start": 191,
+   "hl_end": 202,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.997
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-b3a8569a5fd976aa#15",
+   "year": 1960,
+   "publication": "jackson advocate",
+   "gender_signal": "F",
+   "excerpt": "…dexter street. The meet ing was presided over by the pres ident,: Mrs. B. D. Rushing. The devotion was conducted by the devotion chairman, Mrs. G. R. Bolden. The art period was conQuoted by Mrs. L. C. Pickens, art instructor. Etiquette instructor was Mrs. o. D. Johnson. During the fellowship, which followed the meeting, the hostess served chicken plates to the men, bers. Present were",
+   "hl_start": 191,
+   "hl_end": 209,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-ba3ec8cff7e698f3#0",
+   "year": 1927,
+   "publication": "the republican",
+   "gender_signal": "F",
+   "excerpt": "Rev. and Mrs. C. A. Shilke returned to their home in Oakland Friday evening from a visit of few days to relatives in York county, Pa, and to friends in Frederick county, Nd. Mrs. H. w. Matheny, of Cumberland, was her…",
+   "hl_start": 9,
+   "hl_end": 26,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.003,
+    "D": 0.997
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-f0c45e6e6763837d#3",
+   "year": 1912,
+   "publication": "the citizen",
+   "gender_signal": "M",
+   "excerpt": "…m with the murder of Thos. Dolphin last July at Keens, as to Shether he was guilty or not guilty. He answered Not Guilty\" Hub bard sat at his counsel's table with attorneys F. P. Kimble and W. H. lee. He was told to stand up which be promptly did. Prothonotary w. J. Barnes pronounced the customary nterrogations: Are you ready for your trial?\" Yes\" replied Hubbard.",
+   "hl_start": 191,
+   "hl_end": 200,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.443
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-c2d7076437444676#3",
+   "year": 1918,
+   "publication": "daily kennebec journal",
+   "gender_signal": "F",
+   "excerpt": "she will visit her sis ter. while her husband is training at Camp Devens. Mrs w. A. Horne has returned to Waterville after visiting Mrs. A. A. Horne a few DAYS. Miss Grace Moors has been visit ing Miss Beatrice Drawn on the Ridge. Friends Of Fessenden Lutz, who was wounded on July 18th will be glad 70 know that his parents Rave heard by n letter written by him Aug.…",
+   "hl_start": 161,
+   "hl_end": 177,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.982
+   }
+  },
+  {
+   "role": "PROFESSIONAL",
+   "entity_id": "as1-04875cd9a5584d14#0",
+   "year": 1933,
+   "publication": "the indianapolis times",
+   "gender_signal": "F",
+   "excerpt": "Daughters of Isabella will sew for the Red Gross Monday at the Taylor building, 100 South Meridian street. Mrs. William Theodore Mil Ter is in charge. Annual state meeting of the Daughters will be held Nov II to 10, at Gary.",
+   "hl_start": 107,
+   "hl_end": 136,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.788,
+    "D": 0.004
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-1841f1625da0d442#7",
+   "year": 1924,
+   "publication": "phillips county herald",
+   "gender_signal": "F",
+   "excerpt": "and Mrs. F. A. Woodlands and daughter Anna were Holyoke callers Tuesday afternoon. Clifford and Harold Woodlands he'll ped F. A. Woodlands butcher beef Wednesday. The A. B. C. club met with Mrs. F. n. Austin Thursday afternoon. There were twelve ladies and eight children present and the yreport fine time. Most OF the men folks firm this community attended the Fred Padgett sale Thursday.",
+   "hl_start": 190,
+   "hl_end": 207,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.733
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-acd2da4971d51a4b#0",
+   "year": 1906,
+   "publication": "west virginia argus",
+   "gender_signal": "F",
+   "excerpt": "The May magazines now coming in and on sale a, the Argus Book Store. Emory p. Albright leaves for Wheeling today on some insurance business. Mrs. J. NJ. Crane of Morgsntown. is here this week looking after her property. Sherman Graham and A. X. Jenkins of Mason,own, were in town yesterday on bust ness. DIR. Hanson",
+   "hl_start": 141,
+   "hl_end": 151,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.423,
+    "D": 0.999
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-ff482f6fdeec0d8e#17",
+   "year": 1909,
+   "publication": "aberdeen herald",
+   "gender_signal": "M",
+   "excerpt": "prisoners doing time can be worked without interfering with Aberdeen laborers, Superintendent Morse is u.s. ing them. in an endeavor to make them earn their board. William Cameron has remodeled his home, Broadway and Fifth streets adding to it cement basement. 1t is his intention to commence the erecton of another residence on the same lots in the near future. Nearly…",
+   "hl_start": 164,
+   "hl_end": 179,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-d9c36831c91c65b5#1",
+   "year": 1930,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "TOXIC (P.--Because the national religion makes hem divinities, Emperor Hirohito, Empress Nagako and Dowager Empress Sadako will not be counted as among Japan's 60,000,0 inhabitants when the national census Is taken October /. other royalties. including the two infant d…",
+   "hl_start": 63,
+   "hl_end": 79,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.935,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-3359843033306b1b#0",
+   "year": 1963,
+   "publication": "smyrna times",
+   "gender_signal": "M",
+   "excerpt": "Clifton Murray of Selbyville was named Delaware \"soybean king\" at the 55th annual Della : ware Crop Show Tuesday (NoVember 10y in Dover. His top soybean yield was AZ. 2 bushels per acre from one field, ma…",
+   "hl_start": 0,
+   "hl_end": 14,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.001
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-c21f39e455bbc321#0",
+   "year": 1924,
+   "publication": "the wolf point herald",
+   "gender_signal": "M",
+   "excerpt": "James Griffin, state senator from Blaine county, and an appraiser fo1 the Federal Land Bank at Spokane, is spending the week here on business connected with the National Farm Loan associations Of this se…",
+   "hl_start": 0,
+   "hl_end": 13,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.018,
+    "D": 0.991
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-64bbbfb09617a51b#0",
+   "year": 1915,
+   "publication": "the lynden tribune",
+   "gender_signal": "M",
+   "excerpt": "A bill to reduce the 15 per cent charged on delinquent taxes to 10 per cent will be introduced into the legislature by one of Whatcom County's representatives., F. D. Yale. 1.-THE state law makes 1t usury for money loaners to charge more than IL per cent interest, but turns around and charges Is per cent on delinquent taxes, which",
+   "hl_start": 161,
+   "hl_end": 171,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.003,
+    "D": 0.001
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-e84d1108df00bdca#15",
+   "year": 1951,
+   "publication": "the durant news",
+   "gender_signal": "F",
+   "excerpt": "singing the club song. Guests for the afternoon were Mrs. H. L. Harrington, Miss Oil. ess to the Twentieth Century yer, Miss Dillon and Miss Norma Gene Branch. Mrs. Wiley Hum phries was welcomed back to tn, club after an absence. During the social hour. Mrs Branch, assisted by Mrs. Her rington and Norma Gene Branch served white brick ice cream cen tered with sha…",
+   "hl_start": 160,
+   "hl_end": 174,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.886
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-c4aa209f2fa57b43#3",
+   "year": 1912,
+   "publication": "shepherdstown register",
+   "gender_signal": "M",
+   "excerpt": "…nd his death will be greatly regretted by many persons. DR.. Albert had occasionally visited in Shepherdstown, and had endeared himself TO The Lutherans here. Mrs. Maria RightStine, wife OF Mr. William M. Rightstine, died last Sunday at her home in Riverton, Va, and was buried at that place on Tuesday. The deceased, whose maiden name was Nc Carthy, was sister Of former Mayor Nc earthly, of Richmond, Va…",
+   "hl_start": 191,
+   "hl_end": 216,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-5260c3e4ffbe2611#2",
+   "year": 1900,
+   "publication": "yorkville enquirer",
+   "gender_signal": "M",
+   "excerpt": "saloon, in the main street Of Conrad, when one evening a well dressed. dis tinguished looking gentleman stepped out of the west bound express upon the platform. Does Mr. Kirk live where he used TOT\" he asked Of one of the loungers at the station. Yes: he lives up by the church\" was the answer. The stranger went on down the main street. looking about him curiousl…",
+   "hl_start": 166,
+   "hl_end": 174,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.994
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-3146a37261012b44#3",
+   "year": 1963,
+   "publication": "filipino forum",
+   "gender_signal": "M",
+   "excerpt": "…t purpose. | told him that l was only a custodian of the money of the association and could not touch it without due authorization. | suggested that he call meeting the following weekend at Mr. Ferrera'S office. He did not ans wer and no such meeting was announced. Instead, he went ahead with his plans, furnish ing the money himself and call ed it U. of w. Filipino Alumni",
+   "hl_start": 191,
+   "hl_end": 202,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.005
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-dc989278bdc61e1a#2",
+   "year": 1930,
+   "publication": "the republican",
+   "gender_signal": "M",
+   "excerpt": "friends. James Bell, former resident of Oakland, is in town visiting friends. Capt. James A. Hayden and family have returned from Mt. Lake Park for the winter. Messrs. G. S. Hamill and John T. Mitchell were in Cumberland Tues day. Charles Newman, formerly of The Republican office, has accepted a position on the Preston County Journal, Kingwood. E. G. Naylor went to Me…",
+   "hl_start": 160,
+   "hl_end": 180,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.002
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-9841beb1a8a2a357#0",
+   "year": 1945,
+   "publication": "the daily alaska empire",
+   "gender_signal": "F",
+   "excerpt": "Miss Cora A. Brouillet, Field Consultant in Hospital Nursing for the U. S. Indian Service with headquarters at Minneapolis. has reported to Superintendent Don Foster. She will give supervisory service to the Alas…",
+   "hl_start": 0,
+   "hl_end": 22,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.002,
+    "D": 0.7
+   }
+  },
+  {
+   "role": "BUSINESS",
+   "entity_id": "as1-c8e3bd6ad11d6e6f#12",
+   "year": 1924,
+   "publication": "the seattle star",
+   "gender_signal": "F",
+   "excerpt": "…enfoId and Mr. Norman Burnett. the ushers A reception followed the ceremony at the Yacht club brilliantly decorated in the rich shades Of yetTows and browns against green background Mr. and Mrs. Lcman will be at home in New York City after July 1.",
+   "hl_start": 191,
+   "hl_end": 201,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.857
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-641d86d65ea3f2f2#4",
+   "year": 1912,
+   "publication": "belding banner",
+   "gender_signal": "F",
+   "excerpt": "…ing of Doric Chapter o.. f. $. held Tuesday evening, the follow ing officers were elected for the ensuing year: Worthy Matron-Mrs. Maude Unger Worthy Patron-George N Foster Associate Matron-Mrs. Jennette Brown Secretary-Mrs. Eva Divine Treasurer-Mrs. Edith Knapp Conductress-Mrs. Myrtle Unger Associate Conductress-Mrs Vern Brown. Delegates to the Grand Chapter to be held in Grand Rapids G. n. Fost…",
+   "hl_start": 191,
+   "hl_end": 210,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 1.0,
+    "D": 0.897
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-8774f1e3b37bf9b6#5",
+   "year": 1951,
+   "publication": "the miami times",
+   "gender_signal": "M",
+   "excerpt": "…s WASH tngton Bureau, had testified against it at a hearing before a senate subcommittee. In his testfmony, Mr. Mitchell cited the Caldwell record as governor. This record is again cited in Mr. Whites letter to the President, which points out that the new civil defense chief 'rhas conSlStentiy advocated total racial segregation in the U. S., not unlike the apartheid doctrine of the Malan…",
+   "hl_start": 191,
+   "hl_end": 201,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.005,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-8a8a9ed63bccbb1f#1",
+   "year": 1957,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "Credited with making the f1rst night landing on an air craft carrier. Admiral Price served almost continuously with naval air groups until his retirement in 1854. He was born In August, Ark, and attended the University Of Arkansas before his appoint ment to the Naval Academy in 1912. In 1920 he became a pilot at Pensacola, Fla. During World War II Adj miral Price took part in …",
+   "hl_start": 186,
+   "hl_end": 189,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.997
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-447dcf991eef7cdb#6",
+   "year": 1930,
+   "publication": "imperial valley press",
+   "gender_signal": "M",
+   "excerpt": "% leave at once. The com FIaint followed these orders. \"Wlfe died Tuesday, John Green, 81, told the court this morning when arialgncd on charge Of drunken ness. John is regular customer of the local court and still owes the cIty $40 for fine assessed earlier IN the month and which was \"forgotten\" in the passing Of time. He was fined s25 this morning wit…",
+   "hl_start": 161,
+   "hl_end": 165,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.07,
+    "D": 0.985
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-083236fb88c70561#0",
+   "year": 1948,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "per cent of the goal. The USO, 104 Red Feather agencies in the Washington area and the hospital ization fund will share the cam paign funds. Corporations Give. Mr. Rich explained that a sub stantial part of the money reported by his unit so far comes from cor poration gifts. The categories of firms listed within the divisions do not include all firms of th…",
+   "hl_start": 160,
+   "hl_end": 168,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.065,
+    "D": 0.999
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-d9dd648e30fb6f8d#5",
+   "year": 1912,
+   "publication": "the birmingham age-herald",
+   "gender_signal": "M",
+   "excerpt": "meeting. An ordinance to prohibit the carrying of pistols off of premises not their own or under their control, and penalty for the violation was passed as read. Alderman LaRue introduced an ordi- nance to regulate the rates for lights in the city of Bessemer by any person. firm or corporation, which was referred to the street and lights committee to report hack a…",
+   "hl_start": 162,
+   "hl_end": 176,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.994
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-913e6c806ab85456#2",
+   "year": 1921,
+   "publication": "eagle river review",
+   "gender_signal": "F",
+   "excerpt": "\"Chance!\" he growled. whats life without its chance! Life! Huh! A game of chance-with the cards stacked, and the devils deal! Rocket, you'll carry double tonight. Yellow curls, eyes like Ruebells and ankles e.! But high headed-she came dew ilish nigh shootin' me this afternoon! But the harder to tame, the better worth tamin.\" The Pearlhunter was writing back I'm …",
+   "hl_start": 163,
+   "hl_end": 175,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.788
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-bf343f64f0a146c3#0",
+   "year": 1921,
+   "publication": "evening public ledger",
+   "gender_signal": "F",
+   "excerpt": "Mr. and Mrs. Silas 8. Stein are occupy ing their new home, Sunny road, Mel rose Park Mrs. Stein will be rernembered as Miss Rita Manko. Mr. and Mrs. Waiter 4. Fleisher and their family. Of Powelton avenue. expec, to move shortly into their new homo In Oak Lane.",
+   "hl_start": 119,
+   "hl_end": 134,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.004,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-9c25acd6ebea114b#1",
+   "year": 1930,
+   "publication": "the indianapolis times",
+   "gender_signal": "F",
+   "excerpt": "campaigns IOr aQditor SirnultaneouSly. Having an nounced her can didacy some time ago for the Democratic nomination for auditor of Marion county, Miss HenZie also has become a cam didate for auditor of the Federation of international Study and Travel Clubs. RI XT---.",
+   "hl_start": 146,
+   "hl_end": 157,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.033,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-ce115060b50ec0b0#0",
+   "year": 1915,
+   "publication": "washington standard",
+   "gender_signal": "F",
+   "excerpt": "The above shows many surprises, as Miss Irene Abbott takes the lead of the entire lineup with a grand total of 100000 votes and is in turn closely followed by Miss Evelyn Fun son. Miss Eunson was third at the last count, while Miss Abbott was…",
+   "hl_start": 35,
+   "hl_end": 52,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.049,
+    "D": 0.946
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-b3a8569a5fd976aa#15",
+   "year": 1960,
+   "publication": "jackson advocate",
+   "gender_signal": "F",
+   "excerpt": "…dexter street. The meet ing was presided over by the pres ident,: Mrs. B. D. Rushing. The devotion was conducted by the devotion chairman, Mrs. G. R. Bolden. The art period was conQuoted by Mrs. L. C. Pickens, art instructor. Etiquette instructor was Mrs. o. D. Johnson. During the fellowship, which followed the meeting, the hostess served chicken plates to the men, bers. Present were",
+   "hl_start": 191,
+   "hl_end": 209,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.788,
+    "D": 0.96
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-089167c4af019821#3",
+   "year": 1909,
+   "publication": "the hawaiian star",
+   "gender_signal": "M",
+   "excerpt": "~4AAN W. Ii ~ The annual meeting of stockholders OF the McBryde Sugar Co., Ltd, will be held at the office of Messrs. Theo. H, Davies & Co., Ltd, Kaahumanu st., Honolulu, on Wednesday, March IT, 1909, at 10 o'clock a. m. The stock books of the company will be closed for transfer of Stock",
+   "hl_start": 110,
+   "hl_end": 122,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.602,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-15649324b05b3e20#1",
+   "year": 1939,
+   "publication": "the waterbury democrat",
+   "gender_signal": "F",
+   "excerpt": "…gsters are among the representative committees named to promote the success of the corps and the coming entertain ment. The committees follow: President, J. Winfred Beecher; vice president, Mrs. David Weaving; sec- retary, Jerry Murphy; treasurer, Mrs M. P. Hickey; corps leader, E. N Garfield. Chairman of social committee Mrs. w. H. Hill; chairman of ways and means committee, Joseph P Cavanaugh;…",
+   "hl_start": 191,
+   "hl_end": 209,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 1.0,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "CIVIC",
+   "entity_id": "as1-dc989278bdc61e1a#2",
+   "year": 1930,
+   "publication": "the republican",
+   "gender_signal": "M",
+   "excerpt": "friends. James Bell, former resident of Oakland, is in town visiting friends. Capt. James A. Hayden and family have returned from Mt. Lake Park for the winter. Messrs. G. S. Hamill and John T. Mitchell were in Cumberland Tues day. Charles Newman, formerly of The Republican office, has accepted a position on the Preston County Journal, Kingwood. E. G. Naylor went to Me…",
+   "hl_start": 160,
+   "hl_end": 180,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.013,
+    "D": 0.943
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-bd5649ac7c2ddd97#27",
+   "year": 1960,
+   "publication": "the farmville herald",
+   "gender_signal": "F",
+   "excerpt": "Druen, Of Rice, Mr. and Mrs. A. F.. Osborn and sons, Of Fa1mville, and Mr. and Mrs. Garland Stafford and son and Mr. and Mrs Jimmy Davis and family. Of Richmond. Mr. and Mrs. c. L. Jones and sons spent Sunday with Mr. and Mrs. j. w. Morris at Burkeville On Monday Mr. and Mrs. Morris and Mr. ard Mrs. j. w. Morris, Jr. were guests Of Mr. and Mrs. Jones. MIR. and Mrs. Clark Ga…",
+   "hl_start": 170,
+   "hl_end": 186,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 1.0,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-66aa28d4c245f074#1",
+   "year": 1939,
+   "publication": "the kennewick courier-reporter",
+   "gender_signal": "F",
+   "excerpt": "| Mr. and Mrs. Wallace Preston and children, Wallace Jr. and Billy Mr. and Mrs. Ed Brand, Mr. and Mrs. Ted Watkins and daughters, Opal and Rose Mary, Mr. and Mrs. Dick Smalley and daughter, Nor ma, and Mr. and Mrs. w. J. Pres ton, motored to Palouse Falls on Sunday, where they …",
+   "hl_start": 75,
+   "hl_end": 88,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.996,
+    "D": 0.997
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-22171aa319071741#6",
+   "year": 1951,
+   "publication": "milford chronicle",
+   "gender_signal": "F",
+   "excerpt": "The friends Of Mr. Clarence All bott, are glad to know that he was able to return to his work this week after being confined several weeks with a broken ankle. Mrs. Mary Vansant, who has been III for the past week is some what improved. We hope she will soon be able to be out again. Miss Carolyn Horney and Miss Marie Biggs have returned home from camp. Church and S…",
+   "hl_start": 160,
+   "hl_end": 177,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-bf343f64f0a146c3#0",
+   "year": 1921,
+   "publication": "evening public ledger",
+   "gender_signal": "F",
+   "excerpt": "Mr. and Mrs. Silas 8. Stein are occupy ing their new home, Sunny road, Mel rose Park Mrs. Stein will be rernembered as Miss Rita Manko. Mr. and Mrs. Waiter 4. Fleisher and their family. Of Powelton avenue. expec, to move shortly into their new homo In Oak Lane.",
+   "hl_start": 119,
+   "hl_end": 134,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.832,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-e215d38603b6312a#4",
+   "year": 1957,
+   "publication": "the journal",
+   "gender_signal": "F",
+   "excerpt": "was calling on Edna Boyd Monday. Mrs. Earnest Barnhart and son, and Johnnie Garvin were calling on their parents, Mr. and Mrs. Clem Garvin, Wednesday after noon. Mr. and Mrs. Myron Wiley of GAINESVILLE were guests Sunday at Alva Garvins. Edna Boyd and Esther Garvin attended the Electric meeting at Marietta, Saturday. Mr. and Mrs. Delmar Porter and son of Gallipolis were vis…",
+   "hl_start": 170,
+   "hl_end": 186,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.998,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-19324f738abb353d#17",
+   "year": 1933,
+   "publication": "the bismarck tribune",
+   "gender_signal": "F",
+   "excerpt": "…. Meland enter tanned ct dinner Sunday the follow ing: Mr. and Mrs. Vic Peterson and daughter Jacqueline. Mrs. william vanvleet and children, Mr. and Mrs. Carl leland and son Wylis, Mr. and Mrs. Ed Madison and Mr. ana Mrs. Helmer Meland and family.",
+   "hl_start": 191,
+   "hl_end": 206,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.991,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-33b83c479e278a0e#1",
+   "year": 1960,
+   "publication": "the journal",
+   "gender_signal": "F",
+   "excerpt": "Mrs. Marilyn Jean Roehrig and children visited Tuesday even ing with Mr. and Mrs. Charles Mitchell. Mr. and Mrs. Harry Thompson spent Wednesday evening with Mr. and Mrs. Francis Thompson and daughters. Mrs. Linda Hayes spent Sun day evening with Mr. and Mrs. James",
+   "hl_start": 77,
+   "hl_end": 98,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.999,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-aa52dc6996a70a5a#31",
+   "year": 1951,
+   "publication": "the daily alaska empire",
+   "gender_signal": "F",
+   "excerpt": "…an, Betty Bod ding; from Petersburg: Stanley Friese, George Gentry. R. E. Isto. From Hoonah: MT. and Mrs. Dar Sharclane, Mrs. Robert Greenwald from Sitka; Paul Otto, B. c. Felch c. Burdick, Mrs. S. Hopkins; iron Skagway: c. McCloud, J. Bowen 2. Renshaw, z. A. Neal, Frank Gla- CT, Louis Rapuzzi, J. Gardner; from daines: Violet Knight, c. w. Kerns",
+   "hl_start": 191,
+   "hl_end": 206,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.158,
+    "D": 0.005
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-c7dab9f6b291145c#19",
+   "year": 1957,
+   "publication": "milford chronicle",
+   "gender_signal": "F",
+   "excerpt": "with Frank Robin son in fredericksburg, Md Mr. and Mrs. Samuel Warrington and daughters spent Sunday after noon with Mr. and Mrs. Dean See lev near Woodenhawk. Mr. end Mrs. John Williams of Federalsbrrg spent Monday even ing with Mr. and Mrs. John Hast inps and mother. Mr. and Mrs. Kenneth West and Mr. and Mrs. George Hsrdestv of Bridgeville spent Sunday evening with Mr. an…",
+   "hl_start": 168,
+   "hl_end": 186,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.996,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-fee534b9899f3701#17",
+   "year": 1948,
+   "publication": "the chronicle-star combined with the moss point advertiser",
+   "gender_signal": "F",
+   "excerpt": "…: End, Mrs. f. A. Wages; 3rd, Mrs. T. j. Casterena. Shadow boxes: 1st, Mrs. George Anderson; End, Mrs. Walter John son; Bird, Mrs. L. L. LaPlant. Specimen Roses: 1st, Mrs. c. w. Smith; End, Mrs. Don Baragerr; 3rd, Mrs. Floyd Wages. Tricolor in specimen classes: Miss Catherine Conrov Specimen Amarylis: LIST, Mrs A. w. Woodward; End, Mrs. c, w. Smith; 3rd, Mrs. A. w. Wood ward. Specimen Daylillie…",
+   "hl_start": 191,
+   "hl_end": 208,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.702,
+    "D": 0.001
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-724d525b19ec0e62#8",
+   "year": 1963,
+   "publication": "evening star",
+   "gender_signal": "F",
+   "excerpt": "…haron Siegener, daughter of Mrs. A. Loring Siegener, and who is an old friend of the Richard Nixon daughters; Patricia Fair mont Stone, daughter of Col. and Mrs. Alexander Graham Stone, and Miss Deborah Hunter Drum, daughter of Col. and Mrs. ]. Hunter Drum. Also on hand among the",
+   "hl_start": 191,
+   "hl_end": 215,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.825,
+    "D": 0.989
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-18c39a371f402c83#20",
+   "year": 1939,
+   "publication": "evening star",
+   "gender_signal": "F",
+   "excerpt": "…inton Hall, near Manassas. Va. for the past six weeks. Carl Stephan, son of Mr. and Mrs Frederick F. Stephan of Arlington is in Oak Park, ILL.\" to visit his pa ternal grandparents, DR.. and Mrs F. w. Stephan. He has also been with his maternal grandparents, Mr. and Mrs. R. A. Atwood. near Oak Park. Carl will join his parents around the middle of next month and he will",
+   "hl_start": 191,
+   "hl_end": 208,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.022,
+    "D": 0.983
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-f9b085f343b679fd#0",
+   "year": 1936,
+   "publication": "the redwood gazette",
+   "gender_signal": "F",
+   "excerpt": "department. The subject regarding the signal for meeting was discussed and it was decided that one blast at z p. m. be the sign for regular or special meetings. Mr.: and Mrs. Clayton Johnson and family were guests at the H. Z. Hanson home near Morgan Sunday. Miss Arlene Hemmingson of Redwood Falls visited at the j. P. kagel home Thursday and Friday. Mr. and Mrs. L. H. Clements …",
+   "hl_start": 170,
+   "hl_end": 190,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.971,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "SOCIAL",
+   "entity_id": "as1-2f29476c3ecba5b3#3",
+   "year": 1912,
+   "publication": "new-york tribune",
+   "gender_signal": "F",
+   "excerpt": "… evening, March %, the Nc Intyre Trio appeared at the residence OF George Caspar Pennell, No. BIS West lO4th street. with Miss Laura Combs, soprano as assisting artist According to reports, Miss Ferne Rogers a pupil Of Frederick T.. Bristol, made successful debut i'm London Miss Rogers has a somewhat extended experience, haying sung in the Royal Opera Of CobursGotha during two seasons In such r…",
+   "hl_start": 191,
+   "hl_end": 208,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.003,
+    "D": 0.993
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-d9c36831c91c65b5#1",
+   "year": 1930,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "TOXIC (P.--Because the national religion makes hem divinities, Emperor Hirohito, Empress Nagako and Dowager Empress Sadako will not be counted as among Japan's 60,000,0 inhabitants when the national census Is taken October /. other royalties. including the two infant d…",
+   "hl_start": 63,
+   "hl_end": 79,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.925
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-0fec5a31103397e3#3",
+   "year": 1918,
+   "publication": "the daily gate city and constitution-democrat",
+   "gender_signal": "M",
+   "excerpt": "…., and Mrs. Robert Shriber on their return home from Kansas where they had been visiting relatives. Mr. and Mrs. Otis Danford and mother Mrs. Walker, who has been visiting the latter's son, Mr. Ora Walker and wife have returned to their home in Ohio. Mrs Mabel Thompson Of Canton is here visiting her mother Mrs Gilbert west OF town There is quite number from here attending the chautauqua at F…",
+   "hl_start": 191,
+   "hl_end": 205,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 1.0,
+    "D": 0.995
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-8c3fd188ed8c3d88#13",
+   "year": 1918,
+   "publication": "every evening, wilmington daily commercial",
+   "gender_signal": "F",
+   "excerpt": "…h the 7 parents Mr. and Mrs Alexand Donoho Mrs Jessie Tayior and little son Of Delnar are visiting Mrs Taylor father, Harry G. Records Mrs Evelyn Hare OF Wilmington Is vi>i' ING her mother, Mrs James Nea g Walter Lawrence Of Philadelphia i visiting At the home Of Mr. and Mrs Frank G. Dawson Private Harley Richardson Of Camp Mead has been spending short fur Tough with his mother, Mrs. Willis R…",
+   "hl_start": 191,
+   "hl_end": 206,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": true,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.999,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-e86f823250600f6c#2",
+   "year": 1957,
+   "publication": "the sidney herald",
+   "gender_signal": "M",
+   "excerpt": "staying at the Don Noteboom home this week while the Notebooms and MI. and Mrs. Oscar Helm are attending irrigation meetings in the New Rockford area of North Dakota. Gary Sedlacek celebrated his 9th birthday this week Thursday. His mother, Mrs. Ben Sedlacek, took birthday cake and other treats to school for the members of his first grade class. That evening Gary was …",
+   "hl_start": 167,
+   "hl_end": 180,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.971,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-d301fba1707f363b#0",
+   "year": 1957,
+   "publication": "the journal",
+   "gender_signal": "F",
+   "excerpt": "Mckee returned Monday to their studies at Ohio University Athens, after spending their mid year semester vacation with their parents. Mrs. Frances Secrest visited over the weekend with her son. Robert and family at Columbus Ida Pennell and Dalton Secrest went to Columbus Sunday after noon and accompanied her home Mr. and Mrs. Earl Patton, Mr.…",
+   "hl_start": 134,
+   "hl_end": 154,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.057,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-9872c189c392beb7#7",
+   "year": 1900,
+   "publication": "north park union",
+   "gender_signal": "M",
+   "excerpt": "…torney Frank j. Annis and |. N. Gar bett came into Walden Thursday. Legal business brought them into the Park, and possibly little politics was mixed with it. Mr. William Tilton and family, Mr. B. F. Flowers and family and Gus. Lindholm, al Of Bellvue, tarried in town over night Thursday. They arc on the road TO Steamboat Springs. Mrs. Flowers is . sister to Mrs. Norm Davis Of Walden.",
+   "hl_start": 191,
+   "hl_end": 208,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-4cb3acb18aaccd37#1",
+   "year": 1915,
+   "publication": "baraboo weekly news",
+   "gender_signal": "F",
+   "excerpt": "F. G. Schoemann of Plain has purchased the j. j. Haas farm near the village. Miss Pearl Hill spent several days last week in Baraboo with her brother j. H. Hill and family. The Spring Green Cemetery Associaton has been reorganized and incorporated and now exists as a legal body. Th…",
+   "hl_start": 77,
+   "hl_end": 92,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.405,
+    "D": 0.996
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-cbcf42e52ffc352d#4",
+   "year": 1948,
+   "publication": "the republican",
+   "gender_signal": "F",
+   "excerpt": "Lake Park. and Miss Helen Kelly, of near Frost burg. Nh Jack Friend, accompanied by Miss Lillian Jones, Addison, Pa, were bowling in Cumberland, Friday even ing. Mrs. Ida Friend and son, Emmitt. We're visiting Mrs. Sally Glotfclty, Bittinger. on Sunday. Mr. and Mrs R. H. Schlossnagle and daughters Shirley and Sandra were guests ON Sunday Of the form er's",
+   "hl_start": 162,
+   "hl_end": 177,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.998
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-2db2ce8885182203#1",
+   "year": 1936,
+   "publication": "the waterbury democrat",
+   "gender_signal": "F",
+   "excerpt": "said she was suffering from \"dose of drugs or poison\" She was taken to Martha Washington hospital where her condition was described as fair. Her par ents, Mir. and Mrs. c. s. Burke, are enroute here.",
+   "hl_start": 164,
+   "hl_end": 180,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.968,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-e10948e6a667f84b#16",
+   "year": 1924,
+   "publication": "milford chronicle",
+   "gender_signal": "F",
+   "excerpt": "their rate of speed been rapid the accident would likely have ended fatal | Mrs. Welsh of Bridgeville is visiting her daughter, Mrs Layton Houston, for some time. Mrs. G. H. Dodd and Mr. and Mrs. l. | w. Washburn enjoyed day on the river on Tuesday. ., have returned from visit with thelr aunt Mrs Ola Sirman, in Delmar Miss Helen Lingo is enjoying a Visit with her au…",
+   "hl_start": 163,
+   "hl_end": 178,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.145,
+    "D": 0.737
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-f21c851f9de50f3a#1",
+   "year": 1900,
+   "publication": "the national tribune",
+   "gender_signal": "F",
+   "excerpt": "…n might we'll be proud TO have saved one poor soul from the shackleS oil drink, out Mrs Has .ins has redeemed thousands by her nozzle aud practical work among those who have been victims OF Mrs Hawkins for years suffered the rrsf n nd anguish shared by many true ana faithful women of America to-day, who have dr,nK-ahcted fathers husbands sons. she determined to over CONS this fearful evil…",
+   "hl_start": 191,
+   "hl_end": 202,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.002,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-3f3ac6688f7f2be5#2",
+   "year": 1945,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "installations and destroyed two fighters and three coastal vessels. In special announcement. Gen. MacArthur's headquarters disclosed the hanging, April 10. of Maj. Sakae Narioka. of the japanese Army, conyicted of spying. He penetrated American lines in civilian clothes.",
+   "hl_start": 159,
+   "hl_end": 177,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.068,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-ac28f83a3bd3f0ae#0",
+   "year": 1942,
+   "publication": "the daily alaska empire",
+   "gender_signal": "F",
+   "excerpt": "… be models for the show, and will demonstrate clothing proper for girls between the ages of and 16 years. The tea is under the chairman ship of Mrs. Earl McGinty, with a committee including Mrs. Harvey Startling, Miss Ruby McNeil, Mrs Floyd Fagerson and Mrs. Nevin of Douglas Girl Scouts will serve from small tables. Although the tea will begin at 2 o'clock, the fashion show is not scheduled to star…",
+   "hl_start": 191,
+   "hl_end": 212,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.097,
+    "D": 0.972
+   }
+  },
+  {
+   "role": "FAMILY",
+   "entity_id": "as1-5369ebc1d326b2c1#20",
+   "year": 1936,
+   "publication": "the redwood gazette",
+   "gender_signal": "F",
+   "excerpt": "…ests were Mr. and Mrs. Melvin Manguson and daughter of Mil roy, Mr. and Mrs. Ralph Surprenant and family of Currie, Mr. and Mrs. Harry Jefferson, Mr. and Mrs. Halvor Rue and family, Mr. and Mrs Lawrence Hansen and family and Mr. and Mrs. Vernon Kormann. Mrs. Vernon Dittbenner and Mrs. Erwin Bruins were callers at Lamberton Wednesday. Mr. and Mrs. Joseph Zeug and daughters visited at the Harry Sch…",
+   "hl_start": 191,
+   "hl_end": 210,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.008,
+    "D": 0.556
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-5248069e92314212#53",
+   "year": 1909,
+   "publication": "the cecil whig",
+   "gender_signal": "F",
+   "excerpt": "Church. on Wednesday evening. November \", nj six o'clock Miss Mary G. Norwood. M:ss Phil ena Hutton. Miss May Cornelius. MISS Edith Gccscy. Miss Ruth u. Wilde. Miss Marion T, Maddocks oi the fac ulty 81 the Jacob Tome Institute at Port Deposit. attended the Teachers destitute here. last week. Chester s. Courscy. of Centreville, well known here. and Democrats …",
+   "hl_start": 160,
+   "hl_end": 171,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.774
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-8de125fbb9ecda4c#3",
+   "year": 1900,
+   "publication": "mineral point tribune",
+   "gender_signal": "F",
+   "excerpt": "hillside avenue Then he carefully copied the address | on card. Six weeks later Abner Vincent and his wife and Mary were sitting on the porch of their modest little cottage. 1t was early twilight, and the shadows We're deepening beneath the vines and the naples. Il can't understand it bit\" Abner was sayi…",
+   "hl_start": 111,
+   "hl_end": 115,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.008,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-f21c851f9de50f3a#1",
+   "year": 1900,
+   "publication": "the national tribune",
+   "gender_signal": "F",
+   "excerpt": "…n might we'll be proud TO have saved one poor soul from the shackleS oil drink, out Mrs Has .ins has redeemed thousands by her nozzle aud practical work among those who have been victims OF Mrs Hawkins for years suffered the rrsf n nd anguish shared by many true ana faithful women of America to-day, who have dr,nK-ahcted fathers husbands sons. she determined to over CONS this fearful evil…",
+   "hl_start": 191,
+   "hl_end": 202,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.004
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-c4aa209f2fa57b43#3",
+   "year": 1912,
+   "publication": "shepherdstown register",
+   "gender_signal": "M",
+   "excerpt": "…nd his death will be greatly regretted by many persons. DR.. Albert had occasionally visited in Shepherdstown, and had endeared himself TO The Lutherans here. Mrs. Maria RightStine, wife OF Mr. William M. Rightstine, died last Sunday at her home in Riverton, Va, and was buried at that place on Tuesday. The deceased, whose maiden name was Nc Carthy, was sister Of former Mayor Nc earthly, of Richmond, Va…",
+   "hl_start": 191,
+   "hl_end": 216,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.035,
+    "D": 0.908
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-3359843033306b1b#0",
+   "year": 1963,
+   "publication": "smyrna times",
+   "gender_signal": "M",
+   "excerpt": "Clifton Murray of Selbyville was named Delaware \"soybean king\" at the 55th annual Della : ware Crop Show Tuesday (NoVember 10y in Dover. His top soybean yield was AZ. 2 bushels per acre from one field, ma…",
+   "hl_start": 0,
+   "hl_end": 14,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.968
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-ca6e532a894d435c#5",
+   "year": 1954,
+   "publication": "the detroit tribune",
+   "gender_signal": "M",
+   "excerpt": "back hv four members % , NJ ghhmhnod gang aftc leaving theatre on liolhrook near Oak land SUNDAY night when his accused a,salaAt was arrested He is William Brown. eS4l Cameron. who was found by his grandmother Mrs. Eva Boil Ton. same address. lying uneon. seious and bleeding on his front porch. Arrested on charge of felonlouS assault was",
+   "hl_start": 168,
+   "hl_end": 175,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.023,
+    "D": 0.003
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-b372835778a6726e#0",
+   "year": 1942,
+   "publication": "detroit evening times",
+   "gender_signal": "M",
+   "excerpt": "… today because of disagreement with terms of peace plan. The rtouBILE centers around performance OF electrical work in the factories by UAW-CIO members. In an attempt to solve the prob lem, Ed Thai, secretary of the Building Trades Council, called a meetin gof his organization late today at the Labor Temple. CARPENTERS OUT Meanwhile, AFL carpenters refused TO lay a tool to their conIs…",
+   "hl_start": 191,
+   "hl_end": 198,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.031,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-7a5ab8e0b239fc82#3",
+   "year": 1912,
+   "publication": "atlanta georgian",
+   "gender_signal": "M",
+   "excerpt": "…two hours questioning on the stand yesterday when she defied the jurors and prosecutor All traces of bravado had disappeared today. While it was said the government did not expect to indict Johnson for bringing the Cam eron girl to Chicago, her testimony with that of other witnesses, was expected to show he had brought other women to Chicago from other states. The city council passed …",
+   "hl_start": 191,
+   "hl_end": 198,
+   "labels": {
+    "A": false,
+    "B": true,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-19163f205163e6f2#0",
+   "year": 1903,
+   "publication": "durango semi-weekly herald",
+   "gender_signal": "M",
+   "excerpt": "Juan Miguel Of Pagosa Junction h in the county jail. His boad 10 plAcsd at $1,000. He was arrested on CON plant OF his wife ON . warrant chare ing him with assault With intent t. kill. His trial will come In the JaA",
+   "hl_start": 0,
+   "hl_end": 30,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": true,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.74,
+    "D": 0.991
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-b486d5739744f8e6#0",
+   "year": 1903,
+   "publication": "the washington times",
+   "gender_signal": "M",
+   "excerpt": "he should say they we're mere anecdotesi The calf was born seventeen years ago on the farm of Mr. Lockhart, who has liven in the immediate neighborhood for thirty-five years. Mr. Lockhart's son was a taxidermist, which circumstance accounts for the preservation of this freak. which lived only an…",
+   "hl_start": 94,
+   "hl_end": 106,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.118,
+    "D": 0.812
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-c21f39e455bbc321#0",
+   "year": 1924,
+   "publication": "the wolf point herald",
+   "gender_signal": "M",
+   "excerpt": "James Griffin, state senator from Blaine county, and an appraiser fo1 the Federal Land Bank at Spokane, is spending the week here on business connected with the National Farm Loan associations Of this se…",
+   "hl_start": 0,
+   "hl_end": 13,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.011,
+    "D": 0.979
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-3847b43fa0e624f8#8",
+   "year": 1918,
+   "publication": "the daily gate city and constitution-democrat",
+   "gender_signal": "M",
+   "excerpt": "chancery, SO. A resume Of the new cases filed was given in this column two weeks ago. The grand jury is called to meet today, Tuesday, and the trial jury for August %. | George McElroy, resident OF | Utica. few miles northeast OF Bonaparte, died suddenly last Mon day evening. He had been milking q COW when he was attacked by pain in his arm This pain became severe",
+   "hl_start": 170,
+   "hl_end": 184,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.037,
+    "D": 0.472
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-a7e3cf786ed1fa55#0",
+   "year": 1927,
+   "publication": "new britain herald",
+   "gender_signal": "M",
+   "excerpt": "J. Gordes Is i'll with grip at his home, \"A Monroe street. A daughter was born this morn ing to MT. and Mrs. Charleton Torrello of 361 Church street. Steak sandwiches on rye. Soda Shoppe, 95 W. Main.…",
+   "hl_start": 0,
+   "hl_end": 9,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.602
+   }
+  },
+  {
+   "role": "CRIME_ACCIDENT",
+   "entity_id": "as1-046e6107fb89d7c9#1",
+   "year": 1900,
+   "publication": "the age-herald",
+   "gender_signal": "M",
+   "excerpt": "tightly clenched. Engineer Hogg pulled the body to the bank, and he found that the boy had been bleeding from the nose as if some one had struck him between the eyes. Walter Hudson. who had been playing with the negro who was drowned, was ar rested, but as no one preferred a charge against him he was released.",
+   "hl_start": 167,
+   "hl_end": 180,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.056,
+    "D": 0.994
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-2ffb1b4df3254bb0#1",
+   "year": 1927,
+   "publication": "seward daily gateway",
+   "gender_signal": "M",
+   "excerpt": "…enting the Caro Company of Juneau, and former U. of Wn. football star. And the reason his arrival has been looked forward to is because previous to leaving for the Interior, few weeks ago, \"Bill\", who is the champ ion handball player of the Capitol City, taught a few local chaps some of the finer points in the gentle in- door sport. Tonight at 5 bells they hope to get their revenge…",
+   "hl_start": 191,
+   "hl_end": 195,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-d5d638c87ff56ed9#30",
+   "year": 1939,
+   "publication": "evening star",
+   "gender_signal": "F",
+   "excerpt": "…omposer. Others from ava! were Mrs. Charles Wood, Mrs. Mar Gel March, the brides singing teacher; Miss Elizabeth Jones ant Mr. Frederick M. luton of Phila delphia, Miss Harriet Whittier ant Miss Dorothy George of Boston. Mr. and Mrs. Forest Stein brother -in-law and sister of tn bridegroom, and Mr. Paul and MI Curtis Luckenbill, brothers of tn bridegroom, came from their hom in",
+   "hl_start": 191,
+   "hl_end": 210,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.003,
+    "D": 0.997
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-e4027aa1a9fd8630#0",
+   "year": 1930,
+   "publication": "richmond planet",
+   "gender_signal": "M",
+   "excerpt": "On Friday night, August l, 1880, at 500 P. NJ, Rev. F. W. Williams, pas tor of Fourth Baptist Church, and his choir were present. DR.. Williams, pull ed off Mighty Sermonic. Text; 1 Cor. $40. His subject was: 'The Master Builder. Something was really doing…",
+   "hl_start": 47,
+   "hl_end": 66,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.609
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-68163f78120b95f0#1",
+   "year": 1954,
+   "publication": "the key west citizen",
+   "gender_signal": "M",
+   "excerpt": "Cardinals punched four singles in the second inning to defeat Cincinnati 81 and gain a tie with the Redlegs for fifth place. Harvey Haddix chalked up his 18th triumph. Randy Jackson walloped his 18th home run early in the game, then singled in the 14th inning to drive in the run that gave the Chicago Cubs a 9-8 victory over Milwaukee. Rookie Bill Tremel pitched seven i…",
+   "hl_start": 168,
+   "hl_end": 181,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.013,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-9d7237335ffe7583#0",
+   "year": 1912,
+   "publication": "the guthrie daily leader",
+   "gender_signal": "F",
+   "excerpt": "MIR and Mrs. George Marquardt OF Guthrie, okla who have been visit ing the past few days with Mrs. Ambrose Bowdsh, left Yesterday for Western Kansas Mr. Marquardt IS professor Of German and ENGLISH in Oklahoma Universit…",
+   "hl_start": 8,
+   "hl_end": 29,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.936
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-799220e2863baf96#11",
+   "year": 1936,
+   "publication": "evening star",
+   "gender_signal": "F",
+   "excerpt": "… w. Hardy, all tied with net cards of II. Winifred Faunce, former District women's golf champ, set new unofficial record for the Manor layout with card of 78, one shot below the mark set by Mrs Dorothy Campbell Hurd two years ago. Up at Rarmingdale, Long Island, Claude Rippy shot a subpar 70 in q practice round which should augur well for the young man in the medal round today. Rippy is s…",
+   "hl_start": 191,
+   "hl_end": 202,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.205,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-29e5d67539de1dbd#16",
+   "year": 1957,
+   "publication": "evening star",
+   "gender_signal": "F",
+   "excerpt": "Frank HUGELY, Joe Kicheloe: 2--Domirlo. Carter y FUR; 3--Sneakers. r. II. Rogers Jean Eaton; Golden Diadem, Darcy PHILIPS, owner and rider. Ladies race: Redmond. Leon Green away, Mrs. r. H. Rogers My Cheer, horac, Mofett. Sally Rossel: Apt Sschoiar Mr. and Mrs, Don Patterson, kathy Kusner; 4-Straight Road. Horace Monet, Mrs. NJ. A. johnson. Middeburg Bowl (gentlemen's race) iI\"-Driftwood,",
+   "hl_start": 179,
+   "hl_end": 205,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.515
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-22ef9e278ab6a713#2",
+   "year": 1936,
+   "publication": "the indianapolis times",
+   "gender_signal": "M",
+   "excerpt": "This was followed by Merchant of Venice\" again with Miss Barry NOR. In the following autumn, came his production of \"Caponsacchi,\" which ran for 272 performances. Mr. Hampden then turned from the tragic and romantic to realistic comedy, appearing as DR.. Stock man in Ibsen's \"An Enemy of the People\" Followed King Henry \"\" 1.-The Light of ASIA\" THE Bonds of Inter…",
+   "hl_start": 163,
+   "hl_end": 174,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.18,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-66d11ed062bd3bc6#0",
+   "year": 1900,
+   "publication": "the times",
+   "gender_signal": "F",
+   "excerpt": "…ur any day to see what the result Is, and TO take note that this feminine fancy for ornamenting the horseless carriage has had its influence on every vehicle that comes from the shops\" When Madame Rejane found that sitting perched on what looks to American eyes like the COW catcher OF a quadracycle was no longer exciting comment. she and her luxury loving sisters in the thespian art with ad…",
+   "hl_start": 191,
+   "hl_end": 204,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.003
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-b3a8569a5fd976aa#15",
+   "year": 1960,
+   "publication": "jackson advocate",
+   "gender_signal": "F",
+   "excerpt": "…dexter street. The meet ing was presided over by the pres ident,: Mrs. B. D. Rushing. The devotion was conducted by the devotion chairman, Mrs. G. R. Bolden. The art period was conQuoted by Mrs. L. C. Pickens, art instructor. Etiquette instructor was Mrs. o. D. Johnson. During the fellowship, which followed the meeting, the hostess served chicken plates to the men, bers. Present were",
+   "hl_start": 191,
+   "hl_end": 209,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.006,
+    "D": 0.679
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-9c08181f1ebace06#0",
+   "year": 1900,
+   "publication": "decorah public opinion",
+   "gender_signal": "M",
+   "excerpt": "Inasmuch as our beloved brother, Thos. w. Robinson has been removed from us by the hand Of death and whereas he has been true and faith full member of our lodge, meeting all obligations in true fraternal spirit, ever-ready to perform such d…",
+   "hl_start": 39,
+   "hl_end": 50,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.857
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-2f29476c3ecba5b3#3",
+   "year": 1912,
+   "publication": "new-york tribune",
+   "gender_signal": "F",
+   "excerpt": "… evening, March %, the Nc Intyre Trio appeared at the residence OF George Caspar Pennell, No. BIS West lO4th street. with Miss Laura Combs, soprano as assisting artist According to reports, Miss Ferne Rogers a pupil Of Frederick T.. Bristol, made successful debut i'm London Miss Rogers has a somewhat extended experience, haying sung in the Royal Opera Of CobursGotha during two seasons In such r…",
+   "hl_start": 191,
+   "hl_end": 208,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.997
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-087bc5ce74db6f8e#0",
+   "year": 1912,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "tells the story why it failed to gain ground. Only plays which sent the backs at the line We're used. Capt. Blewett made few plunges for five to make single gain. Lee was not given the ball once during the scrimmage and as yet no line on his ability has been gotten. Mcdonald. who replaced Mccarthy at left half, showed great speed, but was repeatedly bloc…",
+   "hl_start": 163,
+   "hl_end": 166,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.058,
+    "D": 0.001
+   }
+  },
+  {
+   "role": "ARTS_SPORTS",
+   "entity_id": "as1-01dba09e29e495e2#23",
+   "year": 1918,
+   "publication": "the mitchell capital",
+   "gender_signal": "F",
+   "excerpt": "…I ? Florence Brown of Sioux City and .yirS. George Gum of Scotland who ave been visiting their brother. Geors Brown and wife, north of town. py,a ne1arn, ID t9 'ssIg Zion homes SATURDAY eve Miss Thelma Cole, who assisted in the rendition of THE Princess of Poe\" her recently. came from washington yesterday morning and is spending a few days visiting friends in this city. Mr. and Mrs. G.. NJ. Be…",
+   "hl_start": 191,
+   "hl_end": 207,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.008,
+    "D": 0.013
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-b372835778a6726e#0",
+   "year": 1942,
+   "publication": "detroit evening times",
+   "gender_signal": "M",
+   "excerpt": "… today because of disagreement with terms of peace plan. The rtouBILE centers around performance OF electrical work in the factories by UAW-CIO members. In an attempt to solve the prob lem, Ed Thai, secretary of the Building Trades Council, called a meetin gof his organization late today at the Labor Temple. CARPENTERS OUT Meanwhile, AFL carpenters refused TO lay a tool to their conIs…",
+   "hl_start": 191,
+   "hl_end": 198,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.005,
+    "D": 0.116
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-46a616f965745837#2",
+   "year": 1930,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "LONDON (N.AN.A.). Mr. and Mrs. Philip Snowden, who have just celebrated their silver wedding. are among the most devoted couples in public life. i was at a register ONCE in Yorkshire that Mr. Snowden, then chairman of tho Independent Labor party, married MibS Ethel Annakin, school teacher with a great interest in the labor move mdnt, and since then they have lived in such perfect amity …",
+   "hl_start": 188,
+   "hl_end": 199,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.01,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-adf2dda9113b0da2#2",
+   "year": 1903,
+   "publication": "mower county transcript",
+   "gender_signal": "F",
+   "excerpt": "they were all marched out into the dining room where a table was elegantly set for ~ and loaded with every thing good oieat and decorated with cut roses. Every. one enjoyed y good time Mrs. Roe buck and Mrs. Dibble were presented with d fancy y dish in remb berance cot the occasion saA|",
+   "hl_start": 185,
+   "hl_end": 193,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.874
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-5260c3e4ffbe2611#2",
+   "year": 1900,
+   "publication": "yorkville enquirer",
+   "gender_signal": "M",
+   "excerpt": "saloon, in the main street Of Conrad, when one evening a well dressed. dis tinguished looking gentleman stepped out of the west bound express upon the platform. Does Mr. Kirk live where he used TOT\" he asked Of one of the loungers at the station. Yes: he lives up by the church\" was the answer. The stranger went on down the main street. looking about him curiousl…",
+   "hl_start": 166,
+   "hl_end": 174,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.942
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-ac52cbe584c06e49#7",
+   "year": 1942,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "explosives. One of the two saboteurs who escaped death, Ernest Peter Burger. was expected to be the Governments most important witness. United States Attorney ]. Albert Woll said Burger, once mechanic in Detroit and Milwaukee, would be brought here secretly from his place of decentlon. There were indications that ne might disclose by his testimony many angles o…",
+   "hl_start": 162,
+   "hl_end": 173,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.048
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-82dae6284c47231c#18",
+   "year": 1939,
+   "publication": "morgan county democrat",
+   "gender_signal": "F",
+   "excerpt": "…. r. Dewitt and sister, Mrs. Eva West, and brother Winn Dewitt of Laramie, Wyo.--Mr. and Mrs. Austin Petit bone, Grant Mummey and friends Dale and Miner Morris were guests Sunday of Mr. and Mrs. Frank Roberts. Mr. Roberts remains quite poorly. Robert Morris of CCC camp near Coshocton, was home the week end. On Sunday he and his mother Mrs. Miner Morris, visited Mr. and",
+   "hl_start": 191,
+   "hl_end": 209,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-ca9e55ba1f73eaa8#0",
+   "year": 1948,
+   "publication": "the union county journal",
+   "gender_signal": "F",
+   "excerpt": "Lady Justice, who since 1888 has held the balance scales of justice on top the Union County Court House, has finally been given a really useful job to do for the residents of the County. Within the next…",
+   "hl_start": 0,
+   "hl_end": 12,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.995
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-0ac9217d1ca91f64#7",
+   "year": 1906,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "…ction. Some Of the clever lines are not peculiar or indigenous to this par ticular piece. but they have been trans planted with skill and discretion. A volatile French villain was played by Mr. Durand with good comedy effect, and his remark apropos Of the crudities OF one OF the rich tourists, Money does no care who has it,\" evoked evidences of amused APP probation. There were frequent t…",
+   "hl_start": 191,
+   "hl_end": 201,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.673
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-2ffb1b4df3254bb0#1",
+   "year": 1927,
+   "publication": "seward daily gateway",
+   "gender_signal": "M",
+   "excerpt": "…enting the Caro Company of Juneau, and former U. of Wn. football star. And the reason his arrival has been looked forward to is because previous to leaving for the Interior, few weeks ago, \"Bill\", who is the champ ion handball player of the Capitol City, taught a few local chaps some of the finer points in the gentle in- door sport. Tonight at 5 bells they hope to get their revenge…",
+   "hl_start": 191,
+   "hl_end": 195,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-1ea89dc91121d8d3#2",
+   "year": 1960,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "CARPENTERS Bethesda area housing project: prevailing wages. Must be sober and industrious. Apply to Mr. SORDER; Directions: From D. c, nne at western ave. proceed out River rd, to Wilson lane C2nd traHc light. turn right on Wilson blocks to Maryknoll ave, left on Maryknoll",
+   "hl_start": 100,
+   "hl_end": 110,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.222
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-b486d5739744f8e6#0",
+   "year": 1903,
+   "publication": "the washington times",
+   "gender_signal": "M",
+   "excerpt": "he should say they we're mere anecdotesi The calf was born seventeen years ago on the farm of Mr. Lockhart, who has liven in the immediate neighborhood for thirty-five years. Mr. Lockhart's son was a taxidermist, which circumstance accounts for the preservation of this freak. which lived only an…",
+   "hl_start": 94,
+   "hl_end": 106,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.005,
+    "D": 0.627
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-3146a37261012b44#3",
+   "year": 1963,
+   "publication": "filipino forum",
+   "gender_signal": "M",
+   "excerpt": "…t purpose. | told him that l was only a custodian of the money of the association and could not touch it without due authorization. | suggested that he call meeting the following weekend at Mr. Ferrera'S office. He did not ans wer and no such meeting was announced. Instead, he went ahead with his plans, furnish ing the money himself and call ed it U. of w. Filipino Alumni",
+   "hl_start": 191,
+   "hl_end": 202,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.741
+   }
+  },
+  {
+   "role": "LABOR",
+   "entity_id": "as1-0c6765b74ade2f9c#0",
+   "year": 1927,
+   "publication": "the daily worker",
+   "gender_signal": "M",
+   "excerpt": "The Lewis machine Wednesday sustained its first defeat Lewis had to his proposal to wreck the constitution the matter of assessment control by taking the and refusing roll CALL Even the New York Time…",
+   "hl_start": 4,
+   "hl_end": 9,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-7f0910f6813cf502#0",
+   "year": 1963,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "the Korean War hero for whom the school is named. Francis c. Hammond, who received the Congressional Medal of Honor. was a 2l-yearold Navy hospital corpsman with the LIST Marine Division when he was killed in Korean fighting in 1858.",
+   "hl_start": 50,
+   "hl_end": 68,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.086,
+    "D": 1.0
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-9306ccc70def84e6#1",
+   "year": 1945,
+   "publication": "the glasgow courier",
+   "gender_signal": "F",
+   "excerpt": "Capt. and Mrs. John L. Hodges and children Of Billings visited Captain Hodges mother, Mrs. j. L. Hodges of Fort Peck, the first of the week. Captain Hodges is stationed at Calcutta, India, but was called home because of an accident to n of the children. Mrs. Hodges went to Billings to meet he…",
+   "hl_start": 86,
+   "hl_end": 103,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-9035f1b6e0535615#8",
+   "year": 1921,
+   "publication": "richmond times-dispatch",
+   "gender_signal": "M",
+   "excerpt": "…rish Times. the Unionist or gan. is pleading with the Sim Fein ~ ttttpl the lbTllISn governments offer. or at least submit to pie. biscitc, while the leaders of the Dominion League, such as Sir Horace llunkctt, and the clcricals, have remanned silent 1t & not believed in political quarters here. however, that they can much longer keep out OF the picture The attitude OF Ulster is being cl…",
+   "hl_start": 191,
+   "hl_end": 201,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.895
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-a6f34c65cb12f10a#1",
+   "year": 1900,
+   "publication": "the st. louis republic",
+   "gender_signal": "M",
+   "excerpt": "by the Reverend John +. Herget Of the Water Tower Baptist Church Mr. Dill was married first to his cousin Mary Din. In 1874. Two years later his wife went to Chicago. Having secured divorce, in search of another wife. He succeeded, but after Only six years of mar…",
+   "hl_start": 65,
+   "hl_end": 73,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.573
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-0a3c29c74daa4194#69",
+   "year": 1906,
+   "publication": "evening star",
+   "gender_signal": "F",
+   "excerpt": "… including the Cuban minister and Sonora de Quesada, the Argentine minister and Sonora Portela, Mr. and Mrs. Q. T. Crosby, Mr. and Mrs. Chandler Anderson, Mrs. Carey Hutchinson of New York, Mrs. Roots house guest: Miss Sheriff., Maj. Biddle, Maj. Macomb and Miss Edith Root. The Secretary of War and Mrs. Taft were also dinner guests last night, their party being composed of Senator and Mr…",
+   "hl_start": 191,
+   "hl_end": 201,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.004
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-e9eb2e0d4ef8a563#0",
+   "year": 1942,
+   "publication": "the waterbury democrat",
+   "gender_signal": "M",
+   "excerpt": "On the dawn patrol. =. If you see guy roaming man with the net. It's only Jimmie Buzzuto popular afraid warden surveying his territory for better pecau tionary measures just in case of blackout. Chief Curtin should be proud of his staff Joe Bagley, IT, touring around town with …",
+   "hl_start": 74,
+   "hl_end": 88,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.994
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-c95151d61282da21#22",
+   "year": 1963,
+   "publication": "milford chronicle",
+   "gender_signal": "F",
+   "excerpt": "… Lewes Contest candidates. The contest, sponsored by the Lewes Rotary Club, will be held at the Lewes School auditorium on Friday, May 8. While a col lege student, Mrs. Pigman was the first Miss Delmarva. She presently serves as the TV Weather Girl over WBOC, Sails bury, Md, and as a fashion COM mentator and modelling counsellor. Starting May 1st, ambulance runs",
+   "hl_start": 191,
+   "hl_end": 204,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-d5f272b2a9c3403c#1",
+   "year": 1903,
+   "publication": "the kalispell bee",
+   "gender_signal": "M",
+   "excerpt": "| | To the Editor of the Bee: Your paper recently contained statements purporting to have been made by A. 5. Cutler which reflected upon me, and as l desired to be fair with Mr. Cutler, Notwithstanding his unwarranted and uncalled for attack upon me- l inquired of him as to the accuracy of the report, and told him | that if he would not lie about me would not tell the tru…",
+   "hl_start": 174,
+   "hl_end": 184,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.697
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-8a8a9ed63bccbb1f#1",
+   "year": 1957,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "Credited with making the f1rst night landing on an air craft carrier. Admiral Price served almost continuously with naval air groups until his retirement in 1854. He was born In August, Ark, and attended the University Of Arkansas before his appoint ment to the Naval Academy in 1912. In 1920 he became a pilot at Pensacola, Fla. During World War II Adj miral Price took part in …",
+   "hl_start": 186,
+   "hl_end": 189,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.002,
+    "D": 0.004
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-03c8caba02b40766#0",
+   "year": 1921,
+   "publication": "the new york herald",
+   "gender_signal": "F",
+   "excerpt": "Miss Jessie Megeath. daughter OF Mr. ana Mrs. Samuel \\. MeSeath. OF 1000 Pork avenue. was married 10 Lieut. Harry L. Rogers. Jr yesterday morn ing il the ballroom or the Gothala BY",
+   "hl_start": 0,
+   "hl_end": 19,
+   "labels": {
+    "A": true,
+    "B": false,
+    "C": false,
+    "D": false,
+    "E": false
+   },
+   "probs": {
+    "C": 0.001,
+    "D": 0.0
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-9651334181471101#5",
+   "year": 1906,
+   "publication": "the birmingham age-herald",
+   "gender_signal": "M",
+   "excerpt": "spirits. but only to bring them back to their old allie glance. Conquer by kndness-let that be our policy. Very truly yours, ABRAHAM LINCOLN. Conquer by Kindness. Do you wonder when General Rose Grams received that letter he refrained from executing Major Lyons? Do you wonder that Lincoln's policy of love was",
+   "hl_start": 182,
+   "hl_end": 200,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": false,
+    "D": false,
+    "E": true
+   },
+   "probs": {
+    "C": 0.002,
+    "D": 0.057
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-3f3ac6688f7f2be5#2",
+   "year": 1945,
+   "publication": "evening star",
+   "gender_signal": "M",
+   "excerpt": "installations and destroyed two fighters and three coastal vessels. In special announcement. Gen. MacArthur's headquarters disclosed the hanging, April 10. of Maj. Sakae Narioka. of the japanese Army, conyicted of spying. He penetrated American lines in civilian clothes.",
+   "hl_start": 159,
+   "hl_end": 177,
+   "labels": {
+    "A": false,
+    "B": true,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.011,
+    "D": 0.994
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-5ec82a5092c14960#0",
+   "year": 1915,
+   "publication": "daily kennebec journal",
+   "gender_signal": "F",
+   "excerpt": "r. F. Smith of Locke's Market will leave this morning with Mrs. Smith and daughter for his old home at Bethel, where they will pass a portion of a two-weeks vacation, the remand er Of which they will p…",
+   "hl_start": 0,
+   "hl_end": 11,
+   "labels": {
+    "A": false,
+    "B": false,
+    "C": false,
+    "D": true,
+    "E": false
+   },
+   "probs": {
+    "C": 0.0,
+    "D": 0.711
+   }
+  },
+  {
+   "role": "MILITARY",
+   "entity_id": "as1-c0c9311860dfce79#4",
+   "year": 1939,
+   "publication": "the washington times",
+   "gender_signal": "M",
+   "excerpt": "dinner part nerS. Alone among the male guests the representatives Of the Army and Navy wear black ties instead Of white. So do their superior officers-usually. General Craig was the excepton who recently arrived at a stately White House function, complete with gold braid and decorations, but wearing a white tie. This deviation from established practice did not …",
+   "hl_start": 160,
+   "hl_end": 173,
+   "labels": {
+    "A": true,
+    "B": true,
+    "C": false,
+    "D": true,
+    "E": true
+   },
+   "probs": {
+    "C": 0.002,
+    "D": 0.996
+   }
+  }
+ ]
+}

@@ -25,6 +25,7 @@ import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 
 from gna.lexicons import AUTHORITY, ROLES  # noqa: E402
+from gna.frame import apply_mixed_title_rule  # noqa: E402
 from gna.paths import DATA, INTERIM, RESULTS, safe_write  # noqa: E402
 from gna.roles_ml import (BowRoleModel, EmbedRoleModel, bow_text, crossfit, encode_contexts,  # noqa: E402
                           roles_matrix)
@@ -32,7 +33,8 @@ from gna.roles_ml import (BowRoleModel, EmbedRoleModel, bow_text, crossfit, enco
 ANN = DATA / "annotation"
 APPLY_PER_YEAR = 5000
 ENT_COLS = ["entity_id", "article_id", "year", "publication", "hclass", "n_ner_mentions", "gender_h", "gender_hp",
-            "gender_hpn", "roles_a", "roles_b", "n_quotes_name", "n_quotes_pron", "ctx", "ctx_hl_start", "ctx_hl_end"]
+            "gender_hpn", "titles", "roles_a", "roles_b", "n_quotes_name", "n_quotes_pron", "ctx", "ctx_hl_start",
+            "ctx_hl_end"]
 TARGETS = ROLES + ["AUTHORITY"]
 
 
@@ -100,6 +102,8 @@ def main() -> int:
 
     P = ref[isp].reset_index(drop=True)
     w = P["weight"].to_numpy(float)
+    rows += gender_rows("gender_hp_v2", P["gender_hp"], P["gender_text"], w)   # before the mixed-title rule
+    P = apply_mixed_title_rule(P)
     for tier in ("gender_h", "gender_hp", "gender_hpn"):
         rows += gender_rows(tier, P[tier], P["gender_text"], w)
 
@@ -131,11 +135,22 @@ def main() -> int:
         rows += gender_rows("E_llm", [E[i]["gender_text"] for i in Pe["entity_id"]], Pe["gender_text"], w[has])
         rows.append({"method": "E_llm", "target": "quoted",
                      **wprf(Pe["quoted"] == "yes", [E[i]["quoted"] for i in Pe["entity_id"]], w[has])})
+        ja = TARGETS.index("AUTHORITY")
+        for g in ("F", "M"):
+            sel = (Pe["gender_hp"] == g).to_numpy()
+            rows.append({"method": "E_llm", "target": f"AUTHORITY|{g}",
+                         **wprf(Yref[has][sel, ja], pe[sel, ja], w[has][sel])})
         print(f"method E rows on {has.sum()} reference entities")
 
     for m, Yp in preds.items():
         for j, t in enumerate(TARGETS):
             rows.append({"method": m, "target": t, **wprf(Yref[:, j], Yp[:, j], w)})
+    # differential error: AUTHORITY precision/recall within each signalled gender (primary rule)
+    ja = TARGETS.index("AUTHORITY")
+    for g in ("F", "M"):
+        sel = (P["gender_hp"] == g).to_numpy()
+        for m, Yp in preds.items():
+            rows.append({"method": m, "target": f"AUTHORITY|{g}", **wprf(Yref[sel, ja], Yp[sel, ja], w[sel])})
     qref = P["quoted"] == "yes"
     rows.append({"method": "quote_rule_name", "target": "quoted", **wprf(qref, P["n_quotes_name"] > 0, w)})
     rows.append({"method": "quote_rule_name+pronoun", "target": "quoted",

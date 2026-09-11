@@ -191,7 +191,8 @@ class Site:
     def page(self, route, title, desc, body):
         nav = "".join(f'<li><a href="{r}"{" aria-current=page" if r == route else ""}>{E(t)}</a></li>' for r, t in NAV)
         c = self.corpus_h
-        issue = (f"<span>Vol. I</span><span>Frozen {E(self.frozen or '—')}</span><span>Git {E(self.sha7)}</span>"
+        issue = (f"<span>Vol. I</span><span>Frozen {E(self.frozen or '—')}</span>"
+                 f"<span>Git <span class=\"sha\">{E(self.sha7)}</span></span>"
                  f"<span>{num(c.get('n_articles'))} articles · {c.get('first_year', '—')}–{c.get('last_year', '—')}</span>"
                  f'<button class="theme-toggle" type="button" hidden>Theme: system</button>')
         doc = f"""<!doctype html>
@@ -256,21 +257,21 @@ def home(site: Site):
     fig_v = round(100 * unk) if ok(unk) else None
     n_art = site.corpus_h.get("n_articles")
     hero = f"""<section class="hero reveal" style="--i:0">
-<div><p class="hero-figure tnum" aria-hidden="true"><span data-tick="{fig_v if fig_v is not None else ''}">{fig_v if fig_v is not None else '—'}</span><span class="unit">%</span></p></div>
-<div><h1>of the people these newspapers name carry no textual sign of their gender.</h1>
-<p class="qualifier">Measured on {num(tot)} people in {num(n_art)} articles sampled from 1900 to 1963. Before anyone asks how the share of women changed, that number decides what the share can mean. This atlas tracks both, and tests whether the answer survives a change of method.</p>
+<div class="hero-lead"><p class="hero-figure tnum" aria-hidden="true"><span data-tick="{fig_v if fig_v is not None else ''}">{fig_v if fig_v is not None else '—'}</span><span class="unit">%</span></p>
+<h1><span class="sr-only">{fig_v if fig_v is not None else '—'}% </span>of the people these newspapers name carry no textual sign of their gender.</h1></div>
+<div class="hero-side"><p class="qualifier">Measured on {num(tot)} people in {num(n_art)} articles sampled from 1900 to 1963. Before anyone asks how the share of women changed, that number decides what the share can mean. This atlas tracks both, and tests whether the answer survives a change of method.</p>
 <a class="cta" href="/robustness/">See what survives the robustness grid</a></div>
 </section>"""
 
     h1 = first(ts, estimand="female_share", tier="hp", population="ner", role="ALL")
     mt = [r for r in where(ma, kind="trend", role="AUTHORITY") if r.get("method") in ("A", "B", "C", "D", "E")]
     sl = [r["slope_pp_dec"] for r in mt if ok(r.get("slope_pp_dec"))]
-    rh1 = next((r for r in rs if r.get("estimand") == "H1_female_share" and not any(r.get(k) for k in ("method", "adjust", "tier", "papers"))), {})
+    rh1 = next((r for r in rs if r.get("estimand") == "H1_female_share" and not any(r.get(k) for k in ("method", "adjust", "tier", "papers", "resolution"))), {})
     vf = [r["f1"] for r in val if r.get("target") == "AUTHORITY" and r.get("method") in ("A_lexical", "B_dependency", "C_bow@0.5", "D_embed@0.5", "E_llm") and ok(r.get("f1"))]
     stats = f"""<ul class="stats reveal" style="--i:1">
 <li><span class="v tnum">{pct(h1.get('early_share'))} → {pct(h1.get('late_share'))}</span><span class="l">women's share of gender-signalled people, 1900–21 to 1948–63</span><span class="s">trend {signed(h1.get('slope_pp_dec'))} pp per decade, {ci(h1.get('ci_lo'), h1.get('ci_hi'))}</span></li>
 <li><span class="v tnum">{signed(min(sl)) if sl else '—'} to {signed(max(sl)) if sl else '—'}</span><span class="l">pp per decade: the trend in women's share of authority roles, depending on which of {len(sl)} methods measures “authority”</span><span class="s">same people, same years; <a href="/methods/">compare methods</a></span></li>
-<li><span class="v tnum">{pct(rh1.get('share_positive'), 0)}</span><span class="l">of {num(rh1.get('n_cells'))} analysis specifications show a rising women's share</span><span class="s">slope range {signed(rh1.get('slope_min'))} to {signed(rh1.get('slope_max'))} pp per decade; <a href="/robustness/">the grid</a></span></li>
+<li><span class="v tnum">{num(rh1['share_positive'] * rh1['n_cells']) if ok(rh1.get('share_positive')) and ok(rh1.get('n_cells')) else '—'}</span><span class="l">of {num(rh1.get('n_cells'))} analysis specifications show a rising women's share</span><span class="s">slope range {signed(rh1.get('slope_min'))} to {signed(rh1.get('slope_max'))} pp per decade; <a href="/robustness/">the grid</a></span></li>
 <li><span class="v tnum">{dec(min(vf)) if vf else '—'}–{dec(max(vf)) if vf else '—'}</span><span class="l">F1 for “authority” across methods, against reference labels</span><span class="s">reference labels were produced by an AI annotator, not humans; <a href="/validation/">details</a></span></li>
 </ul>"""
 
@@ -578,12 +579,26 @@ def methods(site: Site):
     rel = site.rel
     yr = where(ma, kind="yearly", role="AUTHORITY")
     ms = [m for m in ("A", "B", "C", "D", "E") if where(yr, method=m)]
-    panels = [{"title": METHOD_NAME[m], "series": [series([r for r in where(yr, method=m)], METHOD_NAME[m], "women", 1, min_n=15, ci_on=False)]} for m in ms]
+    def pooled(rows):                       # E's subsample is too thin for yearly points: pool the four periods
+        out = []
+        for lo, hi in ((1900, 1915), (1918, 1930), (1933, 1945), (1948, 1963)):
+            g = [r for r in rows if lo <= r["year"] <= hi and r.get("n")]
+            n, k = sum(r["n"] for r in g), sum(r.get("k") or 0 for r in g)
+            if n:
+                out.append({"year": round((lo + hi) / 2), "share": k / n, "n": n})
+        return out
+    panels = [{"title": METHOD_NAME[m], "series": [series(pooled(where(yr, method=m)) if m == "E" else where(yr, method=m),
+                                                          METHOD_NAME[m], "women", 1, min_n=0 if m == "E" else 15, ci_on=False)]}
+              for m in ms]
     tab = [[E(METHOD_NAME[m]), str(r["year"]), pct(r.get("share")), pct(r.get("prevalence")), num(r.get("n"))]
            for m in ms for r in sorted(where(yr, method=m), key=lambda r: r["year"])]
+    pop = {m: sum(r.get("n_pop") or 0 for r in where(yr, method=m)) for m in ms}
+    e_note = (f" The LLM (E) labelled a year-balanced random subsample of {num(pop['E'])} of them, so its panel pools four "
+              f"periods (1900–15, 1918–30, 1933–45, 1948–63) and is still noisy.") if "E" in pop else ""
     fig1 = figure("multiples", clean_json({"panels": panels, "y": {"format": "pct0"}}),
                   "Women's share of authority roles, measured five ways on the same people",
-                  "Each panel is one method applied to the same application sample (up to 5,000 gender-signalled people per year; the LLM saw a 300-per-year subsample).",
+                  f"Each panel is one method applied to the same application sample of {num(pop.get('A'))} gender-signalled people "
+                  f"(up to 5,000 per year).{e_note}",
                   table(["Method", "Year", "Women's share in role", "Role prevalence", "People in role"], tab, numeric={2, 3, 4}), SOURCE)
     tr = where(ma, kind="trend", role="AUTHORITY")
     rows = [{"label": METHOD_NAME[r["method"]], "value": r.get("slope_pp_dec"), "lo": r.get("ci_lo"), "hi": r.get("ci_hi")}
@@ -675,19 +690,22 @@ def validation(site: Site):
     prf = [[E(r["method"]), E(r["target"]), dec(r.get("precision")), dec(r.get("recall")), dec(r.get("f1")), num(r.get("n_pos_ref")),
             pct(r.get("prev_ref_w")), pct(r.get("prev_pred_w"))]
            for r in val if r.get("target") in ("AUTHORITY", "PUBLIC_OFFICE", "PROFESSIONAL", "BUSINESS", "CIVIC", "FAMILY")]
+    dg = [[E(r["method"]), "women" if r["target"].endswith("|F") else "men", dec(r.get("precision")), dec(r.get("recall")),
+           num(r.get("n_pred_pos")), num(r.get("n_pos_ref"))]
+          for m in methods for r in val if r.get("method") == m and r.get("target") in ("AUTHORITY|F", "AUTHORITY|M")]
     ac = load("annotation_consistency", {}) or {}
     ac_rows = [[E(r["field"].replace("role:", "role · ")), dec(r.get("kappa")), pct(r.get("agreement"), 0), num(r.get("n"))]
                for r in ac.get("rows", [])]
-    ac_html = (f"<h3>Self-consistency of the reference labels</h3><p class='prose'>{num(ac.get('n_items'))} items were re-labelled blind, "
-               f"in shuffled order, after the full pass. This is {E(ac.get('what', ''))}. It measures stability, not correctness, "
-               f"and it is not agreement between annotators.</p><div class='table-scroll'>"
+    ac_html = (f"<h3>Self-consistency of the reference labels</h3><p class='prose'>{num(ac.get('n_items'))} items. "
+               f"{E(ac.get('what', ''))[:1].upper()}{E(ac.get('what', ''))[1:]}. A near-perfect κ here is expected for "
+               f"that reason and should not be read as evidence that the labels are right.</p><div class='table-scroll'>"
                f"{table(['Field', 'Cohen κ', 'Agreement', 'Items'], ac_rows, numeric={1, 2, 3})}</div>") if ac_rows else ""
     tot = next((r for r in gc if r.get("year") == -1), {})
     cons = [{"label": "pronoun rule agrees with honorific", "color": "neutral", "dash": 1,
              "points": [{"x": r["year"], "y": r.get("agree"), "n": r.get("n")} for r in gc if r.get("year", -1) > 0]}]
     body = f"""{head("Validation", "Every method is checked against a stratified sample of reference labels. The reference labels are not human annotation, and this page says so first.")}
 <div class="finding"><p class="claim">Who produced the reference labels</p>
-<p>{E(ref_note)}. The {num(n_ref)} labelled people were drawn by stratified random sampling (period × honorific class × role present). The annotator worked blind to every method's output, following <code>research/annotation_protocol.md</code>. Estimates are reweighted to population proportions. Replacing these labels with human annotation is the first open item, and the <a href="/annotate/">annotation tool</a> exists for exactly that.</p></div>
+<p>{E(ref_note)}. {num(isp.get('n_pred_pos'))} extracted entities were drawn by stratified random sampling (period × honorific class × role present); {num(n_ref)} of them are real people and carry the gender and role labels used below. The annotator worked blind to every method's output, following <code>research/annotation_protocol.md</code>. Estimates are reweighted to population proportions. Replacing these labels with human annotation is the first open item, and the <a href="/annotate/">annotation tool</a> exists for exactly that.</p></div>
 {ac_html}
 <h2>Is the extracted span a person?</h2>
 <p class="prose">Of sampled entities, {pct(isp.get('precision'))} (sampling-weighted) are real references to a person. The rest are OCR fragments, places and organisations tagged as people. Every entity-level estimate carries this noise.</p>
@@ -701,7 +719,10 @@ def validation(site: Site):
 {figure("line", clean_json({"title": "Pronoun rule vs honorific", "series": cons, "y": {"domain": [0, 1], "format": "pct0"}}), "Large-sample check: does the pronoun rule agree with the honorific?", f"Among {num(tot.get('n'))} people with both an honorific and a pronoun signal, the rule agrees {pct(tot.get('agree'))} of the time (women {pct(tot.get('agree_when_F'))}, men {pct(tot.get('agree_when_M'))}). No annotation is needed: the honorific is the check.", series_table(cons), SOURCE)}
 <h2>Roles</h2>
 {hm}
-<div class="table-scroll">{table(["Method", "Role", "Precision", "Recall", "F1", "Reference positives", "Reference prevalence", "Predicted prevalence"], prf, numeric={2, 3, 4, 5, 6, 7})}</div>"""
+<div class="table-scroll">{table(["Method", "Role", "Precision", "Recall", "F1", "Reference positives", "Reference prevalence", "Predicted prevalence"], prf, numeric={2, 3, 4, 5, 6, 7})}</div>
+<h3>Is the error the same for women and men?</h3>
+<p class="prose">Authority-role precision and recall computed separately among people the primary rule signals as women and as men. If a method over-assigns authority to women, or under-finds it for men, the women's share it reports is biased even when overall F1 looks acceptable. Counts are small, so read these as warnings, not corrections. Typical cases are on the <a href="/failures/">failures page</a>.</p>
+<div class="table-scroll">{table(["Method", "Signalled gender", "Precision", "Recall", "Predicted positive (n)", "Reference positive (n)"], dg, numeric={2, 3, 4, 5})}</div>"""
     site.page("/validation/", "Validation", "Precision, recall and F1 of every NLP method against stratified reference labels.", body)
 
 
@@ -723,23 +744,47 @@ def robustness(site: Site):
     fig = figure("strip", clean_json({"rows": rows, "xLabel": "trend estimate, pp per decade", "format": "dec2", "labelWidth": 240, "title": "Multiverse"}),
                  "Every specification's trend estimate", "One dot per specification; tick marks the median. The right margin gives the share of specifications with a positive trend.",
                  table(["Estimand", "Specifications", "Positive", "Median", "Min", "Max"],
-                       [[E(r["label"]), num(len(r["values"])), pct(sum(v > 0 for v in r["values"]) / len(r["values"]), 0),
+                       [[E(r["label"]), num(len(r["values"])), num(sum(v > 0 for v in r["values"])),
                          dec(sorted(r["values"])[len(r["values"]) // 2]), dec(min(r["values"])), dec(max(r["values"]))] for r in rows], numeric={1, 2, 3, 4, 5}), "")
     def dim_table(dim):
-        rs = [r for r in summ if r.get(dim) is not None and all(r.get(k) is None for k in ("adjust", "tier", "papers", "method") if k != dim)]
-        return table([dim.capitalize(), "Estimand", "Cells", "Positive", "Sig. positive", "Sig. negative", "Median slope", "Sign survives all"],
-                     [[E(str(r.get(dim))), E(r["estimand"]), num(r.get("n_cells")), pct(r.get("share_positive"), 0), pct(r.get("share_sig_positive"), 0),
-                       pct(r.get("share_sig_negative"), 0), dec(r.get("slope_median")), "yes" if r.get("sign_survives_all") else "no"] for r in rs],
+        rs = [r for r in summ if r.get(dim) is not None and all(r.get(k) is None for k in ("adjust", "tier", "papers", "method", "resolution") if k != dim)]
+        return table([dim.capitalize(), "Estimand", "Cells", "Positive cells", "Sig. positive", "Sig. negative", "Median slope", "Sign survives all"],
+                     [[E(str(r.get(dim))), E(r["estimand"]), num(r.get("n_cells")),
+                       num(r["share_positive"] * r["n_cells"]) if ok(r.get("share_positive")) and ok(r.get("n_cells")) else "—",
+                       pct(r.get("share_sig_positive"), 1), pct(r.get("share_sig_negative"), 1), dec(r.get("slope_median")),
+                       "yes" if r.get("sign_survives_all") else "no"] for r in rs],
                      numeric={2, 3, 4, 5, 6})
     body = f"""{head("Robustness", "Each headline estimate is re-computed under every combination of reasonable analysis choices. A claim is reported as supported only if its sign survives all of them.")}
 {fig}
 <h2>The grid</h2>
-<div class="prose"><p><strong>Gender rule</strong>: honorific only; + pronoun rule (primary); + gendered nouns. <strong>People</strong>: NER-detected only (primary); + honorific-pattern detector. <strong>Duplicates</strong>: keep; drop near-duplicates (MinHash Jaccard ≥ .8). <strong>OCR</strong>: all; legible articles with dictionary rate ≥ .75. <strong>Newspapers</strong>: all; excluding the <em>Evening Star</em>; capped at 500 articles per paper-year. <strong>Time bins</strong>: year; 5-year; decade. <strong>Content</strong>: all; news only. <strong>Role method</strong> and classifier <strong>threshold</strong> (0.3/0.5/0.7) for role estimands. A reduced grid adds topic + newspaper fixed effects.</p></div>
+<div class="prose"><p><strong>Gender rule</strong>: honorific only; + pronoun rule (primary); + gendered nouns. <strong>People</strong>: NER-detected only (primary); + honorific-pattern detector. <strong>Duplicates</strong>: keep; drop near-duplicates (MinHash Jaccard ≥ .8). <strong>OCR</strong>: all; legible articles with dictionary rate ≥ .75. <strong>Newspapers</strong>: all; excluding the <em>Evening Star</em>; capped at 500 articles per paper-year. <strong>Time bins</strong>: year; 5-year; decade. <strong>Content</strong>: all; news only. <strong>Entity resolution</strong>: couple clusters such as “Capt. Bissell … Mrs. Bissell” set to UNKNOWN (primary; decision D17, added after first results); kept as merged. <strong>Role method</strong> and classifier <strong>threshold</strong> (0.3/0.5/0.7) for role estimands. A reduced grid adds topic + newspaper fixed effects.</p></div>
 <h3>By gender rule</h3><div class="table-scroll">{dim_table('tier')}</div>
+<h3>By entity resolution</h3><div class="table-scroll">{dim_table('resolution')}</div>
 <h3>By newspaper handling</h3><div class="table-scroll">{dim_table('papers')}</div>
 <h3>By method</h3><div class="table-scroll">{dim_table('method')}</div>
-<h3>Raw vs fixed-effects adjusted</h3><div class="table-scroll">{dim_table('adjust')}</div>"""
+<h3>Raw vs fixed-effects adjusted</h3><div class="table-scroll">{dim_table('adjust')}</div>
+{review_checks_html()}"""
     site.page("/robustness/", "Robustness", "Multiverse analysis of every headline trend in GenderNews Atlas.", body)
+
+
+def review_checks_html() -> str:
+    rc = load("reviewer_checks", []) or []
+    if not rc:
+        return ""
+    wild = [[E(r["estimand"]), E(r["spec"]), signed(r.get("slope_pp_dec")), dec(r.get("p_wild_cluster"), 3),
+             dec(r.get("p_analytic_twoway"), 3), num(r.get("n_clusters"))]
+            for r in rc if r.get("check") == "wild_cluster_bootstrap_year"]
+    logit = [[E(r["estimand"]), E(r["spec"]), signed(r.get("slope_pp_dec")), signed(r.get("lpm_slope_pp_dec"))]
+             for r in rc if r.get("check") == "logit_vs_lpm"]
+    bh = [r for r in rc if r.get("check") == "bh_fdr_role_trends"]
+    n_q = sum(1 for r in bh if ok(r.get("q_bh")) and r["q_bh"] < 0.05)
+    n_p = sum(1 for r in bh if ok(r.get("p_hac")) and r["p_hac"] < 0.05)
+    return (f"<h2>Checks added after review</h2><p class='prose'>Requested in the mock reviews (<code>research/reviews.md</code>). "
+            f"Wild-cluster bootstrap over the 22 year clusters; logit average marginal effects against the linear probability "
+            f"model; Benjamini–Hochberg control across the {len(bh)} role-trend tests, of which {n_q} survive at q &lt; .05 "
+            f"(against {n_p} at an uncorrected p &lt; .05).</p>"
+            f"<div class='table-scroll'>{table(['Estimand', 'Adjustment', 'Slope (pp/decade)', 'Wild-cluster p', 'Two-way analytic p', 'Year clusters'], wild, numeric={2, 3, 4, 5})}</div>"
+            f"<div class='table-scroll'>{table(['Estimand', 'Adjustment', 'Logit AME (pp/decade)', 'LPM slope (pp/decade)'], logit, numeric={2, 3})}</div>")
 
 
 def failures(site: Site):
@@ -906,6 +951,8 @@ def main() -> int:
         shutil.copytree(figs, DIST / "figures")
     (DIST / "annotate").mkdir()
     shutil.copy(ROOT / "tools" / "annotate" / "index.html", DIST / "annotate" / "index.html")
+    if (ROOT / "site" / "vercel.json").exists():           # headers, CSP, clean URLs for the static deploy
+        shutil.copy(ROOT / "site" / "vercel.json", DIST / "vercel.json")
     site = Site()
     for fn in (home, timeline, roles, quotes, language, topics, methods, disagreement, validation, robustness, failures,
                data_page, paper):

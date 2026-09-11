@@ -66,6 +66,14 @@ function initFilters() {
   }
 }
 
+// The section menu is open in the markup so the nav works without JavaScript;
+// on narrow screens, collapse it so 13 links do not push the page below the fold.
+function initMenu() {
+  const menu = document.querySelector(".mast-menu");
+  if (menu && matchMedia("(max-width: 760px)").matches) menu.removeAttribute("open");
+}
+
+initMenu();
 initTheme();
 mountAll();
 initFilters();

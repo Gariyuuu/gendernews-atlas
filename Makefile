@@ -45,7 +45,10 @@ analyze:
 
 robustness:
 	$(PY) scripts/robustness.py
+	$(PY) scripts/reviewer_checks.py
 	$(PY) scripts/claims.py
+	$(PY) scripts/failure_examples.py
+	$(PY) scripts/annotation_consistency.py
 
 figures:
 	$(PY) scripts/figures.py
@@ -58,13 +61,14 @@ paper: freeze
 
 site:
 	$(PY) scripts/export_site_data.py
-	cd site && npm ci && npm run build
+	$(PY) site/build.py
+	cd site && npm run check && npm test
 
 test:
 	$(PY) -m pytest -q
 
 lint:
-	$(PY) -m ruff check src scripts tests
+	$(PY) -m ruff check src scripts tests site/build.py
 
 reproduce: data preprocess annotate models analyze robustness figures paper site test
 

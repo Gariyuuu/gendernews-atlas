@@ -48,6 +48,15 @@ historical text.
 
 The rules are symmetric in F and M.
 
+4. **Mixed-title rule (decision D17, added after first results).** Rule 2's fallback
+   lets "Mrs. Bissell" attach to the unique unclassed "Capt. Clayton L. Bissell", which
+   is the couple construction and not one person. Any cluster that joins a female
+   honorific (Mrs., Miss, Misses, Ms., Madame, Mme., Mlle., Lady) with any other title
+   (name suffixes Jr./Sr. excepted) has every gender tier set to UNKNOWN
+   (`gna.frame.apply_mixed_title_rule`). The pre-rule behaviour is robustness dimension
+   `resolution = v2_merge`. Untitled couples are not detectable and remain an error
+   source (limitations §11).
+
 ## 5. Gender-signal hierarchy (`extract.resolve_gender`)
 
 The measured quantity is **the gender signalled by the text**, not a person's identity.

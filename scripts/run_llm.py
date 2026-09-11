@@ -48,10 +48,24 @@ def main() -> int:
                  for i in items]
     else:
         out = INTERIM / "llm_apply.jsonl"
-        ml = pd.read_parquet(INTERIM / "method_labels.parquet", columns=["entity_id", "year", "publication"])
+        ml_path = INTERIM / "method_labels.parquet"
+        if ml_path.exists():
+            ml = pd.read_parquet(ml_path, columns=["entity_id", "year", "publication"])
+        else:
+            # identical selection to scripts/role_methods.py (same population, same seed, same order),
+            # so E's subsample is a subset of the C/D application sample; checked in analyze_methods
+            sys.path.insert(0, str(Path(__file__).resolve().parent))
+            from role_methods import APPLY_PER_YEAR, load_entities
+            allE = load_entities()
+            allE = allE[(allE["n_ner_mentions"] >= 1) & (allE["gender_hp"] != "UNKNOWN")]
+            rng0 = np.random.default_rng(20260911)
+            ml = pd.concat([g.iloc[np.sort(rng0.choice(len(g), size=min(APPLY_PER_YEAR, len(g)), replace=False))]
+                            for _, g in allE.groupby("year")], ignore_index=True)[["entity_id", "year", "publication"]]
+        # nested per-year random order, submitted round-robin across years: every prefix of the run
+        # is a year-balanced sample, so a run stopped early is still usable (achieved n is reported)
         rng = np.random.default_rng(20260912)
-        pick = pd.concat([g.iloc[np.sort(rng.choice(len(g), size=min(a.per_year, len(g)), replace=False))]
-                          for _, g in ml.groupby("year")])
+        pick = pd.concat([g.iloc[rng.permutation(len(g))[:a.per_year]].assign(_rank=np.arange(min(a.per_year, len(g))))
+                          for _, g in ml.groupby("year")]).sort_values(["_rank", "year"], kind="stable")
         ctx = pd.concat([pd.read_parquet(p, columns=["entity_id", "ctx", "ctx_hl_start", "ctx_hl_end"])
                          for p in sorted((INTERIM / "extract").glob("entities_*.parquet"))])
         pick = pick.merge(ctx, on="entity_id")

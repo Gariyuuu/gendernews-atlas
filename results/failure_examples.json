@@ -134,6 +134,50 @@
    "reference_notes": "King; bridegroom"
   },
   {
+   "kind": "Role: authority assigned by rules (B) to a woman the reference gives none",
+   "entity_id": "as1-94fc9b06d3298d62#2",
+   "year": 1933,
+   "publication": "the waterbury democrat",
+   "excerpt": "church yesterday afternoon the officers were reelected as follows: Honorary president. Mrs Robert b. Brown, wife of Rev Robert F.. Brown. former pastor at the Sec. ond church; president, Mrs Will Ham c. Green; first vice president Mrse stephen T. Crane; second vice president, Mrs Arthur Reed Klmball; recording secretary, Mrs Walter M Boyd: corresponding secretary. Mrs Anson w. Miner; treasurer, Mrs Aaron …",
+   "hl_start": 187,
+   "hl_end": 208,
+   "note": "Reference roles: CIVIC. Method B roles: PUBLIC_OFFICE.",
+   "reference_notes": "church women's society president"
+  },
+  {
+   "kind": "Role: authority assigned by rules (B) to a woman the reference gives none",
+   "entity_id": "as1-08f1dbec3893e152#0",
+   "year": 1960,
+   "publication": "minneapolis spokesman",
+   "excerpt": "~ lady Of clubdom, the late Mrs. Lillian Turner Alexander, with ten women from Minneapolis and ten from st. Paul. The Greek word \"Adelphai,\" meaning sister was selected by the late william r. Morris, Minneapolis attorney, for the club name which was unanimo…",
+   "hl_start": 28,
+   "hl_end": 57,
+   "note": "Reference roles: CIVIC. Method B roles: PUBLIC_OFFICE.",
+   "reference_notes": "\"lady of clubdom\"; club founder"
+  },
+  {
+   "kind": "Role: authority assigned by rules (B) to a woman the reference gives none",
+   "entity_id": "as1-89282346cad8e37d#19",
+   "year": 1930,
+   "publication": "evening star",
+   "excerpt": "…The hostesSes at the studio for this week during the afternoon hours will be Miss Marie c. Redfern, Mrs. Ed Mrs. Ernest Virgins and Mrs. Hugh Irish. The following elections committee has been chosen: Miss Jean Stephenson, Mrs. Evelyn Sheriff., DR.. Frances Moon Butts, Mrs. Theodore Tiller and Mrs. Hugh Irish. This committee will receive nominations for the different Offices which are to be filled at the annual meetin…",
+   "hl_start": 201,
+   "hl_end": 221,
+   "note": "Reference roles: CIVIC. Method B roles: PUBLIC_OFFICE.",
+   "reference_notes": "club elections committee"
+  },
+  {
+   "kind": "Role: authority assigned by rules (B) to a woman the reference gives none",
+   "entity_id": "as1-d465d52444c9865d#7",
+   "year": 1945,
+   "publication": "the chronicle-star combined with the moss point advertiser",
+   "excerpt": "staff during l945. The officers, all of whom were reelected are as follows: Mrs. j. S. Abbey, president; Mrs. c. H. Gray, first vice president; Mrs. j. c. Crane. second vice president; Miss Bessie Perry. record y 100 per cent in either bum ing secretary; Mrs. W. E. Wig gins, corresponding secretary; Mrs. H. H. Cole, treasurer; Mrs. S, b. McIlwain parliamentarian;",
+   "hl_start": 185,
+   "hl_end": 202,
+   "note": "Reference roles: CIVIC. Method B roles: PUBLIC_OFFICE.",
+   "reference_notes": "club recording secretary"
+  },
+  {
    "kind": "Role: public office inherited by the lexical window (A)",
    "entity_id": "as1-94fc9b06d3298d62#2",
    "year": 1933,

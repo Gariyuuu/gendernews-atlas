@@ -107,3 +107,26 @@ from the last build (Almanac, warm) on accent hue. The hero figure is computed f
 paper (`#f9f6f1`) showed the first women step at 2.97:1, below the 3:1 mark floor. It
 was snapped to the next validated step (`#d95926`: 3.60:1, CVD ΔE 27.3), and figures and
 site share it via `config/palette.json`.
+
+**D17 — Mixed-title clusters lose their gender signal (post-results measurement fix).**
+Inspecting women coded MILITARY by method B showed couple constructions ("Capt.
+Clayton L. Bissell … Mrs. Bissell", "Vice Admiral Edward L. Cochrane and Mrs.
+Cochrane") forming one entity. The surname-only *Mrs.* mention attaches to the unique
+neutral-class full name. This is the path in `extract._cluster` meant for "Jane Addams …
+Miss Addams". The merged entity is labelled F and carries the husband's title. Among
+NER-supported entities, 1,370 of 175,078 F entities (0.8%) join a female honorific with
+another title. They are 13.3% of F entities in method-B authority roles, falling from
+23.7% (1900–15) to 9.6% (1948–63), so they inflate the level of H2 more early than
+late.
+
+Fix: `gna.frame.apply_mixed_title_rule` sets every gender tier to UNKNOWN on such
+clusters. Titles are stored per entity, so no re-extraction is needed, and entity ids
+(and so the reference labels) are unchanged.
+
+The rule was added after the first results were seen, so it is a deviation from the
+frozen plan. The old behaviour stays in the multiverse as `resolution = v2_merge`. The
+validation reports the gender rule both ways (`gender_hp_v2` and `gender_hp`). Samples
+drawn before the rule (the reference sample, the C/D application sample and the LLM
+subsample) are left as drawn, and mixed clusters are removed at analysis time. Untitled
+couples ("Clayton Bissell … Mrs. Bissell") cannot be detected this way (see
+limitations).

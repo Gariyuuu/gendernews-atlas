@@ -43,6 +43,10 @@ it.
 8. **The pronoun heuristic is a heuristic.** It uses nearest salient antecedent with a
    subject preference, not a learned coreference model. Its disagreement with honorifics
    is measured on every person who has both signals (`results/gender_consistency.parquet`).
+   One known failure: it does not apply the binding constraint that a non-reflexive
+   object pronoun cannot corefer with the subject of its own clause. So in "General
+   Crowder nicknamed her", *her* can sign the General. The reference sample measures the
+   resulting error rate, but it is not corrected.
 
 ## Extraction on historical OCR
 
@@ -52,9 +56,14 @@ it.
    more than the gender-signalled pool.
 10. **OCR noise is uneven.** The period-dictionary word rate and the legibility label are
     coarse proxies. They are used as a robustness filter, not a correction.
-11. **Entity resolution is within-article and conservative.** Ambiguous surname
-    mentions are dropped, and the same person across articles is counted once per
-    article.
+11. **Entity resolution is within-article and conservative, with one known merge
+    error.** Ambiguous surname mentions are dropped, and the same person across articles
+    is counted once per article. In couple constructions ("Capt. Clayton Bissell … Mrs.
+    Bissell") the surname-only *Mrs.* attaches to the husband's full name. Where the
+    husband carries a title, the cluster is detected and its gender set to UNKNOWN
+    (decision D17, added after first results; the old behaviour is a robustness
+    dimension). Untitled couples ("Clayton Bissell … Mrs. Bissell") are not detected.
+    They can still attach a man's roles to a woman and bias women's role shares upward.
 
 ## Validation
 

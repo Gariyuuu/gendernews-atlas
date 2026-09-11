@@ -27,6 +27,32 @@ def role_flags(role_lists: pd.Series, prefix: str) -> pd.DataFrame:
     return pd.DataFrame(out, index=role_lists.index)
 
 
+# Honorifics that mark a woman, and name suffixes that are not titles.
+F_HONORIFICS = frozenset({"mrs", "miss", "misses", "ms", "madame", "mme", "mlle", "lady"})
+NAME_SUFFIXES = frozenset({"jr", "sr"})
+
+
+def mixed_title(titles) -> bool:
+    """True when a cluster joins a female honorific with any other title.
+
+    In the couple construction ("Capt. Clayton Bissell ... Mrs. Bissell") a surname-only
+    "Mrs." mention attaches to the husband's titled full name (decision D17).  Such a
+    cluster is not one person, so its honorific cannot sign its gender.
+    """
+    s = set(titles) if titles is not None else set()
+    return bool(s & F_HONORIFICS) and bool(s - F_HONORIFICS - NAME_SUFFIXES)
+
+
+def apply_mixed_title_rule(df: pd.DataFrame) -> pd.DataFrame:
+    """Copy of `df` with every gender tier set to UNKNOWN on mixed-title clusters; adds `mixed_title`."""
+    df = df.copy()
+    df["mixed_title"] = df["titles"].map(mixed_title).astype(bool)
+    for c in ("gender_h", "gender_hp", "gender_hpn"):
+        if c in df:
+            df.loc[df["mixed_title"], c] = "UNKNOWN"
+    return df
+
+
 def is_f(g: pd.Series) -> pd.Series:
     """1.0 for F, 0.0 for M, NaN for UNKNOWN / conflict."""
     return g.map({"F": 1.0, "M": 0.0}).astype(float)
